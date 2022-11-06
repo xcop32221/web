@@ -169,7 +169,7 @@ vi 文件名 可以进入这个文件
 //去除origin绑定
 git remote -rm origin
 
-//添加origin
+//添加远端仓库(origin为名字）
 git remote add origin 地址
 
 //推送文件到远端

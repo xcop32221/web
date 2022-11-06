@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 这个是核心库，必须先应用,全局多个React对象 -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <!-- 引入react-dom，用于支持react操作dom，全局有个ReactDom对象 -->
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- 引入bable用于将jsx转为js -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <!-- 这里一定要写bable，让bable去编译JSX成为JS -->
+    <style>
+      .title{
+        background-color: orange;
+        width: 200px;
+      }
+    </style>
+</head>
+ 
+<body>
+    <!-- 准备好一个容器 -->
+    <div class="test">
+       
+    </div>
+  
+  <script type="text/babel">
+    const myId='first'
+    const myData='hello React'
+    //1.创建虚拟DOM
+    const VDOM=<div >
+    <h2 id={myId} className='title' style={{color:'white',fontSize:'20px'}}>
+      <span>{myData}</span>
+    </h2>
+    <h2 id={myId+'2'} className='title'>
+      <span>{myData}</span>
+    </h2>
+    <input type="text"/>
+    
+    </div>
+    //此处不要写引号，不是字符串
+    
+    //2.渲染虚拟DOM到页面
+    const div1=document.querySelector('.test')
+    ReactDOM.render(VDOM,div1)//虚拟dom，容器(需要原生选择器)
+   
+    //JSX语法规则
+    /*
+      1.定义虚拟DOM时不要写''
+      2.虚拟DOM混JS形式使用：{}
+      3.样式的类名不要用class，要用className（避开关键字）
+      4.内联样式：{{key：value}} JS形式的样式对象
+      5.虚拟DOM中只能写一个根标签(父元素)
+      6.标签必须闭合
+      7.标签首字母:
+        1.若小写字母开头，则将该标签转为html同名元素；若html无同名元素，则报错
+        2.若大写字母开头，react去渲染对应的组件，若组件没有定义，则报错
+    */
+   
+  </script>
+</body>
+</html>

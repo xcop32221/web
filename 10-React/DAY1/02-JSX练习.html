@@ -12,22 +12,28 @@
     <!-- 引入bable用于将jsx转为js -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <!-- 这里一定要写bable，让bable去编译JSX成为JS -->
+    <style>
+      .title{
+        background-color: orange;
+        width: 200px;
+      }
+    </style>
 </head>
  
 <body>
-    <!-- 准备好一个容器 -->
-    <div class="test">
-       
-    </div>
-  
-  <script type="text/babel">
-    //1.创建虚拟DOM
-    const VDOM=<h1>Hello,React</h1>//此处不要写引号，不是字符串
-    //2.渲染虚拟DOM到页面
-    const div=document.querySelector('.test')
-    ReactDOM.render(VDOM,div)//虚拟dom，容器(需要原生选择器)
-    
+    <div id="test"></div>
+   <script type="text/babel">
+        const data=['Angular','React','Vue']
+        const vdom=(
+            <div>
+                <h1>前端框架</h1>
+                <ul>
+                    {data}
+                </ul>
+            </div>
+        )
+        ReactDOM.render(vdom,document.getElementById('test'))
 
-  </script>
+   </script>
 </body>
 </html>
