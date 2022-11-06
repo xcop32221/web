@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打字机效果</title>
+    <style>
+        .box {
+            /* 计算出原本字体所占宽度 */
+            width: 130px;
+            /* background-color: pink; */
+            font-size: 20px;
+            /* 英文内容 需要让文字直接等宽,方便计算 */
+            font-family: monospace;
+            /* 溢出隐藏 */
+            overflow: hidden;
+            /* 强制不换行 */
+            white-space: nowrap;
+            /* 模拟光标效果 */
+            border-right: 1px solid rgb(205, 201, 201);
+            margin: 150px auto;
+            /* 调用动画 */
+            animation:
+                daziji 6s steps(13) forwards,
+                guangbiao 1s steps(1) infinite;
+
+        }
+
+        /* 打字机 逐帧出字效果 */
+        @keyframes daziji {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 130px;
+            }
+
+        }
+
+        /* 模拟光标闪烁 */
+        @keyframes guangbiao {
+            0% {}
+
+            50% {
+                border-right: 1px solid transparent;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 容器 -->
+    <div class="box">hello world!!</div>
+</body>
+
+</html>

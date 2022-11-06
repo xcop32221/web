@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+            width: 500px;
+            height: 200px;
+            background-color: skyblue;
+            display: flex;
+            /* flex-direction: column; */
+            /* 主轴变为垂直方向，flex-basis优先级就大于高度*/
+        }
+        .item:nth-child(1){
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* 主轴是水平方向，200覆盖100px宽度 */
+            /* flex-basis: 200px; */
+            /* auto 元素本身有宽度，auto就表示元素本身大小 */
+            /* 元素本身没有宽度， 但有内容，auto得到元素内容的宽度 */
+            /* flex:auto; */
+            flex:1;
+        }
+        .item:nth-child(2){
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            flex:1;
+            /* flex:auto; */
+        }
+        .item:nth-child(3){
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            flex:1;
+            /* flex:auto; */
+            /* flex-basis: 0%; */
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

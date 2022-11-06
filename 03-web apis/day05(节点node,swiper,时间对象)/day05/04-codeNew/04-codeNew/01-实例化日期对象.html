@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Star(name,age){
+      this.name=name
+      this.age=age
+    }
+
+    const date=new Date()
+    
+    let year=date.getFullYear()
+    let month=date.getMonth()
+    let date1=date.getDate()
+    let day=date.getDay()
+    let h=date.getHours()
+    let m=date.getMinutes()
+    let s=date.getSeconds()
+    console.log(year)
+    console.log(month+1)
+    console.log(date1)
+    console.log(day+1)
+    console.log(h)
+    console.log(m)
+    console.log(s)
+
+    const arr = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+
+    const date2 = new Date()
+    const i = date2.getDay()
+    const res = arr[i]
+    console.log(res)
+
+
+
+  </script>
+</body>
+
+</html>

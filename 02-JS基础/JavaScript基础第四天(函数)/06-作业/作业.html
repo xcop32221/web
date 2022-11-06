@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //题一：
+        //在主流程中得到constr变量，放入函数中执行，将结果写入文档中
+
+        //题二：
+        function sum1(num1,num2)
+        {
+            return num1+num2
+        }
+
+        //题三
+        function changeNum(num1,num2)
+        {
+            let temp=num1
+            num1=num2
+            num2=num1
+            return [num1,num2]
+        }
+
+        //题四
+
+        //函数定义
+        function inputAcc()
+        {
+            let num=+prompt('请输入银行卡余额')
+            return num
+        }
+
+        function inputExp1()
+        {
+            let num=+prompt('请输入食宿消费')
+            return num
+        }
+
+        function inputExp2()
+        {
+            let num=+prompt('请输入生活消费')
+            return num
+        }
+
+        function remainAcc(tol,exp1,exp2)
+        {
+            let rem=tol-exp1-exp2
+            if(rem>=0)
+            {
+                alert('当前余额为:'+rem)
+            }
+            else
+            {
+                alert('当前欠款为'+(+rem))
+            }
+            return rem
+        }
+        //test
+        // console.log(remainAcc(inputAcc(),inputExp1(),inputExp2()))
+
+        //题五
+        function handleData(arr,istrue=true)
+        {
+            function sum(arr)
+            {
+                let sum=0
+                for(let i=0;i<arr.length;i++)
+                {
+                    sum+=arr[i]
+                }
+                return sum
+            }
+            function ave(arr)
+            {
+                let ave=0
+                ave=sum(arr)/arr.length
+                return ave
+            }
+            if(istrue)
+            {
+                return sum(arr)
+            }
+            else
+            {
+                return ave(arr)
+            }
+        }
+
+        //test
+        // let arr1=[1,2,3,4]
+        // console.log(handleData(arr1,false))
+
+
+        //转换秒数练习
+        //函数定义
+        function transSeconds(num)
+        {
+            let time=[]
+            let h=parseInt(num/60/60%24)
+            let m=parseInt(num/60%60)
+            let s=parseInt(num%60)
+            time.push(h,m,s)
+            return time
+        }
+        //test
+        while(true)
+        {
+            let seconds=+prompt('请输入秒数')
+            if(seconds>0)
+            {
+                let time=transSeconds(seconds)
+                for(let i=0;i<time.length;i++)
+                {
+                    if(time[i]<10)
+                    {
+                        time[i]+='0'
+                    }
+                }
+                document.write(`转换为${time[0]}小时，${time[1]}分钟,${time[2]}秒`)
+                break
+            }
+            else
+            {
+                alert('输入格式不正确重新输入')
+                continue
+            }
+        }
+        
+    </script>
+</body>
+</html>

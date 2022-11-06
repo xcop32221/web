@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个变量来接收用户输入的值，并且转换成数字
+        let num = +prompt('请输入一个数')
+        // 声明一个result来接收逻辑与的判断
+        // 既要变量对4取余为0，又要变量对100取余不等于0
+        let result = num % 4 === 0 && num % 100 !== 0
+        // 弹出一个结果
+        alert(result)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 比较运算符得到的是一个布尔型的值
+        console.log(10 > 5);
+        console.log(10 < 5);
+        // 比较运算符在做比较的时候，会将两边的数据进行一个隐式转换成数字类型进行比较
+        console.log(10 >= '10');
+        console.log(10 <= '11');
+        console.log(10 < '9');
+        console.log('==================');
+        console.log(10 == 10);
+        // ==只需要判断两边的值相等，就可以得到true
+        console.log(10 == '10');
+        // ===全等号，全等号会判断两边的值和类型，只有都相等的情况下才能得到true
+        console.log(10 === '10');
+        console.log('============');
+        console.log(10 !== 5);
+        // 不全等，判断两边的值和类型是否不相等
+        console.log(10 !== '10');
+        // 判断两边值是否不相等
+        console.log(10 != '10');
+    </script>
+</body>
+
+</html>

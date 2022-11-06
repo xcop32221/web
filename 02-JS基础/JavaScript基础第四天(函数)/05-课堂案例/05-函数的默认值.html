@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 如果函数有形参,但是没有实参,那么调用后,形参的值默认都为undefined,所以即有可能发生未知错误
+        // 给了形参默认值过后,可以极大的防止了程序报错的问题出现
+        function addCount(x = 0, y = 0) {
+            console.log(x, y);
+            console.log(x + y);
+        }
+        addCount()
+        // 有实参的情况下,形参的默认值不会有任何影响,采用还是实参值
+        addCount(10, 20)
+    </script>
+</body>
+
+</html>

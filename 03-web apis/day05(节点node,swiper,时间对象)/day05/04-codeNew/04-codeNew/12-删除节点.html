@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button>删除</button>
+  <ul class="test">
+    <li>熊大</li>
+    <li>熊二</li>
+    <li>光头强1</li>
+    <li>光头强2</li>
+    <li>光头强3</li>
+    <li>光头强4</li>
+  </ul>
+
+  
+  <ul class="ul-test">
+    <li>
+        <span>
+            <button class="btn">删除</button>
+        </span>
+    </li>
+  </ul>
+  <script>
+    //父节点--》事件委托(enturst)，增加节点，克隆节点，删除节点，查询节点
+    const ul=document.querySelector('.test')
+    const btn=document.querySelector('button')
+    btn.addEventListener('click',function(){
+       if (ul.children.length===0) {
+        btn.disabled=true
+       }
+       else{
+        ul.removeChild(ul.children[0])
+       } 
+      })
+
+
+  </script>
+</body>
+
+</html>

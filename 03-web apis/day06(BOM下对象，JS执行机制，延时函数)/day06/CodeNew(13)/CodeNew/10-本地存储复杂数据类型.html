@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="get">获取local</button>
+  <button class="set">存数据</button>
+  <input type="text" class="ipt">
+  <script>
+    let i=0
+    const get=document.querySelector('.get')
+    const set=document.querySelector('.set')
+    const ipt=document.querySelector('.ipt')
+    set.addEventListener('click',function(){
+       localStorage.setItem('1',[])
+       ipt.value=''
+       i+=1
+      })
+    get.addEventListener('click',function(){
+      console.log(localStorage.getItem('1')) 
+      })
+  </script>
+</body>
+
+</html>

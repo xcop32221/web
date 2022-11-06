@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS任务分为同步任务和异步任务
+        //同步任务：同时执行一个任务，串联
+        //异步任务：同时执行多个任务，并联
+        //1.JS判断该任务是同步任务还是异步任务
+        //2.同步任务放入执行栈中，同步进程执行同步任务
+        //3.异步任务给异步进程处理，异步进程将满足条件的任务放入任务队列中
+        //4.主线程中同步任务执行完成后，不断扫描异步任务队列，将满足条件的异步任务拿出来执行
+        let arr=[1,2,3]
+        for(var i=0;i<arr.length;i++)
+        {
+            setInterval(function(){
+                console.log(i)
+            },1000)
+        }
+    </script>
+</body>
+</html>

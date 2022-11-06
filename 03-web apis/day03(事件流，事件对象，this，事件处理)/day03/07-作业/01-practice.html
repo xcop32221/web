@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            height: 3000px;
+        }
+
+        .aside {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .item {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0 10px;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: red;
+            color: #fff;
+        }
+
+        .content {
+            width: 660px;
+            margin: 400px auto;
+        }
+
+        .neirong {
+            height: 300px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .content1 {
+            background-color: red;
+        }
+
+        .content2 {
+            background-color: blue;
+        }
+
+        .content3 {
+            background-color: orange;
+        }
+
+        .content4 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="aside">
+        <div class="item active" data-id="1">男装/女装</div>
+        <div class="item" data-id="2">儿童服装/游乐园</div>
+        <div class="item" data-id="3">电子产品</div>
+        <div class="item" data-id="4">电影/美食</div>
+    </div>
+
+    <div class="content">
+        <div class="neirong content1">男装/女装</div>
+        <div class="neirong content2">儿童服装/游乐园</div>
+        <div class="neirong content3">电子产品</div>
+        <div class="neirong content4">电影/美食</div>
+    </div>
+
+    <script>
+        //获取元素
+        const aside=document.querySelector('.aside')
+
+        //事件监听：导航栏，
+        aside.addEventListener('click',function(e){
+            if (e.target.tagName=='DIV') {
+            
+            //点击对应导航栏颜色改变
+            //排他
+            const active=document.querySelector('.aside .active')
+            if(active) active.classList.remove('active')
+            //给自己添加
+            e.target.classList.add('active')
+            
+            //右边网页转到导航栏对应的位置
+            //对应方法：使用类名选择器
+            const temp=e.target.getAttribute('data-id')
+            const pos=document.querySelector(`.content${temp}`)
+            console.log(pos)
+            document.documentElement.scrollTop=pos.offsetTop
+            }
+          })
+        
+        //事件监听：滚动时导航栏随之变化
+        window.addEventListener('scroll',function(){
+            const content=document.querySelectorAll('.neirong')
+            const items=document.querySelectorAll('.item')
+            //排他
+            const active=document.querySelector('.aside .active')
+            if(active) active.classList.remove('active')
+            //根据滚动位置添加
+            if (window.pageYOffset+400>=content[0].offsetTop && window.pageYOffset<content[1].offsetTop) {
+                //找到对应的导航栏
+                console.log(content[0].offsetTop)
+                items[0].classList.add('active')
+            }
+            if (window.pageYOffset>=content[1].offsetTop && window.pageYOffset<content[2].offsetTop) {
+                //找到对应的导航栏
+                items[1].classList.add('active')
+            }
+            if (window.pageYOffset>=content[2].offsetTop && window.pageYOffset<content[3].offsetTop) {
+                //找到对应的导航栏
+                items[2].classList.add('active')
+            }
+            if (window.pageYOffset>=content[3].offsetTop) {
+                //找到对应的导航栏
+                items[3].classList.add('active')
+            }
+
+          })
+       
+    </script>
+</body>
+
+</html>

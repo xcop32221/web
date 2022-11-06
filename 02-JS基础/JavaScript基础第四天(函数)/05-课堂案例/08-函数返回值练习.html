@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 求两个数中的最大值
+        function compareMax(num1 = 0, num2 = 0) {
+            if (num1 >= num2) {
+                return num1
+            } else {
+                return num2
+            }
+        }
+        // 调用函数,把函数的返回值打印出来
+        console.log(compareMax(70, 90));
+
+        // 求数组中最大值
+        function getMax(arr = []) {
+            let max = arr[0]
+            for (let i = 0; i < arr.length; i++) {
+                // 如果某一个元素大于了max的值,就说明数组的这个元素值才是最大值,那么把这个值赋给max即可
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+            // 如果一个函数,要返回多个值,推荐用数组装多个数据,或者对象
+            return [max, 100]
+        }
+        console.log(getMax([8, 4, 3, 9, 4, 10, 3]));
+
+        // 求数组中的最小值
+        function getMin(arr = []) {
+            let min = arr[0]
+            for (let i = 0; i < arr.length; i++) {
+                // 如果某一个元素小于min的值,就说明数组的这个元素值才是最小值,那么把这个值赋给min即可
+                if (min > arr[i]) {
+                    min = arr[i]
+                }
+            }
+            return min
+        }
+        console.log(getMin([10, 8, 9, 4, 6, 2, 7]));
+    </script>
+</body>
+
+</html>

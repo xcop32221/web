@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个计算两个数和的函数
+        function addSum() {
+            let num1 = +prompt('请输入第一个数')
+            let num2 = +prompt('请输入第二个数')
+            console.log(num1 + num2);
+        }
+
+        // 计算1-100的和
+        function addHun() {
+            let sum = 0
+            for (let i = 10; i <= 50; i++) {
+                sum += i
+            }
+            console.log(sum);
+        }
+        addSum()
+        // 1-100
+        addHun(10,50)
+        // 1-50
+        addHun()
+        // 2-99
+        addHun()
+    </script>
+</body>
+
+</html>

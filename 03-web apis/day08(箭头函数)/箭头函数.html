@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        window.color = 'red';
+        let o1 = {
+            color: 'blue',
+            o2:{
+                color:'purple',
+                action:() =>console.log(this.color),
+                action2:function(){
+                    console.log(this.color)
+                },
+                action3:function(){
+                    const fn1=()=>console.log(this.color)
+                    return fn1()
+                }
+            },
+            action:function(){
+                console.log(this.color)
+            }
+        };
+        let num=20.006
+        num.toFixed(1)
+        console.log(num)
+        
+        // window.custom= () => console.log(this)
+        // let sayColor = () => console.log(this.color);
+        // sayColor(); // 'red'
+        // o.sayColor = sayColor;
+        // o.sayColor(); // 'red'
+        //o.action()
+        // window.custom()
+        o1.o2.action()
+        o1.o2.action2()
+        o1.o2.action3()
+        o1.action()
+        
+        
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串方法</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------------原始值包装类型-----------------')
+        let s1 = "some text";
+        console.log('1:'+typeof s1)
+        //Q:原始值本身不是对象，为什么有引用类型才特有的方法，基本数据类型逻辑上不应该有方法
+        let s2 = s1.substring(2);
+        console.log('2:'+s2)
+        //--------------------------------------
+        //原始值包装类型： JS内部有三种特殊的引用类型：Boolean、Number 和String
+        //显式创建：new Boolean/Number/String
+        let string=new String('abc')
+        console.log('3:'+string)
+        console.log('4:'+typeof string)
+        //后台进行了很多处理，从而实现了上述操作,执行上面代码时，后台进行了以下操作：
+        //1.创建了String类型的实列
+        //2.调用实例的指定方法
+        //3.销毁实例
+        
+        //这种行为可以让原始值拥有对象的行为。原始值包装对象的生命周期仅在访问它的代码那行执行期间
+        //无法去显示访问该对象--垃圾回收
+
+        //---------------------------------Boolean类型方法---------------------
+        console.log('---------------boolean-----------------')
+        let bool = new Boolean(true)
+        //valueof返回一个boolean原始值
+        console.log('1:' + bool.valueOf())
+        //toString返回一个string原始值
+        console.log('2:' + bool.toString())
+        //----------------------------------String类型方法---------------------
+        console.log('----------------string----------------')
+        let str = 'hello,world'
+        //字符串位置方法//
+        //indexOf（） : 返回字符串中指定文本首次出现的索引(位置)，未出现，返回-1 ,
+        //可接收两个参数，第一个参数是查找的内容，第二个参数(可选)，从指定位置开始)
+        console.log('1：' + str.indexOf('l'))
+        //lastIndexOf （）: 返回字符串中指定文本最后一次出现的索引，未出现，返回-1,
+        //可接收两个参数，第一个参数是查找的内容，第二个参数(可选)，从开头到指定位置）
+        console.log('2：' + str.lastIndexOf('l'))
+
+
+        //字符串包含方法//
+        //include('查找项','开始的索引')存在返回True，不存在返回false
+        console.log('3：' + str.includes('h'))
+        //startsWith('查找项')是否以指定字符开头，返回True，不存在返回false，大小写敏感
+        console.log('4：' + str.startsWith('h'))
+        //endsWith('查找项')是否以指定字符结束，返回True，不存在返回false，大小写敏感
+        console.log('5：' + str.endsWith('d'))
+
+
+        ///提取子字符串方法//
+        //slice（）：提取字符串的某个部分并在新字符串中返回被提取的部分，俩参数：起始索引，终止索引，不改变原来的字符串，参数可以是负数，负数从后面开始截取字符串，如果只传一个参数，就是从该参数的索引到最后的全部字符/无参数为拷贝字符串
+        let newstr = str.slice(-2)
+        console.log('6：' + newstr)
+        //substr（起始位置，切割长度）：第二个参数代表的是长度，不能为负数
+        let newstr1 = str.substr(0, 5)
+        console.log('7：' + newstr1)
+
+        //字符串模式匹配方法
+        //replace（）：替换字符串内容
+        //1.默认只替换首个匹配--如果全局匹配需要在reg对象加g修饰符
+        //2.对大小写敏感
+        //3.不会改变原字符串，返回新字符串
+        console.log('8:' + str.replace(/[h]/, '*'))
+
+        //match():匹配模式
+        //match()方法接收一个参数，可以是一个正则表达式字符串，也可以是一个RegExp 对象
+        //返回和reg对象exec()方法一样,不该变原字符串返回一个数组
+        console.log('9:' + str.match(/\w/))
+
+        //toUpperCase（）把字符串转换成大写，toLowerCase（）把字符串转化成小写，返回新字符串不改变原来
+        console.log('10：' + str.toUpperCase())
+        //trim(): 删除字符串两端的空白符，返回新字符串不改变原来
+        let str1 = '  hellow,world   '
+        console.log('11:' + str1.trim())
+
+        //concat（）：连接字符串--->字符串使用+
+        //改变原字符串
+        console.log('12:' + str.concat(str1))
+
+        //split（）： 字符串分割为数组,传入分隔符参数/默认不分割，返回数组=[string]/传入参数为''时，返回字符数组
+        //不改变原字符串
+        //数组的join方法-->数组分割为字符串
+        console.log('13:' + str.split(''))
+
+        //---------------------------number类型方法------------------------
+        console.log('--------------number------------------')
+        let num=2.3456
+        let num2=200
+        //toFixed()方法返回包含指定小数点位数的数值字符串，且四舍五入
+        console.log('1:'+num.toFixed(2))
+        //是toExponential()，返回以科学记数法（也称为指数记数法）表示的数值字符串
+        console.log('2:'+num.toExponential())
+        //toPrecision()方法会根据情况返回最合理的输出结果，可能是固定长度，也可能是科学记数法形式。
+        //接收一个参数，表示结果中数字的总位数（不包含指数)
+        console.log('3:'+num2.toPrecision(1))
+        
+
+        //----------for-of使用---------------------------
+        console.log('--------------for-of------------------')
+        //可迭代对象可以使用for-of
+        const arr = [1, 2, 3, 4]
+        // const obj={
+        //     name:'1',
+        //     age:'2'
+        // }
+        const str2 = 'abc'
+        //可迭代对象：一个属性作为“默认迭代器”，而且这个属性必须使用特殊的Symbol.iterator 作为键。
+        for (const item of arr) {
+            console.log(item)
+        }
+        
+        //使用for-of时实际上是调用了next()方法
+        let stringIterator = str2[Symbol.iterator]();
+        console.log(stringIterator.next()); // {value: "a", done: false}
+        console.log(stringIterator.next()); // {value: "b", done: false}
+        console.log(stringIterator.next()); // {value: "c", done: false}
+        console.log(stringIterator.next()); // {value: undefined, done: true}
+    </script>
+</body>
+
+</html>

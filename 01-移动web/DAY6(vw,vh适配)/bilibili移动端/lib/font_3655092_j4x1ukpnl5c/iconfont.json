@@ -1,0 +1,72 @@
+{
+  "id": "3655092",
+  "name": "bilibili移动",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1221891",
+      "name": "火焰",
+      "font_class": "hot",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "1425579",
+      "name": "comment",
+      "font_class": "pinglun",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2674474",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "630092",
+      "name": "向下箭头",
+      "font_class": "xiangxiajiantou",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "629357",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "2306764",
+      "name": "BILIBILI_LOGO",
+      "font_class": "bilibili",
+      "unicode": "e6b4",
+      "unicode_decimal": 59060
+    },
+    {
+      "icon_id": "6380878",
+      "name": "点赞_块",
+      "font_class": "dianzan_kuai",
+      "unicode": "ec8c",
+      "unicode_decimal": 60556
+    },
+    {
+      "icon_id": "23179687",
+      "name": "bilibili-fill",
+      "font_class": "bilibili-fill",
+      "unicode": "e7ac",
+      "unicode_decimal": 59308
+    },
+    {
+      "icon_id": "26267546",
+      "name": "bilibili",
+      "font_class": "bilibili1",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    }
+  ]
+}

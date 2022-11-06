@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let namList = ['赵云', '黄忠', '关羽', '张飞', '马超', '刘备', '曹操']
+        // 2.声明一个生成随机数的函数
+        function randomIndex(arr = []) {
+            let random = Math.floor(Math.random() * arr.length)
+            return random
+        }
+        // 1.循环将所有数组元素放到页面中去
+        for (let i = 0; i < namList.length;) {
+            // 3.声明一个index来接收随机生成的下标
+            let index = randomIndex(namList)
+            // 4.然后页面中打印这个随机数组元素
+            document.write(`${namList[index]}<br>`)
+            // 5.不要变量再去自增,只需要判断nameList的长度为0过后就不用再循环了
+            // 删除当前元素
+            namList.splice(index, 1)
+        }
+
+        // while (namList.length) {
+        //     let index = randomIndex(namList)
+        //     // 4.然后页面中打印这个随机数组元素
+        //     document.write(`${namList[index]}<br>`)
+        //     // 5.只需要判断nameList的长度为0过后就不用再循环了
+        //     // 删除当前元素
+        //     namList.splice(index, 1)
+        // }
+    </script>
+</body>
+
+</html>

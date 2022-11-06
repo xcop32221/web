@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     .flex-wrap{
+      display: flex;
+      width: 600px;
+      height: 100px;
+      border: 1px solid #ddd;
+    }
+    .flex-item{
+      width: 200px;
+      flex-basis: 100px;
+      flex-grow: 50px;
+    }
+    .item1{
+      background: #66efab;
+    }
+    .item2{
+      background: #efe24e;
+    }
+    .item3{
+      background: #ef6754;
+    }
+    .item4{
+      background: #ef9fef;
+    }
+    .item5{
+      background: #191def;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-wrap">
+    <div class="flex-item item1">item1</div>
+    <div class="flex-item item2">item2</div>
+    <div class="flex-item item3">item3</div>
+    <div class="flex-item item4">item4</div>
+    <div class="flex-item item5">item4</div>
+  </div>
+  <script>
+    const box=document.querySelector('.flex-wrap')
+    
+  </script>
+</body>
+</html>

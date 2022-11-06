@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 120px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <ul class="u">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div class="box" style="">
+        我是盒子
+    </div> -->
+    <script>
+
+        // 九九乘法表
+        // let row = 9
+
+        // for (let i = 1; i <= row; i++) {
+        //     document.write(`<br>`)
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(`<span>${i}*${j}=${i * j}</span>`)
+        //     }
+
+        // }
+
+
+
+        //let和var重复声明的区别
+        // // let message
+        // do{
+        //     message=prompt('你爱我吗')
+        // }while(message!=='我爱你')
+
+        // alert('我也爱你')
+
+
+
+        // 数组添加元素
+
+        // let a=[24,56,78,45,4,23,123,23,53]
+        // a.push('a')
+        // console.log(a)
+
+
+
+        // 改变排序方法
+
+        // let temp=0
+        //console.log(a.sort(function(a,b){return a-b}))
+
+
+
+        // 冒泡排序
+
+        //每次排一个数/总共次数为多少个数
+        // for(let index2=0;index2<a.length;index2++)
+        // {
+        //把当前最大的数排到最后/可以减少去和之前排过最大的值相比的次数
+        //     for(let index1=0;index1<a.length-index2;index1++)
+        //     {
+        //         if(a[index1]>a[index1+1])
+        //         {
+        //             temp=a[index1+1]
+        //             a[index1+1]=a[index1]
+        //             a[index1]=temp
+        //             console.log(a)
+        //         }
+        //     }
+
+        // }
+
+
+
+
+        // 斐波那契数列
+
+
+        // let i=0,j=1,temp,arr=[]
+        // let n=+prompt('请输入多少个数')
+        // while(n>0)
+        // {
+        //     temp=i+j
+        //     i=j
+        //     j=temp
+        //     arr.push(i)
+        //     n-- 
+        // }
+        // console.log(arr)
+
+        // 迭代
+        // function feb(n)
+        // {
+        //     if(n==1 || n==0)
+        //     {
+        //         return 1
+        //     }
+        //     if(n<0){
+        //         return 0
+        //     }
+        //     return feb(n-1)+feb(n-2)
+        // }
+
+
+        // let arr=[]
+        // let n=+prompt('n')
+        // for(let i=0;i<n;i++){
+        //     arr.push(feb(i))
+        // }
+        // console.log(arr)
+
+
+
+        // var有变量提升
+
+        // c=a+b
+        // var a=1,b=1,c=1
+        // console.log(c)
+
+        // let sum = 0
+        // for (let i = 1; i < 100; i++) {
+        //     if (i % 2 == 0) {
+        //         sum += i
+        //     }
+        // }
+        // console.log(sum)
+
+        // for (let i = 1; i < 6; i++) {
+        //     document.write(`<br>`)
+        //     for (let j = 0; j < i; j++) {
+        //         document.write('😋')
+        //     }
+        // }
+
+        // let arr = ['马超', '赵云', '关羽', '张飞', '黄忠']
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i])
+
+        // }
+
+        //Dom操作
+
+
+        // const a=document.querySelectorAll('ul li')
+        // for(let i=0;i<a.length;i++)
+        // {
+        //     a[i].innerHTML='a'
+        // }
+        // const u=document.querySelector('.u')
+
+        // const box = document.querySelector('.box')
+        // box.style.width = '200px'
+        // box.style.backgroundColor = 'pink'
+        // box.style.height='25px'
+
+
+
+        //反排数组
+        // let arr = ['一', '二', '三', '四', '五']
+        // for (let i =arr.length-1; i<=0; i--) 
+        // {
+        //     console.log(arr[i])
+        // }
+
+        //    let a=Number('123')
+        //    console.log(a)
+
+
+
+
+
+        // 最大最小值(1)
+        // let arr=[2,6,1,77,52,25,7]
+        // let max=arr[0],min=arr[0]
+        // for(let i=0;i<arr.length;i++)
+        // {
+        //     if(arr[i]>arr[i+1])
+        //     {
+        //         temp=arr[i+1]
+        //         arr[i+1]=arr[i]
+        //         arr[i]=temp
+        //     }
+
+        // }
+        // max=arr[arr.length-1]
+        // console.log(max)
+
+        // for(let i=0;i<arr.length;i++)
+        // {
+        //     if(arr[i]<arr[i+1])
+        //     {
+        //         temp=arr[i+1]
+        //         arr[i+1]=arr[i]
+        //         arr[i]=temp
+        //     }
+
+        // }
+        // min=arr[arr.length-1]
+        // console.log(min)
+
+
+        // 最大最小值(2)
+        // for(let i=1;i<arr.length;i++)
+        // {
+        //     if(max<arr[i])
+        //     {
+        //         max=arr[i]
+        //     } 
+        // }
+        // console.log(max)
+
+
+        // for(let i=1;i<arr.length;i++)
+        // {
+        //     if(min>arr[i])
+        //     {
+        //         min=arr[i]
+        //     } 
+        // }
+        // console.log(min)
+
+        //数组方法
+        // let arr = ['data1', 'data2', 'data3', 'data4']
+
+        // 增加：
+        // 1
+        // let num1 = arr.push('data5')
+
+        // console.log(num1)
+        // console.log(arr)
+
+        // console.log(1)
+        // 2
+        // let num2 = arr.unshift('data6')
+
+        // console.log(1)
+
+        // console.log(num2)
+        // console.log(arr)
+
+        //数组筛选
+
+
+        // let arr=[2,0,6,1,77,0,52,0,25,7]
+        // function sift10(arr)
+        // {
+        //     let newarr=[]
+        //     for(let i=0;i<arr.length;i++)
+        //     {
+        //         if(arr[i]>10)
+        //         {
+        //             newarr.push(arr[i])
+        //         }
+        //     }
+        //     return newarr
+        // }
+        // function remove0(arr)
+        // {
+        //     let newarr=[]
+        //     for(let i=0;i<arr.length;i++)
+        //     {
+        //         if(arr[i]!=0)
+        //         {
+        //             newarr.push(arr[i])
+        //         }
+        //     }
+        //     return newarr
+        // }
+        // console.log(sift10(arr))
+        // console.log(remove0(arr))
+        
+
+
+
+        // 删除
+
+
+        //1.删除末尾元素
+        // let value1=arr.pop()
+        //2.删除首个元素
+        // let value2=arr.shift()
+        //3.删除指定元素
+        // let value3=arr.splice(0,3)
+        // console.log(arr)
+
+
+        // random
+        // let arr=Math.random()*10
+        // console.log(arr)
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        ul {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            /* 块级元素添加了脱标的定位后 */
+            /* 宽度默认由父级100%,变为由实际内容撑开 */
+            /* 解决方案:给块级元素宽度100% */
+            width: 100%;
+            list-style: none;
+            /* ctrl + X  剪切 */
+        }
+
+        ul li {
+            float: left;
+            width: 20%;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 百分比布局 也叫流式布局 -->
+    <!-- 早些年会用的较多,现阶段几乎不用 -->
+    <!-- 除了部分特殊场景 -->
+    <!-- 特殊取值: 100%,50% -->
+    <!-- 有更好的适配方案 -->
+    <!-- 混合使用,取百分比的优点,避开百分比的缺点 -->
+    <ul>
+        <li><img src="../01-案例/02-京东/images/car.png" alt=""></li>
+        <li><img src="../01-案例/02-京东/images/classify.png" alt=""></li>
+        <li><img src="../01-案例/02-京东/images/index.png" alt=""></li>
+        <li><img src="../01-案例/02-京东/images/jd.png" alt=""></li>
+        <li><img src="../01-案例/02-京东/images/login.png" alt=""></li>
+    </ul>
+</body>
+
+</html>

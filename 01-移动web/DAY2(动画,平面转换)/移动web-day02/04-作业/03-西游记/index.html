@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梦幻西游</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    /* 背景图的动画 */
+    @keyframes back_move {
+        from {
+            margin-left: -1920px;
+        }
+
+        to {
+            margin-left: 0px;
+        }
+    }
+
+    .wrap {
+        height: 300px;
+        width: 1200px;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        margin-left: -500px;
+    }
+
+    .warp>div {
+        float: left;
+    }
+
+    /* 孙悟空的窗口 */
+    .wk {
+        width: 200px;
+        height: 180px;
+        overflow: hidden;
+        float: left;
+
+    }
+
+    /* 孙悟空的背景图 */
+    .wk div {
+        background-image: url(./大师兄.png);
+        height: 180px;
+        width: 1600px;
+        animation: wk_move 1s infinite steps(8);
+    }
+
+    @keyframes wk_move {
+        from {
+            margin-left: 0px;
+        }
+
+        to {
+            margin-left: -1600px;
+        }
+    }
+
+    /* 八戒的窗口 */
+    .bj {
+        width: 200px;
+        height: 180px;
+        overflow: hidden;
+        float: left;
+
+    }
+
+    /* 八戒的背景图 */
+    .bj div {
+        background-image: url(./二师兄.png);
+        height: 180px;
+        width: 1600px;
+        animation: bj_move 1s infinite steps(8);
+    }
+
+    @keyframes bj_move {
+        from {
+            margin-left: 0px;
+        }
+
+        to {
+            margin-left: -1600px;
+        }
+    }
+
+    /* 唐僧的窗口 */
+    .ts {
+        width: 170px;
+        height: 240px;
+        margin-top: -30px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .ts div {
+        background-image: url(./师傅.png);
+        width: 1360px;
+        height: 240px;
+        animation: ts_move 1s infinite steps(8);
+    }
+
+    @keyframes ts_move {
+        from {
+            margin-left: 0px;
+        }
+
+        to {
+            margin-left: -1360px;
+        }
+    }
+
+    /* 沙僧的窗口 */
+    .sc {
+        width: 210px;
+        height: 200px;
+        margin-top: -5px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .sc div {
+        background-image: url(./三师弟.png);
+        width: 1680px;
+        height: 200px;
+        animation: cs_move 1s infinite steps(8);
+    }
+
+    @keyframes cs_move {
+        from {
+            margin-left: 0px;
+        }
+
+        to {
+            margin-left: -1680px;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- 人的容器 -->
+    <div class="wrap">
+        <!-- 悟空的窗口 -->
+        <div class="wk">
+            <div></div>
+        </div>
+        <!-- 八戒的窗口 -->
+        <div class="bj">
+            <div></div>
+        </div>
+        <!-- 唐僧的窗口 -->
+        <div class="ts">
+            <div></div>
+        </div>
+        <!-- 沙僧的窗口 -->
+        <div class="sc">
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

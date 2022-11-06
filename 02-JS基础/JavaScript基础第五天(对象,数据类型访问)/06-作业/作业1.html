@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //随机函数(num)
+        function randomnum(start=0,end=10)
+        {
+            if(end==start)
+            {
+                return 0
+            }
+            else{
+            return Math.floor(Math.random()*(end-start+1)+start)
+            }
+        }
+        
+        let arr1=["老赵", "老李", "小传", "小黑"]
+       
+        for(let i=0;i<4;i++)
+        {
+        let num=randomnum(0,arr1.length-1)
+        console.log(arr1[num])
+        arr1.splice(num,1)
+        console.log(arr1)
+        }
+        
+        
+            
+        
+    </script>
+</body>
+</html>

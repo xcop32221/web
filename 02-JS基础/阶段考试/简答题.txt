@@ -1,0 +1,4 @@
+1.两者都是比较是否相等； ==是比较转换后值相等；===是类型和值都相等
+2.object；array
+3.基本数据类型有：Number,String,Boolean,Null,Undefine
+   检测方式有1.typeof 变量 2.type(变量)

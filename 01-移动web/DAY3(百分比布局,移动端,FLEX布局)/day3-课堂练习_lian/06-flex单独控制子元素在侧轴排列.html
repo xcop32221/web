@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            border: 8px solid #000;
+            margin: 50px auto;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .box1>div,
+        .box2>div,
+        .box3>div {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+
+        /* 骰子第三点的书写: */
+        .box3 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box3 .son2 {
+            /* align-self： 控制某个弹性盒子在侧轴的对齐方式（添加到弹性盒子） */
+            /* 取值和align-items相同 (上 中 下) */
+            align-self: center;
+        }
+
+        /* 把son3调整到容器底部 */
+        .box3 .son3 {
+            align-self: flex-end;
+        }
+
+        /* 一点: */
+        .box1 {
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 二点: */
+        .box2 {
+            justify-content: space-between;
+        }
+
+        .box2 .son2 {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一点: -->
+    <div class="box1">
+        <div class="son1"></div>
+    </div>
+
+    <!-- 二点: -->
+    <div class="box2">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+
+    <!-- 三点: -->
+    <div class="box3">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+    </div>
+</body>
+
+</html>

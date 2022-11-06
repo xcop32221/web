@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .container{
+            width: 500px;
+            height: 200px;
+            background-color: skyblue;
+            display: flex;
+        }
+        .item:nth-child(1) {
+            width: 300px;
+            height: 100px;
+            background: pink;
+            flex-shrink: 0.2;
+        }
+        .item:nth-child(2) {
+            width: 400px;
+            height: 100px;
+            background: pink;
+            flex-shrink: 0.1;
+        }
+        /* 1. 溢出的空间是 200  */
+        /* 收缩的比例 总和小于1 ： 只收缩了剩余空间的一部分， 还有部分溢出 */
+
+        /* 2. 计算总的收缩的空间 */
+        /* 200 *(0.2 + 0.1) = 60*/
+
+        /* 3. 计算权重 */
+        /* 300 * 0.2 + 400 * 0.1 = 100 */
+        /* 第一个子项 收缩的占比  60 / 100 = 3/5 */
+        /* 第二个子项 收缩的占比  40 / 100 = 2/5 */
+
+        /* 4. 计算每一个子项的收缩空间 */
+        /* 第一个子项收缩的空间  ==>   60 * 3/5 = 36 */
+        /* 第二个子项收缩的空间  ==>   60 * 2/5 = 24 */
+
+        /* 5. 计算每一个子项的宽度 */
+        /* 第一个 300 - 36 = 264*/
+        /* 第二个 400 - 24 = 376 */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+    </div>
+</body>
+</html>

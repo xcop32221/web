@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rem最终解决方案</title>
+
+    <!-- 媒体查询: 交给js插件去做 -->
+    <!-- 单位计算: 交给vscode插件去做 -->
+
+    <style>
+        /* 需求:213px宽 316px高  蓝色盒子 */
+        div {
+            width: 10rem;
+            /* 插件是按照基准值换算的 */
+            /* 但是实际的网页参考,是按照默认的16px */
+            /* 只有媒体查询或者js引入配置完成后,才能与此插件联动 */
+            height: 8.43rem;
+            font-size: .67rem;
+            background-color: blue;
+        }
+
+        /* 注意点: */
+        /* 后续要使用到rem布局时,一定要注意引入js文件 */
+        /* 确保单位换算的基准值是正确的 37.5px */
+        /* 其他操作和之前的书写方式一模一样 */
+        /* 只不过是把px最后转换成rem而已 */
+        /* rem可以实现小屏到超大屏的适配,所以并不是只能为移动端服务,也可以服务于大屏展示 */
+    </style>
+</head>
+
+<body>
+    <div>测试内容</div>
+
+    <!-- 第一步: 引入js文件,位置通常在body的最底部 -->
+    <!-- <script src="./JS/flexible.js"></script> -->
+</body>
+
+</html>

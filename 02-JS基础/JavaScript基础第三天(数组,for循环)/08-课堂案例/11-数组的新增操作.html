@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['小强', '小刚', '小红', '小军']
+        // 添加元素,push将元素追加到元素数组的最后面去，如果要添加多个元素，那么元素之间由逗号分割
+        // arr.push能得到一个返回值，返回值就是添加元素后数组的长度
+        // console.log(arr.push('陈金民'));
+        // arr.push('果子哥', '易果', '练后健')
+        // console.log(arr);
+
+        // unshift能够添加元素到数组的开头去，如果要添加多个元素，那么元素之间由逗号分割
+        // arr.unshift能得到一个返回值，返回值就是添加元素后数组的长度
+
+        // 以后添加元素，多用push方法，因为后进来的元素，秉承着将元素的位置放到后面去的原则，所以推荐使用push
+        console.log(arr.unshift('陈金民'));
+        arr.unshift('果子哥', '练哥')
+        console.log(arr);
+    </script>
+</body>
+
+</html>

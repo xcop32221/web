@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox {
+            height: 500px;
+            position: relative;
+
+        }
+
+        .person {
+            position: absolute;
+            left: 0;
+            width: 588px;
+            height: 500px;
+            background: url(./img/人物.png) no-repeat;
+        }
+
+        .target1,
+        .target2 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 300px;
+            margin: auto 0;
+            width: 155px;
+            height: 310px;
+            background: url(./img/靶子.png) no-repeat;
+        }
+
+        .target2 {
+            right: 145px;
+            background: url(./img/靶子.png) no-repeat;
+            background-position: -155px 0;
+            z-index: 3;
+        }
+
+
+        /* .bigbox::after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 210px;
+            right: 200px;
+            width: 170px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: lawngreen;
+            z-index: 99;
+        } */
+        .person::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 230px;
+            left: 580px;
+            width: 30px;
+            height: 20px;
+            border-radius: 0 50% 50% 0;
+            background-color: black;
+            z-index: 2;
+            
+        }
+
+        .person:hover::before {
+            transform: translateX(1200px);
+            /* 鼠标移开后里面代码就没用了 */
+            transition: all 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="person"></div>
+        <div class="target1"></div>
+        <div class="target2"></div>
+    </div>
+</body>
+
+</html>

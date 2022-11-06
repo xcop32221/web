@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>禁用浏览器右键菜单</title>
+</head>
+
+<body>
+  <script>
+    document.oncontextmenu = function (event) {
+      if (window.event) {
+        event = window.event;
+      }
+      try {
+        var the = event.srcElement;
+        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")) {
+          return false;
+        }
+        return true;
+      } catch (e) {
+        return false;
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 两个相同函数,后面函数会覆盖前面函数
+        // function test() {
+        //     console.log('我是第一个函数');
+        // }
+
+        // function test() {
+        //     console.log('我是第二个函数');
+        // }
+
+        // test()
+
+        // 如果形参多于实参,那么多余的形参,会被定义成undefined
+        function fn(num1, num2) {
+            console.log(num1, num2);
+        }
+        fn(1)
+        // 如果实参多于形参,那么多余的实参会被忽略掉
+        function fn2(num1, num2) {
+            console.log(num1, num2);
+            // 通过arguments能够拿到所有的实参数据,拿到的实参数据为一个伪数组
+            console.log(arguments);
+        }
+        fn2(1, 2, 3, 4)
+    </script>
+</body>
+
+</html>

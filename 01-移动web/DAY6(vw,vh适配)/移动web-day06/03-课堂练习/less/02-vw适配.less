@@ -1,0 +1,17 @@
+// 需求:设计稿 375px: div 250px 170px pink
+
+// 要求: vw适配
+// 1vw = 3.75px
+// 声明变量 @vw = 3.75px
+// 但 px在less运算时不方便计算,所以预先改为vw单位
+@vw:3.75vw;
+
+div {
+    width: (250 / @vw);
+    height: (170 / @vw);
+    font-size: (20 / @vw);
+    background-color: pink;
+    // 利用插件启用vw支持,确认设计稿改为375px
+    // 在输入时,选择转换后的vw数值
+    // width: 53.3333vw;
+}

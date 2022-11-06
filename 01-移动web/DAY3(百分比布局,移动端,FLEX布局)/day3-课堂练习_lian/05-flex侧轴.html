@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* flex(df)属性: 添加在父级身上 */
+            display: flex;
+            width: 1200px;
+            height: 400px;
+            margin: 100px auto;
+            background-color: pink;
+            /* 水平垂直居中  jcc aic */
+            justify-content: center;
+
+            /* 特殊默认值: stretch(拉伸)*/
+            /* 当子元素没有高度的时候,默认会拉伸至铺满父容器的高度 */
+            /* 我们不用过分在意此属性,因为只要设置了其他的侧轴对齐方式,该属性就会被覆盖 */
+            /* align-items: stretch; */
+            /* 侧轴的对齐方式: */
+            /* 1.默认值,从上到下的排列 */
+            /* align-items: start; */
+            /* 2.从下到上的排列 */
+            align-items: flex-end;
+            /* 3.☆☆☆ 沿侧轴居中排列对齐 ☆☆☆ */
+            /* align-items: center; */
+        }
+
+        .box>div {
+            width: 200px;
+            height: 200px;
+        }
+
+        .son1 {
+            background-color: purple;
+        }
+
+        .son2 {
+            background-color: orange;
+        }
+
+        .son3 {
+            background-color: lawngreen;
+        }
+
+        .son4 {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 弹性容器 -->
+    <div class="box">
+        <!-- 弹性盒子 -->
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+        <div class="son4"></div>
+    </div>
+</body>
+
+</html>

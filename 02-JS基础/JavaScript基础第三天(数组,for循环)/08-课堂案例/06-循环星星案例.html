@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let row = +prompt('请输入你要打印的行数')
+        let col = +prompt('请输入你要打印的列数')
+        // 外层循环打印的是行数
+        for (let i = 1; i <= row; i++) {
+            // 里层循环控制的是列数
+            for (let j = 1; j <= col; j++) {
+                document.write(`⭐`)
+            }
+            // 当里层循环结束过后，换行
+            document.write('<br>')
+        }
+    </script>
+</body>
+
+</html>

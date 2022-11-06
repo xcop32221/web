@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn1">点击</button>
+    <button class="btn2">点击2</button>
+    <script>
+        let btn1 = document.querySelector('.btn1')
+        let btn2 = document.querySelector('.btn2')
+        btn1.onclick = function () {
+            console.log('按钮1被点击了');
+        }
+        btn2.addEventListener('click', function () {
+            console.log('按钮2被点击了');
+        })
+    </script>
+</body>
+
+</html>

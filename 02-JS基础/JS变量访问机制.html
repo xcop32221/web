@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JS中变量查询是通过作用域链查询
+
+        //作用域：
+        //1.全局作用域--浏览器中window实现golbal对象的代理
+        //2.局部作用域--函数
+        //3.let/const的变量具有局部作用域，根据语句的{}来定义
+
+        //JS搜索标识符从沿着作用域链顶端到底端进行查询
+        //作用域链：
+        //1.程序执行流通过执行栈进行，当局部作用域在栈中入栈和出栈时，JS自动生成变量对象，包含当前作用域的变量和引用等
+        //2.当前执行的作用域的变量对象永远位于作用域链最顶端，全局作用域永远位于作用域链最底端
+        //3.由于搜索的机制：1.即作用域链的分支之间的变量不能访问
+        //                 2.外部作用域无法访问内部变量
+        //                 3.全局变量永远都能被访问
+    </script>
+</body>
+</html>

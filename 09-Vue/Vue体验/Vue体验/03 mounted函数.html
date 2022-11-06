@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.global.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const app= Vue.createApp(
+            {
+                data(){
+                    return {num:1}
+                },
+                //模板 展示的内容放入模板中
+                template:'<div>{{num}}</div>',
+                //组件被挂载之后调用
+                //Vue生命周期的一个
+                mounted() {
+                    setInterval(()=>{
+                        this.num+=1
+                    },1000)
+                    alert('加载完毕')
+                },
+            }
+        )
+        app.mount('#app')
+        // window.addEventListener('load',function(){
+        //     alert('加载完毕')
+        //   })
+        //vue面向数据编程，不需要手动操作dom了
+        //采用挂载的方法去连接dom元素
+        
+    </script>
+</body>
+</html>

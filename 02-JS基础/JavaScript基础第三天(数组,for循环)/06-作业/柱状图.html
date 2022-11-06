@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox{
+            width: 800px;
+            height: 600px;
+            border-left: 2px solid #000;
+            border-bottom: 2px solid #000;
+            display: flex;
+            justify-content:space-around;
+            align-items:flex-end;
+            margin: 100px auto;
+        }
+        .bigbox div{
+            position: relative;
+            width: 80px;
+            background-color: pink;
+        }
+        .bigbox div span{
+            position: absolute;
+            bottom: -30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="one"><span>第一季度</span></div>
+        <div class="two"><span>第二季度</span></div>
+        <div class="three"><span>第三季度</span></div>
+        <div class="four"><span>第四季度</span></div>
+    </div>
+    <script>
+        let arr=[]
+        for(let i=0;i<4;i++)
+        {
+            let value=+prompt('请输入数据')
+            arr.push(value)
+        }
+        let toldiv=document.querySelectorAll('.bigbox div')
+        let tolspan=document.querySelectorAll('.bigbox div span')
+        console.log(tolspan)
+        for(let i=0;i<arr.length;i++)
+        {
+            toldiv[i].style.height=(arr[i]/100*600)+'px'
+ 
+        }
+    </script>
+</body>
+</html>

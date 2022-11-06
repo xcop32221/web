@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //倒计时
+    const getCounttime = function (string) {
+      //获取间隔时间戳
+      const now = +new Date()
+      const time = +new Date(`${string}`)
+      const gap = (time - now) / 1000
+
+      //时间戳转换为天，时，分，秒
+      const d = parseInt(gap / 60 / 60 / 24)
+      const h = parseInt(gap / 60 / 60 % 24)
+      const m = parseInt(gap / 60 % 60)
+      const s = parseInt(gap % 60)
+
+      // 5. 补0
+      d = d < 10 ? '0' + d : d
+      h = h < 10 ? '0' + h : h
+      m = m < 10 ? '0' + m : m
+      s = s < 10 ? '0' + s : s
+
+      // 6. 将天时分秒分别放到span标签中
+      document.querySelector('#day').innerHTML = d
+      document.querySelector('#hour').innerHTML = h
+      document.querySelector('#minutes').innerHTML = m
+      document.querySelector('#second').innerHTML = s
+    }
+    setInterval(getCounttime,1000)
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 600px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        h2,
+        p {
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+        caption {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        tr {
+            height: 40px;
+            cursor: pointer;
+        }
+
+        table tr:nth-child(1) {
+            background-color: #ddd;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        let students = [{
+                name: '小明',
+                age: 18,
+                gender: '男',
+                hometown: '河北省'
+            },
+            {
+                name: '小红',
+                age: 19,
+                gender: '女',
+                hometown: '河南省'
+            },
+            {
+                name: '小刚',
+                age: 17,
+                gender: '男',
+                hometown: '山西省'
+            },
+            {
+                name: '小丽',
+                age: 18,
+                gender: '女',
+                hometown: '山东省'
+            }
+        ]
+        /* 1.将整个html结构分为两部分,上面一部分不需要更改的数据写死,
+        接着循环动态生成相对应的数据,最后将下面一部分写死的html结构生成即可 */
+        document.write(`   <h2>学生信息</h2>
+    <p>将数据渲染到页面中...</p>
+
+    <table>
+        <caption>学生列表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>`)
+        // 2.遍历数组,拿到的每个对象,将对象的属性值给放到对应的td表格中即可
+        for (let i = 0; i < students.length; i++) {
+            // 通过students[i]能拿到对应的数组中的每个对象
+            document.write(`
+                <tr>
+                <td>${i + 1}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].age}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].hometown}</td>
+                </tr>`)
+            console.log(students[i]);
+        }
+
+        document.write(`</table>`)
+    </script>
+</body>
+
+</html>

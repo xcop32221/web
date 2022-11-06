@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .bigbox{
+            margin: 200px auto;
+            width: 360px;
+            height: 67.5px;
+            border: 4px solid #000;
+            overflow: hidden;
+        }
+        ul{
+            float: left;
+            width: 1260px;
+            height: 67.5px;
+            list-style: none;
+            /* overflow: hidden; */
+            animation: move 5s linear infinite;
+        }
+        li{
+            float: left;
+            width: 120px;
+            height: 67.5px;
+            
+        }
+        li img{
+            width: 100%;
+        }
+        @keyframes move{
+            0%{
+                transform: translate(0,0);
+            }
+            100%{
+                transform: translate(-840px,0);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+    <ul>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/1.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/2.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/3.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/4.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/5.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/6.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/7.jpg" alt=""></li>
+        <!-- 移动ul时去补充空白，动画结束时原来的图片来覆盖这三张图，接着动画效果 -->
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/1.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/2.jpg" alt=""></li>
+        <li><img src="./移动web-day02/01-案例/03-综合案例/走马灯/images/3.jpg" alt=""></li>
+    </ul>
+    </div>
+</body>
+</html>

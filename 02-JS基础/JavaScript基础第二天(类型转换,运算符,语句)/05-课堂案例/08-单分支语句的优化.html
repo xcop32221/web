@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num = +prompt('请输入您的高考成绩')
+        // if代表如果，if后面的括号里面需要一个布尔值，为true的情况下会执行大括号里面的代码
+        // 如果括号里面不是布尔型会进行隐式转换成布尔类型
+
+        // 数字里面除了0会转换成false以外，其他数字都会被转成true
+        // 字符串里面除了空字符串''会转成false以外，其他字符串都会被转成true
+        // undefined和null都会被隐式转换成false
+
+        // if如果，如果满足条件执行if后大括号代码，不满足就执行else后大括号代码
+        if (num > 700) {
+            alert('恭喜您，考入清华')
+        } else {
+            alert('洗洗睡吧')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            /* 给父元素添加flex */
+            /* 让多个块级元素一行排列 */
+
+            display: flex;
+
+            width: 1200px;
+            height: 400px;
+            background-color: pink;
+
+
+            /* 注意点: */
+            /* 默认的主轴方向是从左到右 */
+
+            /* 多个块级元素默认顶端对齐 */
+
+            /* 内部弹性盒子 不会脱标,父元素能够正常检测,且弹性容器的宽度依旧是父级的百分百 */
+
+
+            /* 1. 默认值 从起点排列 (默认情况下 从左到右) */
+            
+            /* justify-content: flex-start; */
+            /* 2. 从终点依次排列 (默认情况下 从右到左) */
+            /* justify-content: flex-end; */
+            /* 3. ☆☆☆ 沿主轴居中排列 ☆☆☆ */
+            /* justify-content: center; */
+            /* 4. 间距均分在弹性盒子两侧 视觉效果: 两边窄,中间宽 */
+            /* justify-content: space-around; */
+            /* 5. 第一个元素在挨着起点,最后一个元素挨着终点,其他元素均分在中间 */
+            /* justify-content: space-between; */
+            /* 6. 把弹性容器剩余空间均分在每个弹性盒子两侧 */
+            /* justify-content: space-evenly; */
+        }
+
+
+        /* 注释要写的自己能看明白,可以用自己的话去记忆,确保会用,记得住可以实现那些效果即可 */
+        .box>div {
+            width: 200px;
+            height: 200px;
+        }
+
+        .son1 {
+            background-color: #f70;
+        }
+
+        .son2 {
+            background-color: skyblue;
+        }
+
+        .son3 {
+            background-color: rgb(0, 255, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 弹性容器 -->
+    <div class="box">
+        <!-- 弹性盒子 -->
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+        <div class="son2"></div>
+    </div>
+</body>
+
+</html>

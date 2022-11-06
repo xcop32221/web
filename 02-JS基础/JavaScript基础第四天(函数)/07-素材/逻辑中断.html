@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function fn(x, y) {
+    //   x = x || 0
+    //   y = y || 0
+    //   console.log(x + y) //如果调用的时候不传参打印什么？
+    // }
+    // // fn(1, 2)
+    // fn()
+
+    console.log(false && 22) //false
+    console.log(false && 3 + 5) //false
+    let age = 18
+    console.log(false && age++) //false
+    console.log(age) //18
+
+    console.log(true || age++) //true
+    console.log(age) //18
+
+    console.log(11 && 22) //22
+    console.log(0 || 22) //22
+
+    console.log(0 || '') //''
+    console.log(true && 15) //15
+    // 在做逻辑判断的时候，会被转换成布尔类型进行判断，但是如果是打印输出值，不会变
+    //逻辑中断，在左边表达式能得出结果情况下，就不会再去执行右边的表达式了
+    console.log(true && 0);     //0
+  </script>
+</body>
+
+</html>

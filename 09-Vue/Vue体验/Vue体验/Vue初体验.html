@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.global.js"></script>
+</head>
+
+<body>
+    <!-- 需要有一个基本元素 -->
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            //该应用内部提供的数据
+            data() {
+                return {
+                    content: 'hello world',
+                    show: true,
+                    list: [],
+                    inputValue: ''
+
+                }
+            },
+            //该应用提供的方法
+            methods: {
+                handlebtnclick() {
+                    // console.log(this.content)
+                    // this.content=this.content.split('').reverse().join('')
+                    this.list.push(this.inputValue)
+                    this.inputValue = ''
+                }
+            },
+            //模板
+            template:
+            //v-on:/@:事件类型    表示绑定事件
+            //v-model:数据  双向绑定数据
+            //v-bind/: 属性数据双向绑定
+            `
+            <input v-model='inputValue'>
+            <button @click="handlebtnclick" :title="inputValue">添加数据</button>
+            <ul>
+                <todo-item></todo-item>   
+            </ul>
+        `
+        })
+        //添加组件
+        app.component('todo-item',{
+            data(){
+                return {
+                    content:'hello world',
+                    arr:[1,2,3,4]
+                    
+                }
+            },
+            //v-for循环命令
+            template:'<div v-for="(item,i) in arr">{{item}}-{{i}}</div>'
+            
+        })
+        //先注册组件再挂载
+        app.mount('#app')
+
+        //单文件组件 .vue文件
+        //将js 模板 样式都写在该文件中
+    </script>
+</body>
+
+</html>

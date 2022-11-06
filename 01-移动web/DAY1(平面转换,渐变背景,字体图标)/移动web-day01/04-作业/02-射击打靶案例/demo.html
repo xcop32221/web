@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 1600px;
+            height: 500px;
+            background-color: pink;
+        }
+
+        .renwu {
+            position: relative;
+            float: left;
+            width: 588px;
+            height: 499px;
+            background-image: url(./img/人物.png);
+        }
+
+
+        .renwu::after {
+            position: absolute;
+            right: 0;
+            top: 47%;
+            content: '';
+            width: 20px;
+            height: 8px;
+            background-color: red;
+
+        }
+
+
+        .renwu:hover::after {
+            transform: translateX(1500px);
+            transition: all 1s;
+        }
+
+        .bazi {
+            float: right;
+            width: 310px;
+            height: 310px;
+            margin-top: 90px;
+        }
+
+        .bazi::before,
+        .bazi::after {
+            content: '';
+            float: left;
+            width: 155px;
+            height: 310px;
+            background-image: url(./img/靶子.png);
+        }
+
+        .bazi::after {
+            position: relative;
+            background-position: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="renwu"></div>
+        <div class="bazi"></div>
+    </div>
+</body>
+
+</html>

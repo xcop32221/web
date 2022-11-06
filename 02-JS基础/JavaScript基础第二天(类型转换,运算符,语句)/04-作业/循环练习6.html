@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let account=0
+        while(1)
+        {
+        let fun=+prompt('请输入功能')
+        switch(fun){
+            case 1:
+                let withdrow=+prompt('请输入取钱金额')
+                if(account>withdrow){
+                account-=withdrow
+                alert(`当前余额为${account}`)
+                }
+                else{
+                    alert('余额不足，退出功能')
+                    continue
+                }
+            break
+            case 2:
+                let deposit=+prompt('请输入存钱金额')
+                account+=deposit
+                alert(`当前余额为${account}`)
+            break
+            case 3:
+                alert(`当前余额为${account}`)
+            break
+            case 4:
+            break
+            break
+            break
+           
+        }
+        }
+    </script>
+</body>
+</html>

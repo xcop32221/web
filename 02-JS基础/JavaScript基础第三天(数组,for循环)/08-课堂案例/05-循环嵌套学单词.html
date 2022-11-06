@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 外层循环循环的一次，会将里层循环全部循环结束后，再执行到下一次外层循环去
+
+        // 外层循环控制学习的天数，循环的天数
+        for (let i = 1; i <= 3; i++) {
+            document.write(`学习的第${i}天<br>`)
+            // 里层循环控制的循环的天数里面，学习的单词个数
+            for (let j = 1; j <= 5; j++) {
+                document.write(`今天学习的第${j}个单词<br>`)
+            }
+        }
+    </script>
+</body>
+
+</html>

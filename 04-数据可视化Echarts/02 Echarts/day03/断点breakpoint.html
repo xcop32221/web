@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log('start1')
+        console.log('start2')
+        console.log('start3')
+        console.log('start4')
+        console.log('start5')
+        console.log('start6')
+
+        try{
+            // 把可能会报错的代码，放到这个花括号里面
+            console.log(a)
+            const a = 1
+        }catch(error){
+            console.log(error)
+        }
+
+        function fn(){
+            console.log(123)
+            console.log(123)
+            console.log(123)
+            console.log(123)
+            console.log(123)
+
+            for(let i = 0; i < 8 ; i++){
+                console.log(i)
+            }
+        }
+        fn()
+        // 1.  debugger 程序刷新页面的时候进入这个位置
+        // debugger
+
+        console.log(11111)
+        
+        
+        for(let i = 0; i < 8 ; i++){
+            console.log(i)
+        }
+    </script>
+</body>
+</html>

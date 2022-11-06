@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .father {
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+    }
+
+    .son {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="son"></div>
+  </div>
+  <script>
+/*================  事件捕获  =====================*/
+
+    // useCapture 是否使用捕获，它是一个boolean 可以是true或者false，或者不传
+    // 如果不传参数，默认是false！！！
+    // 如果useCapture 传true， 表示事件捕获
+    // addEventListener('click', fn, useCapture)
+
+
+    const son = document.querySelector('.son')
+    const father = document.querySelector('.father')
+    const body = document.body
+    const html = document.documentElement
+
+    // 事件捕获：document  ->  html -> body -> father -> son
+
+    // 事件捕获：addEventListener第三参数为 true
+    son.addEventListener('click', function(){
+        console.log('我是子盒子,我被点击了')
+    })
+
+    father.addEventListener('click', function(e){
+        console.log('我是父盒子, 我被点击了')
+        e.stopPropagation()
+    })
+
+    body.addEventListener('click', function(){
+        console.log('我是body, 我被点击了')
+    })
+
+    html.addEventListener('click', function(){
+        console.log('我是html, 我被点击了')
+    })
+
+    document.addEventListener('click', function(){
+        console.log('我是document, 我被点击了')
+    })
+
+  </script>
+</body>
+
+</html>

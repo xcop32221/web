@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        fn()
+        // 函数变量提升，声明函数过后，当前函数会被提升到当前作用域最上面去
+        function fn() {
+            console.log('我被调用了');
+        }
+
+        // 匿名函数,将一个没有函数名的函数赋值给一个变量，这个就被称为匿名函数
+        let fn1 = function () {
+            console.log('匿名函数被调用了');
+        }
+        // 调用匿名函数，使用变量名加小括号来实现调用；
+        // 并且匿名函数没有变量提升，不可以先调用后声明
+        fn1()
+    </script>
+</body>
+
+</html>

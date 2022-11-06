@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getSum(x = 0, y = 0) {
+            console.log(1);
+            // 函数调用后,拿到的值就是return后面的值
+
+            // return 后面的代码不会被执行,所以谨防在return这行的代码不要换行
+            // 通常习惯将return放到函数的最下面去
+            // 我们通常使用return来终止函数
+
+            console.log(2);
+            console.log(3);
+            // return如果不返回任何东西,那么默认返回的是undefind;如果函数没有return,那么默认返回的也是undefined
+            return x + y
+
+        }
+        // 函数调用后,能拿到一个返回值
+        // 拿到的返回值可以做任何操作
+        console.log(getSum(10, 30));
+    </script>
+</body>
+
+</html>

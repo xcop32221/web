@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <title>Document</title>
+    
+    <style>
+        
+        /* .father{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+        .son{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 0px;
+            height: 0px;
+            background-color: orange;
+            transition: all .3s;
+        }
+        /* .father:hover ~ .son{
+            transform: translate(50%);
+        } */
+
+        /* .father:hover .son{
+            width: 800px;
+            height: 20px;
+        } */
+
+
+
+
+/* 
+        .nav{
+            
+        
+            width: 400px;
+            background-color: skyblue;
+            margin: 0 auto;
+            list-style: none;
+            overflow: hidden;
+        }
+        .nav li{
+            position: relative;
+            float: left;
+            margin-left: 20px; 
+            height: 30px;
+            line-height: 30px;
+        }
+        .nav li a{
+            color: black;
+            text-decoration: none;
+        }
+        .trans{
+        
+            position: absolute;
+            left: 50%;
+            
+            transform: translate(-50%,-50%);
+            width: 0px;
+            height: 0px;
+            background-color: orange;
+            transition: all 2s;
+        }
+        .nav li:hover .trans{
+            width: 80px;
+            height: 5px;
+        } */
+
+        /* 双开门案例 */
+        /* .bigbox{
+            width: 1366px;
+            height: 600px;
+            background-image: url(./02-平面转换/03-案例-双开门/images/bg.jpg);
+            margin: 100px auto;
+            overflow: hidden;
+            
+        }
+        .bigbox::before,.bigbox::after
+        {
+            content: '';
+            width: 50%;
+            height: 100%;
+            float: left;
+            background-image: url(./02-平面转换/03-案例-双开门/images/fm.jpg);
+            transition: all 2s;
+        }
+        .bigbox::after{
+            默认的位置是在左上，坐标是图片的左上角
+            1.数值是以坐标移动
+            2.关键词是图片在盒子中的位置
+            background-position: right;
+        }
+        .bigbox:hover::before{
+            transform: translate(-100%);
+        }
+        .bigbox:hover::after{
+            transform: translate(100%);
+        }
+       */
+
+
+
+    /* 旋转 */
+    /* .rotate{
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        margin: 100px auto;
+        background-color: pink;
+        cursor: pointer;
+        
+    }
+    .rotate::after{
+        content: '\e745';
+        font-family: 'iconfont'!important;
+        transition: all .3s;
+        display: inline-block;
+        
+    }
+    .rotate:hover::after{
+        transform: rotate(180deg);
+    } */
+
+
+    /* 转换原点 */
+    /* .box{
+        margin: 100px auto;
+        position: relative;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        border: 1px solid #000;
+    }
+    .son{
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        margin-left: -4px;
+        height: 200px;
+        width: 8px;
+        background-color: #000;
+        transform-origin: bottom;
+        transition: all 1s;
+    }
+    .box::after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: red;
+    }
+    .box:hover .son{
+        transform: rotate(360deg);
+    } */
+
+    /* <!-- 多重转换 --> */
+    /* .box{
+        width: 1600px;
+        height: 300px;
+        border: 1px solid #000;
+        margin-top: 100px;
+    }
+    .box img{
+        transition: all 2s;
+    }
+    .box:hover img{
+        transform: translate(1300px) rotate(360deg);
+    } */
+
+    /* 缩放 */
+    /* .box{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: #000;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+    .box img{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 150px;
+        transition: all 1s;
+    }
+
+    .box:hover img{
+        transform:translate(-50%,-50%) scale(1.5);
+    } */
+
+    /* 渐变颜色 */
+    /* .box{
+        margin: 200px auto;
+        width: 400px;
+        height: 400px;
+        background-image: linear-gradient(to right top,red,black,orange,blue,white);
+    } */
+
+    </style>
+</head>
+<body>
+    <!-- <div class="father">
+    <div class="son"></div>
+    <p>我是P</p>
+    </div> -->
+
+<!--DNF导航 -->
+    <!-- <ul class="nav">
+        <li><a href="#">游戏安全</a><div class="trans"></div></li>
+        <li><a href="#">玩家社区</a><div class="trans"></div></li>
+        <li><a href="#">游戏资料</a><div class="trans"></div></li>
+        <li><a href="#">商城服务</a><div class="trans"></div></li>
+    </ul> -->
+
+
+<!-- 双开门案例 -->
+    <!-- <div class="bigbox">
+    </div> -->
+
+<!-- 旋转 -->
+    <!-- <div class="rotate">
+        查看更多
+    </div> -->
+
+
+<!-- 原点转换 -->
+    <!-- <div class="box">
+        <div class="son"></div>
+    </div> -->
+
+<!-- 多重转换 -->
+    <!-- <div class="box">
+        <img src="./05-课堂练习/images/tyre1.png" alt="">
+    </div> -->
+
+
+<!-- 缩放 -->
+    <!-- <div class="box">
+        <img src="./05-课堂练习/images/heart.png" alt="">
+    </div> -->
+
+<!-- 渐变颜色 -->
+    <!-- <div class="box"></div> -->
+
+</body>
+</html>

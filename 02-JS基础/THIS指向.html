@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //this是函数自带的值，即只有局部作用域才有this值
+        //普通函数：this值为将函数当做方法调用的对象
+        //箭头函数：定义函数时的作用域的this值
+        window.color = 'red';
+        let o1 = {
+            color: 'blue',
+            o2:{
+                color:'purple',
+                //箭头函数：定义函数时的作用域的this值
+                //向上找作用域，只有全局作用域，即window
+                action:() =>console.log(this.color),
+                action2:function(){
+                    //普通函数：this值为将函数当做方法调用的对象
+                    //这个把action2当做方法调用的是O2
+                    console.log(this.color)
+                },
+                action3:function(){
+                    //箭头函数：定义函数时的作用域的this值
+                    //这里箭头函数的外部作用域是action3这个方法，则调用这个方法的是O2
+                    const fn1=()=>console.log(this.color)
+                    return fn1()
+                }
+            },
+            action:function(){
+                //普通函数：this值为将函数当做方法调用的对象
+                //这个把action当做方法调用的是O1
+                console.log(this.color)
+            }
+        };
+        o1.action()
+        o1.o2.action()
+        o1.o2.action2()
+        o1.o2.action3()
+        
+        
+        
+       
+    </script>
+</body>
+
+</html>

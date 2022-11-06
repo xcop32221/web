@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let sumAge,averageAge,maxAge,minAge
+        let age = new Array()
+        let i=0
+        while(i<5)
+        {
+            let userAge = +prompt(`请输入第${i + 1}个年龄`)
+            if (userAge <= 0 || userAge >= 100) {
+                alert('输入无效年龄，重新输入')
+                continue
+            }
+            else {
+                age.push(userAge)
+                i++
+            }
+        }
+        // for(let i=0;i<5;i++)
+        // {
+        //     let userAge = +prompt(`请输入第${i+1}个年龄`)
+        //     if (userAge <= 0 || userAge >= 100) {
+        //         alert('输入无效年龄，重新输入')
+        //         continue
+        //     }
+        //     else {
+        //         age.push(userAge)
+        // }
+        // }
+        function adultAge(arr) {
+            let adult = []
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] > 18) {
+                    adult.push(arr[i])
+                }
+            }
+            return adult
+        }
+        function sumAge(arr) {
+            let sum = 0
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i]
+            }
+
+            return sum
+        }
+        function averageAge(arr) {
+            let ave
+            ave = sumAge(arr) / arr.length
+            return ave
+        }
+        function max(arr) {
+            let max = 0
+            for (let i = 0; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+            return max
+        }
+        function min(arr) {
+            let min = 100
+            for (let i = 0; i < arr.length; i++) {
+                if (min > arr[i]) {
+                    min = arr[i]
+                }
+            }
+            return min
+        }
+        console.log('成年人年龄'+adultAge(age))
+        console.log('总年龄为'+sumAge(age))
+        console.log('平均年龄为'+averageAge(age))
+        console.log('最大年龄为'+max(age))
+        console.log('最小年龄为'+min(age))
+
+
+    </script>
+</body>
+
+</html>

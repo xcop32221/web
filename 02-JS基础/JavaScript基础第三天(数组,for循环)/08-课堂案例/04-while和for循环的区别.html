@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 我要找到能够整除11的第15个数字，因为不知道第15个整除11的数是多少，所以不知道for循环终止条件
+        // let num = 0
+        // for (let i = 1; i <= 100; i++) {
+        //     if (i % 11 === 0) {
+        //         num++
+        //         if (num === 15) {
+        //             console.log(i);
+        //         }
+        //     }
+        // }
+
+        let i = 1
+        // num用来做计数，计的是有几个数能够被11整除
+        let num = 0
+        // 找到第25个整除11的数后，就不用再循环了
+        while (num < 25) {
+            if (i % 11 === 0) {
+                num++
+                if (num === 25) {
+                    console.log(i);
+                }
+            }
+            i++
+        }
+    </script>
+</body>
+
+</html>

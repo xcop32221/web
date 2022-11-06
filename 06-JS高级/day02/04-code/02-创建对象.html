@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // const obj = new Object()
+    // obj.uname = 'pink老师'
+    // console.log(obj)
+    // const obj = new Object({ uname: 'pink' })
+    // console.log(obj)
+    function Goods(name,price,count){
+      this.name=name
+      this.price=price
+      this.count=count
+      
+    }
+    let arr=[]
+    const obj1=new Goods('小米','1999','20')
+    const obj2=new Goods('华为','1999','20')
+    const obj3=new Goods('vivo','1999','20')
+    arr.push(obj1,obj2,obj3)
+    // console.log(obj1.__proto__.__proto__)
+    console.log(obj1)
+    
+  </script>
+</body>
+
+</html>

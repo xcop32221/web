@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  color: white;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+em,
+i {
+  font-style: normal;
+}
+.main {
+  margin-top: 10%;
+  width: 100vw;
+  height: 9.6rem;
+  background-color: #6b787e;
+  padding: 0.5333rem 0.4rem;
+}
+.main .movie {
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.main .movie .movieleft {
+  width: 2.5rem;
+  border-radius: 0.16rem;
+  overflow: hidden;
+}
+.main .movie .movieleft img {
+  width: 100%;
+  height: 100%;
+}
+.main .movie .movieright {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0.95;
+}
+.main .movie .movieright span {
+  font-size: 0.6133rem;
+}
+.main .movie .movieright i {
+  font-size: 0.4rem;
+}
+.main .movie .movieright em {
+  font-size: 0.32rem;
+}
+.main .movie .movieright .function {
+  width: 100%;
+  height: 0.8rem;
+  font-size: 0.32rem;
+  display: flex;
+  justify-content: space-between;
+}
+.main .movie .movieright .function li {
+  width: 30%;
+  text-align: center;
+  line-height: 0.9333rem;
+  background-color: #fff;
+  border-radius: 0.1333rem;
+  color: #000;
+}
+.main .movie .movieright .function li img {
+  width: 0.4267rem;
+  height: 0.4267rem;
+  vertical-align: sub;
+}
+.main .score {
+  height: 2.6667rem;
+  background-color: #5d6c72;
+  border-radius: 0.1867rem;
+  margin-top: 0.4rem;
+  padding: 0.2667rem 0.4rem;
+}
+.main .score .scorehd {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.main .score .scorehd button {
+  height: 0.5333rem;
+  line-height: 0.5333rem;
+  background-color: transparent;
+  border: 0.0267rem solid #fff;
+  color: #fff;
+  border-radius: 0.1067rem;
+  font-size: 0.32rem;
+}
+.main .score .scorebody {
+  height: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.1333rem;
+}
+.main .score .scorebody span {
+  font-size: 0.96rem;
+}
+.main .score .scorebody .stars {
+  width: 2.9333rem;
+  font-size: 0.32rem;
+}
+.main .score .scorebody .stars i {
+  font-size: 0.48rem;
+  color: #f4ba43;
+}
+.main .score .scorebody .starsdegree {
+  width: 4rem;
+  padding-left: 0.2667rem;
+  border-left: 0.0267rem solid #ccc;
+  padding-left: 0.5333rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.main .score .scorebody .starsdegree .stars_num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_left {
+  display: flex;
+  justify-content: flex-end;
+  width: 45%;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_left i {
+  font-size: 0.32rem;
+  color: #afb5b8;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_right {
+  width: 50%;
+  height: 100%;
+  background-color: #7f898d;
+  height: 5px;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_right .score5_bar {
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background-color: #f3b04b;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_right .score4_bar {
+  position: relative;
+  width: 40%;
+  height: 100%;
+  background-color: #f3b04b;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_right .score3_bar {
+  position: relative;
+  width: 10%;
+  height: 100%;
+  background-color: #f3b04b;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_right .score2_bar {
+  position: relative;
+  width: 5%;
+  height: 100%;
+  background-color: #f3b04b;
+}
+.main .score .scorebody .starsdegree .stars_num .stars_num_right .score1_bar {
+  position: relative;
+  width: 5%;
+  height: 100%;
+  background-color: #f3b04b;
+}
+.main .bottom {
+  margin-top: 0.2667rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 1.3333rem;
+  background-color: #5d6c72;
+  border-radius: 0.1867rem;
+  padding: 0 0.4rem;
+  font-size: 0.32rem;
+}
+.main .bottom .imgbox {
+  font-size: 0.4267rem;
+  height: 0.5867rem;
+  line-height: 0.5867rem;
+}
+.main .bottom .imgbox img {
+  width: 0.5867rem;
+  height: 0.5867rem;
+  vertical-align: middle;
+}

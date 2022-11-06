@@ -1,0 +1,17 @@
+H5接入微信支付
+https://pay.weixin.qq.com/wiki/doc/api/index.html
+
+第三方接入微信登录
+https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419316505&token=&lang=zh_CN
+
+第三方接入QQ登录
+https://connect.qq.com/
+
+第三方地图
+https://developer.amap.com/api/webservice/summary/
+
+第三方聊天功能
+https://www.rongcloud.cn/devcenter?type=demo
+
+第三方图表
+https://echarts.apache.org/examples/zh/index.html

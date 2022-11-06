@@ -1,0 +1,52 @@
+
+// 从今天开始的案例练习 , 就需要用到less作为样式表 开始运用嵌套写法
+
+.box {
+    width: 800px;
+    height: 600px;
+    background-color: pink;
+    margin: 0 auto;
+
+    .box_left {
+        float: left;
+        width: 300px;
+        height: 400px;
+        background-color: #f70;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+        }
+    }
+
+
+
+
+    .box_right {
+        float: right;
+        width: 400px;
+        height: 550px;
+        background-color: skyblue;
+
+        // 需求: 鼠标经过box_right容器让其背景色变成red
+        // & shift + 7: 代表当前选择器
+        &:hover {
+            background-color: red;
+        }
+
+        // 结构伪类场景
+        // &:nth-child(3) {
+        //     margin-right: 0 !important;
+        // }
+
+        // 元素场景
+        // &::after {
+        //     content: '';
+        // }
+
+    }
+}

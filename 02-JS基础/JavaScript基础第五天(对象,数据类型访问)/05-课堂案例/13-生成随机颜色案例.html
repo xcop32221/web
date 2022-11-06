@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function getRandomColor(flag = true) {
+            if (flag) {
+                // true或者无参数都进入到输出16进制判断
+                let arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                // 声明一个变量来接收颜色字符 #ffffff
+                let color = '#'
+                // 循环6次是针对16进制的6个字符来决定循环6次的
+                for (let i = 1; i <= 6; i++) {
+                    // Math.floor(Math.random() * (M - N + 1)) + N          生成一个N到M的随机数
+                    // 声明一个变量来去接收随机的数组下标值
+                    let index = Math.floor(Math.random() * ((arr.length - 1) - 0 + 1)) + 0
+                    // 将每一次循环生成的数组随机元素和color的字符拼接起来
+                    color += arr[index]
+                }
+                return color
+            } else {
+                //false输出rgb颜色  rgb(255,255,255)
+                // 因为rgb格式的随机数有三个，所以直接生成三个随机数
+                let num1 = Math.floor(Math.random() * (255 - 0 + 1)) + 0
+                let num2 = Math.floor(Math.random() * (255 - 0 + 1)) + 0
+                let num3 = Math.floor(Math.random() * (255 - 0 + 1)) + 0
+                // 然后通过模板字符串进行一个拼接即可
+                let color = `rgb(${num1},${num2},${num3})`
+                return color
+            }
+        }
+        console.log(getRandomColor(false));
+    </script>
+</body>
+
+</html>

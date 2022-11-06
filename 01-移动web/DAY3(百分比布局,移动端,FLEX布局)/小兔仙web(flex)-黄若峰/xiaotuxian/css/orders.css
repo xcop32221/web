@@ -1,0 +1,184 @@
+
+/* 主体部分 */
+.main{
+    background-color:#f7f7f8; 
+    width: 375px;
+    height: 1200px;
+}
+.red{
+    color: red;
+}
+/* 头部部分 */
+.top{
+    background-color: #fff;
+    height: 89px;
+}
+.top img{
+    width: 100%;
+    height: 46px;
+}
+.title{
+    width: 100%;
+    height: 43px;
+    text-align: center;
+    line-height: 43px;
+    padding-left: 20px;
+}
+
+.title::before{
+    float: left;
+    content: '\e600';
+    font-family: "iconfont" !important;
+    transform: rotate(180deg);
+}
+
+
+/* <!-- 用户信息栏 --> */
+.userInfo{
+    display: flex;
+    width: 354px;
+    height: 85px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    margin: 6px auto;
+}
+.icon-location{
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: green;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+.userInfo .icon-more{
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    background-color: #dff8ff;
+    border-top: 1px dashed #dff8ff;
+    border-bottom: 1px dashed #dff8ff;
+}
+.id{
+    font-size: 16px;
+    margin-right: 20px;
+}
+.text{
+    font-size: 12px;
+    width: 260px;
+}
+
+
+/* <!-- 商品信息栏 --> */
+.goodsInfo{
+    width: 354px;
+    height: 107px;
+    display: flex;
+    margin: 4px auto;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+}
+.goodImg{
+    width: 85px;
+    height: 85px;
+    background-image: url(../uploads/pic.png);
+    background-size: contain;
+}
+.goodtext{
+    width: 192px;
+    font-size: 13px;
+}
+.goodtext ul li{
+    margin-top: 4px;
+}
+.goodtext ul li:nth-child(1){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}
+.goodtext ul li:nth-child(2){
+    font-size: 8px;
+    color: rgb(136,136,136);
+}
+.goodtext ul li:nth-child(3){
+    color: red;
+    font-size: 13px;
+}
+.goodtext ul li:nth-child(3) del{
+    color: rgb(136,136,136);
+    font-size: 8px;
+}
+.quatity{
+    font-size: 13px;
+    width: 30px;
+    height: 20px;
+}
+
+/* <!-- 用户方式栏 --> */
+.mode{
+    /* display: flex;
+    justify-content: space-around; */
+    width: 354px;
+    height: 125px;
+    margin: 6px auto;
+    background-color: #fff;
+    font-size: 13px;
+    
+}
+.mode ul{
+    padding: 15px 6px;
+    width: 340px;
+    height: 125px;
+
+}
+.mode ul li{
+    display: flex;
+    justify-content: space-between;
+}
+.mode ul li:nth-child(2){
+    margin: 20px 0;
+}
+.detail{
+    width: 260px;
+}
+.pay::after{
+    content: '\e600';
+    font-family: "iconfont" !important;
+}
+
+/* <!-- 价格栏 --> */
+/* 与上面的样式相同 */
+.bottom{
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    width: 375px;
+    height: 79px;
+    background-color: #fff;
+}
+.bottomRight{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 91px;
+    height: 35px;
+    color: white;
+    background-color: #6dc1a9;
+    border: none;
+}
+.bottomLeft{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 15px;
+}
+.bottomLeft::before{
+    content: '合计:' ;
+    font-size: 12px;
+}

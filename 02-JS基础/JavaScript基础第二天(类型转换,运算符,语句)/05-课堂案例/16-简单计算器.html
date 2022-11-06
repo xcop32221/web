@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num1 = +prompt('请输入第一个值')
+        let num2 = +prompt('请输入第二个值')
+        // 获取用户要进行的操作
+        let action = prompt('请输入您要进行的操作')
+        switch (action) {
+            case '+':
+                alert(num1 + num2)
+                break
+            case '-':
+                alert(num1 - num2)
+                break
+            case '*':
+                alert(num1 * num2)
+                break
+            case '/':
+                alert(num1 / num2)
+                break
+            default:
+                alert('我的计算器不够智能，暂支持加减乘除')
+                break
+        }
+    </script>
+</body>
+
+</html>

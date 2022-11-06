@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let arr = [3, 4, 3, 4]
+
+        //对象不是迭代器不能进行of操作
+        // const obj = {
+        //     name: 'wayyt',
+        //     age: 24
+        // }
+        //变量数值
+        // for (const i of arr) {
+        //     console.log(i)
+        // }
+        //遍历索引
+        // for (const i in arr) {
+        //     console.log(i)
+        // }
+
+        // 标签函数
+        // let a = 6;
+        // let b = 9;
+        // function simpleTag(strings, aValExpression, bValExpression, sumExpression) {
+        //     console.log(strings);
+        //     console.log(aValExpression);
+        //     console.log(bValExpression);
+        //     console.log(sumExpression);
+        //     return 'foobar';
+        // }
+
+        // let c=simpleTag`${a}*${b}`
+        // let untaggedResult = `${a} + ${b} = ${a + b}`;
+        // let taggedResult = simpleTag`${a} + ${b} = ${a + b}`;
+
+        // let obj={
+        //     a:1,
+        //     b:2,
+        // }
+        // console.log()
+        // let arr1=[1,2,5,6,8,3,2,1,3]
+        //外部循环控制需要冒泡多少次
+        // for(let i=0;i<arr1.length-1;i++)
+        // {
+        //     //冒泡一个数需要比较多少次
+        //     for(let j=0;j<arr1.length-i;j++)
+        //     {
+        //         if (arr1[j]>arr1[j+1]) {
+        //             temp=arr1[j+1]
+        //             arr1[j+1]=arr1[j]
+        //             arr1[j]=temp
+        //         }
+        //     }
+        // }
+        // console.log(arr1)
+        // const arr1 = [1, 2, 3, 4]
+        // const arr2 = [...arr1]
+        // console.log(arr1===arr2)
+        // console.log(arr2)
+        // const m1 = [[2, 3], [3, 4]]
+        // const m2 = new Map([[2, 3], [3, 4]])
+        // const m3 = new WeakMap([[{ id: 1 }, 'one'], [{ id: 2 }, 'two']])
+        // console.log(m1 instanceof Map)
+        // console.log(m2 instanceof Map)
+        // console.log(m3)
+
+        // let map1 = new Map([[1, 2], [3, 4]]);
+        // let map2 = new Map(map1);
+        // console.log(map1); // Map {1 => 2, 3 => 4}
+        // console.log(map2); // Map {1 => 2, 3 => 4}
+        // console.log(map1===map2)
+
+        // let set1=new Set([1,1,1])
+        // console.log(set1)
+
+        //数组解构
+        let arr = ['foo', 'bar', 'baz'];
+        // let [a,b,c]=arr;
+        // console.log(a,b,c)
+
+        let str = '123'
+        //迭代器
+        // let ite = arr[Symbol.iterator]()
+        // console.log(ite)
+        // let ite=str[Symbol.iterator]()
+
+        // ite.next()//返回{done:,value:}对象
+        // console.log(typeof ite.next())
+
+        // console.log(str[Symbol.iterator])
+
+        // class Counter {
+        //     constructor(limit) {
+        //         this.limit = limit;
+        //     }
+        //     //闭包
+        //     [Symbol.iterator]() {
+        //         let count = 1,
+        //             limit = this.limit;
+        //         return {
+        //             next() {
+        //                 if (count <= limit) {
+        //                     return { done: false, value: count++ };
+        //                 } else {
+        //                     return { done: true, value: undefined };
+        //                 }
+        //             }
+        //         };
+        //     }
+        // }
+
+        // let counter=new Counter(3)
+        // for (const i of counter) {
+        //     console.log(i)
+        // }
+        // for (const i of counter) {
+        //     console.log(i)
+        // }
+
+
+        //生成器
+        // function* nTimes(n) {
+        //     while (n--) {
+        //         yield;
+        //     }
+        // }
+        // for(let i of nTimes(3)){
+        //     console.log('foo')
+        // }
+
+        // class Node {
+        //     constructor(id) {
+        //         this.id = id;
+        //         this.neighbors = new Set();
+        //     }
+        //     connect(node) {
+        //         if (node !== this) {
+        //             this.neighbors.add(node);
+        //             node.neighbors.add(this);
+        //         }
+        //     }
+        // }
+        // class RandomGraph {
+        //     constructor(size) {
+        //         this.nodes = new Set();
+        //         // 创建节点
+        //         for (let i = 0; i < size; ++i) {
+        //             this.nodes.add(new Node(i));
+        //         }
+        //         // 随机连接节点
+        //         const threshold = 1 / size;
+        //         for (const x of this.nodes) {
+        //             for (const y of this.nodes) {
+        //                 if (Math.random() < threshold) {
+        //                     x.connect(y);
+        //                 }
+        //             }
+        //         }
+        //     }
+
+        //     print(){
+        //     for (const node of this.nodes) {
+        //         const ids = [...node.neighbors].map((n) => n.id).join(',');
+        //         console.log(`${node.id}: ${ids}`);
+        //     }
+        // }}
+
+        // const g = new RandomGraph(6);
+        // g.print()
+        //生成数值递增的数组
+        function* range(start, end) {
+            while (end > start) {
+                yield start++;
+            }
+        }
+        // let arr1 = Array.from(range(1, 10))
+
+        // console.log(arr1.indexOf(2))
+        // let obj={
+        //     year_:2017,
+        //     edition:1
+        // }
+        // Object.defineProperty(obj,'year',{
+        //     get(){
+        //         return this.year_;
+        //     },
+        //     set(newvalue){
+        //         if(newvalue>2017){
+        //             this.year_=newvalue
+        //             this.edition+=newvalue-2017
+        //         }
+        //     }
+        // })
+        // obj.year=2018
+        // console.log(obj.edition)
+        // console.log(obj)
+        // 
+        // dest = {
+
+        //     set a(val) {
+        //         console.log(`Invoked dest setter with param ${val}`);
+        //         console.log(val)
+        //     }
+        // };
+        // src = {
+        //     get a() {
+        //         console.log('Invoked src getter');
+        //         return 'foo';
+        //     }
+        // };
+        // // Object.assign(dest,src)
+        // console.log(true===1)
+
+        // let id=1
+        // let qd=2
+        // let obj={
+        //     id,
+        //     qd
+        // }
+        // console.log(obj)
+
+        // let {name,age}=obj
+        // console.log([id,qd])
+
+
+        // function Myobj(){
+        //     Myobj.prototype.name='wayyt'
+        //     Myobj.prototype.getNmae=function(){
+        //         console.log(this.name)
+        //     }
+        // }
+        // let obj1= new Myobj()
+        // let obj2= new Myobj()
+
+        // //对象的__proto__属性可以去访问原型对象
+        // console.log(obj1.__proto__)
+
+        // let obj3={}
+        // console.log(obj3.__proto__)
+        // console.log(Object.__proto__.__proto__)
+
+        // let obj1=new String('123')
+        // let obj2={
+        //     age:'18',
+        //     id:'1'
+        // }
+        // Object.setPrototypeOf(obj1,obj2)
+
+        // console.log(obj1.__proto__.constuctor)
+        // console.log(Object.getPrototypeOf(obj1))
+
+        // function myObj(){
+        //     this.name='wayyt'
+        //     this.id='1'
+        //     myObj.prototype.class='huang'
+        //     Object.defineProperty(this,this.age,{
+        //         enumerable:false,
+        //         value:24
+        //     })
+        // }
+        // let obj1=new myObj()
+
+        // let obj2=Object.create(obj1)
+        // console.log(Object.getPrototypeOf(obj2).constructor)
+        // function Person() { }
+        // Person.prototype.name = "Nicholas";
+        // Person.prototype.age = 29;
+        // Person.prototype.job = "Software Engineer";
+        // Person.prototype.sayName = function () {
+        //     console.log(this.name);
+        // };
+        // let keys = Object.keys(Person.prototype);
+        // console.log(keys)
+        // let p1 = new Person()
+        // for (let key in p1) {
+        //     console.log(key)
+        // }
+        // const o = {
+        //     foo: 'bar',
+        //     baz: 1,
+        //     qux: {}
+        // };
+        // console.log(Object.values(o))
+        // console.log(Object.entries(o))
+        // function Person() { }
+        // let friend = new Person();
+
+
+        //这样手动创建原型是和构造函数自带的原型对象是不同的
+        //堆中放的位置不同
+        // Person.prototype = {
+        //     constructor: Person,
+        //     name: "Nicholas",
+        //     age: 29,
+        //     job: "Software Engineer",
+        //     sayName() {
+        //         console.log(this.name);
+        //     }
+        // };
+
+
+        //原型最主要的问题是它的共享特性
+        //原始值可以shadow，但是引用类型的话在原型上操作会导致错误继承
+        // function Person() { }
+        // Person.prototype = {
+        //     constructor: Person,
+        //     name: "Nicholas",
+        //     age: 29,
+        //     job: "Software Engineer",
+        //     friends: ["Shelby", "Court"],
+
+        //     sayName() {
+        //         console.log(this.name);
+        //     }
+        // };
+        // let person1 = new Person();
+        // let person2 = new Person();
+        // person1.friends.push("Van");
+        // console.log(person1.friends); // "Shelby,Court,Van"
+        // console.log(person2.friends); // "Shelby,Court,Van"
+        // console.log(person1.friends === person2.friends); // true
+
+        //默认的原型对象是object的实例
+        //原型链：js实现继承的机制
+        //1号构造函数的原型是2号构造函数的实例，则该2号实例的原型指向2号构造函数的原型
+        //此时，1号实例总共具有的原型有1号构造函数和2号构造函数的
+        //同理可以再去链接3号函数
+
+        //构造函数+原型对象--->原型链
+        //继承实际上是继承构造函数 1号实例去继承2号构造函数的属性和方法再去继承3号构造函数再去继承object构造函数
+        // function SuperType() {
+        //     this.property = true;
+        // }
+        // SuperType.prototype.getSuperValue = function () {
+        //     return this.property;
+        // };
+        // function SubType() {
+        //     this.subproperty = false;
+        // }
+        // // 继承SuperType
+        // SubType.prototype = new SuperType();
+        // SubType.prototype.getSubValue = function () {
+        //     return this.subproperty;
+        // };
+        // let instance = new SubType();
+        // console.log(instance.getSuperValue()); // true
+
+        // console.log(instance)
+
+
+
+
+        // let obj1={
+        //     name:1,
+        //     age:2,
+        //     inclued(){
+        //         Array.inclued.call(this)
+        //     }
+        // }
+        // let arr1=[1,2,3,4]
+        // Object.assign(obj1,arr1)
+        // console.log(obj1)
+
+        // class Person {
+        //     constructor() {
+        //         console.log(1)
+        //     }
+        // }
+        // console.log(Person.prototype)
+        // class Person {
+        //     constructor(age) {
+        //         this.name='wayyt'
+        //         this.age_ = age;
+        //     }
+        //     sayname(){
+        //         console.log(this.name)
+        //     }
+        //     static create() {
+        //         // 使用随机年龄创建并返回一个Person 实例
+        //         return new Person(Math.floor(Math.random() * 100));
+        //     }
+        // }
+        // // let a=new Person(123)
+        // // a.sayname()
+
+        // class Another extends Person{
+        //     constructor(age){
+        //         super()
+        //         console.log(this)
+        //         this.sayname()
+        //         this.name='alan'
+        //     }
+        // }
+
+        // // const obj2=new Person()
+        // const obj3=new Another(24)
+
+
+        // class Person{
+        //     constructor(){
+        //         console.log('构造函数中'+this)
+        //     }
+        //     move(){
+        //         console.log('原型方法中'+this)
+        //     }
+        //     static up(){
+        //         console.log('静态方法中'+this)
+        //     }
+        // }
+        // const obj1=new Person()
+        // obj1.move()
+        // Person.up()
+
+
+        // const target={name:1}
+        // const handler={
+        //     get(){
+        //         console.log('get')
+        //         return Reflect.get()
+        //     },
+        //     set(){
+        //         console.log('set')
+        //         return Reflect.set()
+        //     },
+        //     has(){
+        //         console.log('has')
+        //         return Reflect.has()
+        //     },
+        //     defineProperty(){
+        //         console.log('defineProperty')
+        //         return Reflect.defineProperty()
+        //     }
+        // }
+        // const proxy=new Proxy(target,handler)
+
+        // console.log(proxy)
+        // const userList = [];
+        // class User {
+        //     constructor(name) {
+        //         this.name_ = name;
+        //     }
+        // }
+        // const proxy = new Proxy(User, {
+        //     construct() {
+        //         const newUser = Reflect.construct(...arguments);
+        //         userList.push(newUser);
+        //         console.log(Reflect)
+        //         return newUser;
+        //     }
+        // });
+        // new proxy('John');
+        // new proxy('Jacob');
+        // new proxy('Jingleheimerschmidt');
+        // console.log(userList); // [User {}, User {}, User{}]
+
+        // const userList1 = [];
+        // function emit(newValue) {
+        //     console.log(newValue);
+        // }
+        // const proxy1 = new Proxy(userList1, {
+        //     set(target, property, value, receiver) {
+        //         const result = Reflect.set(...arguments);
+        //         if (result) {
+        //             emit(Reflect.get(target, property, receiver));
+        //         }
+        //         return result;
+        //     }
+        // });
+        // proxy.push('John');
+        // // John
+        // proxy.push('Jacob');
+
+
+        // let arr1=[6,1,2,3,4,5]
+        // // console.log(arr1.fill(1))
+        // arr1.sort((a,b)=>a-b)
+        // console.log(arr1)
+        // arr1.reverse()
+        // console.log(arr1)
+
+        // Jacob
+        // class Vehicle {
+        //     constructor(){
+        //         this.name='a'
+
+        //     }
+        //     identifyPrototype(id) {
+        //         console.log(id, this);
+        //     }
+        //     static identifyClass(id) {
+        //         console.log(id, this);
+        //     }
+        // }
+        // class Bus extends Vehicle { }
+        // let v = new Vehicle();
+        // let b = new Bus();
+        // b.identifyPrototype('bus'); // bus, Bus {}
+        // v.identifyPrototype('vehicle'); // vehicle, Vehicle {}
+        // Bus.identifyClass('bus'); // bus, class Bus {}
+        // Vehicle.identifyClass('vehicle'); // vehicle, class Vehicle {}
+        // const s1 = new Set(["val1", "val2", "val3"]);
+        // // alert(s1.size); // 3
+        // // 使用自定义迭代器初始化集合
+        // const s2 = new Set({
+        //     [Symbol.iterator]: function* () {
+        //         yield "val1";
+        //         yield "val2";
+        //         yield "val3";
+        //     }
+        // });
+        // // alert(s2.size); // 3
+        // console.log(s1.has('val1'))
+
+        // function deepclone(obj){
+        //     if (typeof obj !=='object') {
+        //         return {...obj}
+        //     }
+        //     else{
+        //         let temp=Array.isArray(obj)?[]:{}
+        //         for(let key in obj){
+        //             if (obj.hasOwnProperty('key')) {
+        //                 if (obj[key] && typeof obj[key]) {
+        //                     temp[key]=deepclone()
+        //                 }
+        //                 else{
+        //                     temp[key]=obj[key]
+        //                 }
+        //             }
+        //         }
+        //     }
+        // return temp
+        // }
+
+        // console.log({...{name:'w',age:24}})
+        //         class Counter {
+        //             // Counter 的实例应该迭代limit 次
+        //             constructor(limit) {
+        //                 this.count = 1;
+        //                 this.limit = limit;
+        //             }
+        //             next() {
+        //                 if (this.count <= this.limit) {
+        //                     return { done: false, value: this.count++ };
+        //                 } else {
+        //                     return { done: true, value: undefined };
+        //                 }
+        //             }
+        //             [Symbol.iterator]() {
+        //                 console.log(this)
+        //                 return this;
+        //             }
+        //         }
+        //         let counter = new Counter(3);
+        //         for (let i of counter) {
+        // console.log(i);
+        // }
+        // class Counter{
+        //     constructor(limit){
+        //         this.count=1
+        //         this.limit=limit
+        //     }
+        //     [Symbol.iterator](){
+
+        //         return {
+        //             next(){
+        //                 this.limit-=1
+        //                 if(this.limit){
+        //                     return {done:false,value:undefined}
+        //                 }
+        //                 else{
+        //                     return{done:true,value:undefined}
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        // let count=new Counter(3)
+
+        // for(let val in count){
+        //     console.log(val)
+        // }
+        // console.log(0 && 1)
+        const getList = ([x, ...y]) => [x, y]
+        const getUser = user => ({ name: user.name, age: user.age })
+
+        const list = [1, 2, 3, 4]
+        const user = { name: "Lydia", age: 21 }
+
+        console.log(getList(list))
+        console.log(getUser(user))
+    </script>
+</body>
+
+</html>

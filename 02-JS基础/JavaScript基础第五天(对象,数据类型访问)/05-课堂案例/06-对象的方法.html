@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: '张三',
+            age: 18,
+            // ：前面叫方法名, :后面叫函数
+            skill: function (action) {
+                console.log(`我会${action}`);
+            },
+            sing: function () {
+                console.log('我会唱歌');
+            }
+        }
+        // 调用对象里面的方法，通过 对象名.方法名()
+        obj.sing()
+        // 方法的形参和实参和函数的形参实参使用方式一致
+        obj.skill('唱跳rap')
+    </script>
+</body>
+
+</html>

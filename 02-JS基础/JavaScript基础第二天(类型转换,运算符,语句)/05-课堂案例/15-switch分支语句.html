@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let wind = prompt('今天吹的什么风')
+        // switch小括号里面的值，来跟下面case精准全等匹配才能执行case后的代码，如果都没有匹配到就会执行default里的代码
+        // break用来防止代码穿透，执行当前case的代码后，如果没有break，那么会从当前case匹配到代码一直往下去匹配
+        switch (wind) {
+            case '东':
+                alert('今天吹的是东风')
+                break
+            case '西':
+                alert('今天吹的是西风')
+                break
+            case '南':
+                alert('今天吹的是南风')
+                break
+            case '北':
+                alert('今天吹的是北风')
+                break
+            default:
+                alert('今天吹的是怪风')
+                break
+        }
+    </script>
+</body>
+
+</html>

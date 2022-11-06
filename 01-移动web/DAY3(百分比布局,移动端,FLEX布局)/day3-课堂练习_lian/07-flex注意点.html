@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 当块级元素和行内元素变成弹性盒子后,会有什么变化?  */
+        .box {
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            /* 添加flex */
+            display: flex;
+        }
+
+        /* 块级元素变成弹性盒子后:宽度由默认的父级100%,变成由自身内容撑开 */
+        .div {
+            background-color: skyblue;
+        }
+
+        /* 行内元素变成弹性盒子后:变成可以直接设置宽高*/
+        .span {
+            width: 60px;
+            height: 80px;
+            background-color: #f70;
+            /* 以后在添加了flex属性的父容器里,书写em,i,span,a,伪元素等等,都不用刻意转换显示模式 */
+        }
+
+
+
+
+
+        
+        a {
+            /* 作为弹性容器使用时,也可以直接设置大小 */
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- 弹性容器 -->
+    <div class="box">
+        <!-- 弹性盒子 - 块级元素div -->
+        <div class="div">我是div</div>
+        <!-- 弹性盒子 - 行内元素span -->
+        <span class="span">我是span</span>
+    </div>
+
+    <!-- 把a标签行内元素当成父级是去使用 -->
+    <a href="#">我是a标签</a>
+</body>
+
+</html>

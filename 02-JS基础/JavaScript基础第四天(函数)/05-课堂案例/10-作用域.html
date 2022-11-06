@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 全局作用域,声明在全局的变量名和函数就能够在整个环境下都能生效
+        let num = 10
+
+        function fn() {
+            // 局部作用域/函数作用域,那么这个变量就只在当前作用域下生效
+            let num1 = 20
+            /* 可以直接不要let 通过赋值的操作,声明一个变量,但是这个变量会直接变成一个全局变量,
+             这样非常不符合代码的严谨性,所以我们不会推荐大家使用这样声明方式 */
+            num2 = 30
+            console.log(num2);
+            // 函数的形参当做一个局部变量来看
+            console.log(num);
+        }
+
+        fn()
+        console.log(num2);
+    </script>
+</body>
+
+</html>

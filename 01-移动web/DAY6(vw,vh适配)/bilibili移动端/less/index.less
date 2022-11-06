@@ -1,0 +1,252 @@
+@import './base';
+@import './normalize';
+
+body{
+    // height: 266.6667vw;
+    background-color: #f4f4f4;
+    // background-color: pink;
+}
+// 头部开始
+header {
+    
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100vw;
+    padding: 0 2.6667vw;
+    background-color: #fff;
+
+    .headertop {
+        // position: fixed;
+        // top: 0;
+        // left: 0;
+        // background-color: #fff;
+        // margin: 0 2.6667vw;
+
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10.6667vw;
+        width: 100%;
+        
+
+        i {
+            font-size: 8vw;
+            color: #fb7299;
+        }
+
+        input {
+            width: 32vw;
+            height: 5.3333vw;
+            border: none;
+        }
+
+        img {
+            width: 8vw;
+            height: 8vw;
+        }
+
+        em {
+            font-size: 5.3333vw;
+        }
+
+        button {
+            border: none;
+            background-color: #fb7299;
+            width: 20.2667vw;
+            height: 7.4667vw;
+            border-radius: 1.0667vw;
+            color: white;
+        }
+    }
+
+    .typeBox {
+        // position: fixed;
+        // left: 0;
+        // top: 10.6667vw;
+        // margin: 0 2.6667vw;
+
+
+        width: 100%;
+        height: 8vw;
+        overflow: hidden;
+        margin-top: 5.3333vw;
+
+        .type {
+            // display: flex;
+            // justify-content: space-between;
+            // flex-wrap: wrap;
+            // align-content: space-between;
+            height: 8vw;
+            width: 100%;
+            border-bottom: .5333vw solid rgb(228, 222, 222);
+            background-color: #fff;
+
+            li {
+                float: left;
+                margin-right: 6.6667vw;
+                width: 8.5333vw;
+                a {
+                    width: 10vw;
+                    height: 8vw;
+                    display: flex;
+                    justify-content: space-between;
+                    color: #343536;
+
+                    &:hover {
+                        color: #fb7299;
+                        border-bottom: .5333vw solid #fb7299;
+                    }
+                }
+            }
+
+        }
+        
+
+       
+    }
+    // 遮罩层用于控制头部箭头效果
+    .mask {
+        position: absolute;
+        right: 5.3333vw;
+        top: 16vw;
+        &:hover~.typeBox {
+            height: 32vw;
+            overflow: visible;
+        }
+        &:hover~.typeBox .type{
+            border-bottom: none;
+        }
+        &:hover~.webmask{
+            opacity: .2;
+        }
+    }
+    .webmask{
+        position: fixed;
+        top: 48vw;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        opacity: 0;
+    }
+}
+.blank{
+    height: 26vw;
+    background-color: transparent;
+}
+// 头部结束
+
+// 内容部分开始
+section{
+    position: relative;
+    width: 100vw;
+    // height: 266.6667vw;
+    padding: 0vw 2.6667vw;
+    background-color: #fff;
+    ul{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-content:space-between;
+        li{
+            position: relative;
+            overflow: hidden;
+            width: 48%;
+            a{
+                color: black;
+                font-size: 3.2vw;
+                height: 36vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                img{
+                    
+                    border-radius: 1.3333vw;
+                    width: 100%;
+                    height: 28vw;
+                    // box-shadow: 2.6667vw 2.6667vw 2.6667vw rgba(0,0,0,.3) inset;
+                    
+                }
+                span{
+                    position: absolute;
+                    top: 22.6667vw;
+                    color: white;
+                    left: 2.6667vw;
+                    z-index: 2;
+                    &::after{
+                        content: '9999';
+                        margin-left: 1.3333vw;
+                    }
+                }
+                    
+                }
+                em{
+                    position: absolute;
+                    top: 22.6667vw;
+                    right: 5.3333vw;
+                    color: white;
+                    z-index: 2;
+                    &::after{
+                        content: '1.8万';
+                        margin-left: 1.3333vw;
+                    }
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 21.3333vw;
+                    width: 100%;
+                    height: 8vw;
+                    background-image: linear-gradient(to top, rgba(0, 0, 0), transparent);
+            }
+                
+            }
+        }
+        .conttext{
+            height: 64px;
+            line-height: 64px;
+            text-align: center;
+            a{
+            color: #ccc;
+            font-size: 14px;
+             }
+        }
+    }
+// 内容部分结束
+
+// 底部悬浮窗
+footer{
+    position: fixed;
+    left: 2.6667vw;
+    bottom: 5.3333vw;
+    width: 94.6667vw;
+    height: 9.3333vw;
+    line-height: 9.3333vw;
+    text-align: center;
+    background-color: #fb7299;
+    border-radius: 13.3333vw;
+    color: white;
+    font-size: 4.2667vw;
+    z-index: 999;
+}
+.copyright{
+    height: 120px;
+    font-size: 12px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p{
+        margin-top: 10px;
+    }
+}
+    

@@ -1,0 +1,13 @@
+// out:false
+// 禁止导出 写在文件的第一行
+
+// 举例:
+// (base)基础样式类和(common)公共样式类,因为直接被index给引用了
+// 所以不需要单独生成自己的css文件
+// 利用禁止导出代码,添加在第一行, 使其不会生成css
+
+body {
+    background-color: red;
+    width: 500px;
+    height: 600px;
+}

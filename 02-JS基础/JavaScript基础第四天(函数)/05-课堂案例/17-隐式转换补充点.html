@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('' + 456468);
+        // 空字符串在做数字减乘除操作时，会被隐式转换成一个0
+        console.log('' - 5);
+        // null在做数字减乘除操作时，会被隐式转换成一个0
+        console.log(null - 10);
+        // undefined在做数字减乘除操作时，会被隐式转换成一个NaN
+        console.log(undefined - 20);
+        // null在做比较的时候，false，undefinednull在做比较的时候，也是false
+        console.log(null == undefined);
+        // 因为都能隐式转换成false，所以值相等，但是类型不等
+        console.log(null === undefined);
+    </script>
+</body>
+
+</html>

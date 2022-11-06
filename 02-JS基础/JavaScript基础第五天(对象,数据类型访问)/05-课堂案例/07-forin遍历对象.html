@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: '张三',
+            age: 18,
+            height: 180,
+            weight: 180
+        }
+        // for in,声明一个变量来做遍历的对象的属性名，in 后面是跟的要遍历的对象
+        for (let k in obj) {
+            // 声明的变量k就是循环遍历的对象里面的 属性名 和 键值对的 键
+            console.log(k);
+            // 遍历对象时,要去拿到属性值,就得obj[k] 进行访问
+            // obj.k或者obj["k"]会被解析成字符串来查找对象里面的属性
+            console.log(obj[k]);
+        }
+        // let arr = [1, 3, 5, 7, 9]
+        // for (let i in arr) {
+        //     // for in 在遍历数组的时候,i是对应的数组下标
+        //     console.log(i);
+        //     // arr[i]对应拿到数组对应的下标元素
+        //     /* 通常不使用for in来遍历数组，因为声明i是数组下标但是为字符串类型，
+        //      在做一些数组下标数字操作时，可能会发生未知报错 */
+        //     console.log(arr[i]);
+        // }
+    </script>
+</body>
+
+</html>

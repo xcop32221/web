@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 媒体查询属于css代码,所以写在style标签里 */
+        /* 媒体查询: 能够检测屏幕尺寸的变化,满足条件就执行相应的css代码 */
+
+        /* 如果监听到屏幕宽度是375px,就执行下列的css代码 */
+        /* 如果不满足条件,就不执行 */
+
+        /* 因为逻辑分辨率(软件应用缩放比例不为整数,比如375.2 / 375.18) */
+        /* 所以想要看到效果,需要格外注意,自己的375px的情况下,有没有带小数(改成与之相应的值就可以了) */
+        @media (width:375px) {
+
+            /* 下面可以书写任意的css代码 */
+            html {
+                font-size: 20px;
+            }
+
+        }
+
+        @media (width:414px) {
+            html {
+                font-size: 40px;
+            }
+        }
+
+        
+        div {
+            /* 书写内容样式时,单位直接使用rem */
+            width: 5rem;
+            height: 3rem;
+            font-size: 2rem;
+            background-color: pink;
+        }
+
+        /* 后续要解决的问题: */
+        /* 媒体查询,想要适配绝大多数屏幕,就需要去书写无数个媒体查询 (效率太低) */
+        /* html里的fz到底写多少合适呢?  */
+    </style>
+</head>
+
+<body>
+    <div>媒体查询</div>
+</body>
+
+</html>

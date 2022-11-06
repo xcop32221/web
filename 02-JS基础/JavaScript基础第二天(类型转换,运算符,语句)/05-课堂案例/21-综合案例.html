@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.声明一个变量来做初始余额
+        let money = 10000
+        // 2.构建一个死循环反复询问用户要进行的操作
+        while (true) {
+            let num = +prompt(`请选择您的操作:
+                    1.取款
+                    2.存款
+                    3.查看余额
+                    4.退出
+            `)
+            // 3.判断一个退出循环条件
+            if (num === 4) {
+                break
+            }
+            switch (num) {
+                case 1:
+                    // 选择取款后，提示用户取款金额，拿到取款金额后，对原有的余额进行相减
+                    let downMoney = +prompt('请输入您要取款的金额')
+                    // 如果取款金额大于原有金额，提示用户余额不足
+                    if (downMoney > money) {
+                        alert('对不起，您的余额不足')
+                    } else {
+                        money -= downMoney
+                        alert(`尊敬的客户，您的余额还剩${money}`)
+                    }
+                    break
+                case 2:
+                    // 选择存款后，提示用户存多少钱，拿到存款金额后，与原有的金额进行相加
+                    let saveMoney = +prompt(`请输入您要存款的金额`)
+                    money += saveMoney
+                    alert(`尊敬的客户，您的余额还剩${money}`)
+                    break
+                case 3:
+                    // 选择显示余额后，弹出弹窗显示money即可
+                    alert(`您的余额有${money}`)
+                    break
+                default:
+                    // 其他操作都会匹配到默认代码来
+                    alert('操作有误，请输入正确的操作代码')
+            }
+        }
+    </script>
+</body>
+
+</html>

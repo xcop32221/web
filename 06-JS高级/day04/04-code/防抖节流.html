@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+          width: 500px;
+          height: 500px;
+          background-color: #ccc;
+          color: #fff;
+          text-align: center;
+          font-size: 100px;
+        }
+        </style>
+</head>
+<body>
+    <div class="box"></div>
+    <input type="text" >
+    <script>
+        const input=document.querySelector('input')
+        const box=document.querySelector('.box')
+        const debounce=function(fn,ms){
+            let timerid
+            return function(...arg){
+                clearTimeout(timerid)
+                timerid=setTimeout(()=>{
+                    fn.call(this,...arg)
+                },ms)
+            }
+        
+        }
+        //时间戳实现
+        const throttle1=function(fn,ms){
+            let start=0
+            return function(){
+                let now=+new Date()
+                if (now-start>500) {
+                    fn.call(this)
+                    start=+new Date()
+                }
+            }
+        }
+        //setTimeout实现
+        const throttle2=function(fn,ms){
+            let timerid
+            return function(){
+                if(!timerid){
+                    timerid=setTimeout(()=>{
+                        fn.call(this)
+                        timerid=null
+                    },ms)
+                }
+            }
+            
+        }
+        const print=function(x,y){
+            console.log(x+y)
+        }
+        let i=0
+        const print2=function(){
+            this.innerHTML=i++
+        }
+        input.addEventListener('keyup',debounce(print,500).bind(this,1,2))
+        box.addEventListener('mousemove',throttle2(print2,500))
+
+
+        function deepclone(obj){
+            if(typeof obj !=="object") return obj
+            else{
+                let temp=new obj.__proto__.constructor
+                for(let key in obj){
+                    if(obj.hasOwnProperty('key'))
+                    {
+                        if (obj[key] && typeof obj[key] =="object") {
+                            temp[key]=deepclone(obj[key])
+                        }
+                        else{
+                            temp[key]=obj[key]
+                        }
+                    }
+                }
+                return temp
+            }
+
+        }
+        
+    </script>
+</body>
+</html>

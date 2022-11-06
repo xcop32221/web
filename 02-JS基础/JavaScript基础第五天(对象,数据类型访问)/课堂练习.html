@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 800px;
+            height: 200px;
+            border: 1px solid #ccc;
+            margin: 200px auto;
+            border-collapse: collapse;
+        }
+        th{
+            height: 40px;
+            background-color: #ccc;
+            border-right: 1px solid rgb(92, 83, 83);
+        }
+        td{
+            height: 40px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 40px;
+        }
+        caption{
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <table>
+        <caption>学生列表</caption>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+    <script>
+        let obj = {
+            name: '123',
+            move: function () {
+                name += 1
+                return name
+            }
+        }
+
+        let calculator = {
+            name: '计算器',
+            author: 'wayyt',
+            version: 1.000,
+            result: undefined,
+            add: function (num1, num2) {
+                return num1 + num2
+            },
+            minus: function (num1, num2) {
+                return num1 - num2
+            }
+
+        }
+        for (const key in calculator) {
+            if (key == 'name') {
+                calculator[key] = '小小计算器'
+            }
+        }
+        console.log(calculator)
+
+        let students = [
+            {
+                name:'小明', age: 18, gender: '男', hometown: '河北省'
+            },
+            {
+                name:'小红', age: 19, gender: '女', hometown: '河南省'
+            },
+            {
+                name:'小刚', age: 17, gender: '男', hometown: '山西省'
+            },
+            {
+                name:'小丽', age: 18, gender: '女', hometown: '山东省'
+            },
+        ]
+
+        // let content=document.querySelectorAll('table td')
+        // for (let key1 in content) {
+        //     if(Number(key1)<5)
+        //     {
+        //         for(let i=0;i<students.length;i++) {
+        //            content[Number(key1)].innerHTML=students[0][i]
+        //         }
+        //     }
+            
+                
+            
+        // }
+
+        // function getname(arr,id)
+        // {
+        //     for(let i in arr)
+        //     {
+        //         if(arr[i]==id)
+        //         {
+        //             document.write(`该身份的家乡是${arr.hometown}<br>`)
+        //         }
+        //     }
+        // }
+        // for(let i=0;i<students.length;i++)
+        // {
+        //     getname(students[i],'男')
+        // }
+        
+        // console.log(Math.round(16.9888))
+        
+        // console.log(Math.log(3,9))
+        // console.log((Math.random()*10).toFixed(0))
+        
+        
+        
+        //随机函数(num)
+        // function randomnum(start=0,end=10)
+        // {
+        //     return Math.floor(Math.random()*(end-start-1)+start)
+        // }
+        // console.log(randomnum(10,50))
+        
+        
+        //随机函数(arr)
+        // function randomarr(arrnum=1,start=0,end=10)
+        // {
+        //     let arr=[]
+        //     for(let i=0;i<arrnum;i++)
+        //     {
+        //         arr.push(Math.floor(Math.random()*(end-start-1)+start))
+        //     }
+        //     return arr
+        // }
+
+
+    //    console.log(randomarr(10))
+
+        let a=String(123)
+        
+        console.log(typeof a)
+    </script>
+</body>
+
+</html>

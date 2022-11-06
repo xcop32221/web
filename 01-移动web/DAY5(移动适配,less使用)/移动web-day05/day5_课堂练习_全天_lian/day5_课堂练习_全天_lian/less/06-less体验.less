@@ -1,0 +1,14 @@
+// 目前阶段浏览器还无法直接检查less文件
+// 所以需要下载 Easy less 插件(把less文件转换为css文件)
+// 默认保存less文件时,会在同级生成css文件
+// css文件与less文件放在一个文件夹里,显然不合适
+// 修改less自动生成css文件的位置 
+// 1. 设置 - 搜索less - 点击Easy less 设置setting.json文件 添加内容 /  "out":"../css/"
+// 2. 在插件下载页面, 点击设置 , 扩展设置, 直接进入setting.json
+
+// 注释不会编译到css文件里
+body {
+    background-color: pink;
+}
+
+

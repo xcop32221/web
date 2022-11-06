@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let year = +prompt('请输入您要查询的年份')
+        // 两个条件，满足一个即可
+        // 先对前面的条件进行一个判断，既要被4整除又不能被100整除，或者后面的条件能够被400整除满足就能为真
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+            alert(`${year}是闰年`)
+        } else {
+            alert(`${year}是平年`)
+        }
+    </script>
+</body>
+
+</html>

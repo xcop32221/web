@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>年会抽奖</title>
+  <style>
+    .wrapper {
+      width: 840px;
+      height: 420px;
+      background: url(./images/bg01.jpg) no-repeat center / cover;
+      padding: 100px 250px;
+      box-sizing: border-box;
+    }
+    img{
+      display: block;
+      width: 800px;
+      height: 400px;          
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="wrapper">
+    <strong>传智教育年会抽奖</strong>
+    <h1>一等奖：<span id="one">???</span></h1>
+    <h3>二等奖：<span id="two">???</span></h3>
+    <h5>三等奖：<span id="three">???</span></h5>
+  </div> -->
+  <img src="./images/1.webp" alt="">
+  <script>
+    function randomnum(start=0,end=10)
+        {
+            if(end==start)
+            {
+                return end
+            }
+            else{
+            return Math.floor(Math.random()*(end-start+1)+start)
+            }
+        }
+    // const personArr = ['周杰伦', '刘德华', '周星驰', 'Pink老师', '张学友']
+    // const content = document.querySelectorAll('span')
+    // for(let i = 0;i<personArr.length;i++){
+    //   let index = randomnum(0,personArr.length-1)
+    //   content[i].innerHTML = personArr[index]
+    //   personArr.splice(index, 1)
+    // }
+
+    const img=document.querySelector('img')
+    img.src=`./images/${randomnum(1,6)}.webp`
+    img.title='背景'
+
+    img.style.borderRadius='50%'
+    
+    
+    
+
+   
+  </script>
+</body>
+
+</html>

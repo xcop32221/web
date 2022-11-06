@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            uname: '果子哥',
+            age: 18,
+            weight: 200,
+            phone: 13888888
+        }
+        // 访问属性,查询对象属性,通过对象名.属性名的方式来进行访问
+        console.log(obj.phone);
+        console.log(obj.weight);
+        // 改变对象属性,首先去访问这个属性，然后进行一个重新赋值即可
+        obj.age = 19
+        console.log(obj);
+        // 增加对象属性,对象名.属性名，
+        // 如果对象中已经有这个属性了，那么赋值就为改变对象属性
+        // 如果对象中没有这个属性，那么赋值就为增加对象属性
+        obj.height = 180
+        console.log(obj);
+
+        // 删除对象属性,直接delete 对象名.属性名即可
+        delete obj.phone
+        console.log(obj);
+    </script>
+</body>
+
+</html>

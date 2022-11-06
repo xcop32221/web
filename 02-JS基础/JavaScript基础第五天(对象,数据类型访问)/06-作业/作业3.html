@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //随机函数(num)
+        function randomnum(start=0,end=10)
+        {
+            if(end==start)
+            {
+                return end
+            }
+            else{
+            return Math.floor(Math.random()*(end-start+1)+start)
+            }
+        }
+        //main
+        let i=4
+        let guessNum=randomnum(0,100)
+        while(i)
+        {
+            
+            num=+prompt('请猜0-100以内的数字')
+            if (num==guessNum)
+            {
+                alert('恭喜你猜对了')
+                break    
+            }
+            else
+            {
+                if (i>1) {
+                    i--
+                    if (num>guessNum) {
+                        alert(`猜大了，请重新猜猜吧，还有${i}次机会`)
+                        continue
+                    }
+                    else if(num<guessNum)
+                    {
+                        alert(`猜小了，请重新猜猜吧，还有${i}次机会`)
+                        continue
+                    }
+                }
+                else{
+                    i--
+                    alert(`没机会了，请重新猜猜吧`)
+                    continue
+
+                }
+            }
+            i--
+        }
+        
+        
+    </script>
+</body>
+</html>

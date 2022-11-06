@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Math.random能够生成0-1的随机小数
+        // 然后通过将这个数乘以一个11就能取到[0,11)
+        // 再通过向下取整,就能生成一个0到10的随机数
+        console.log(Math.floor(Math.random() * 11));
+
+        // 生成一个5到10的随机数
+        // 先生成一个0到5的随机函数,就乘以6即可[0,5]
+        // 再然后将[0,5]的取值,都加上一个5,就变成了[5,10]
+        console.log(Math.floor(Math.random() * 6));
+
+        // 就能生成一个0到X的随机数
+        console.log(Math.floor(Math.random() * (x + 1)));
+    </script>
+</body>
+
+</html>

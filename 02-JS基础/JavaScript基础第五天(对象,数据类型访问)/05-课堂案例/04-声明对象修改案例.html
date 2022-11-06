@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let goods = {
+            name: '小米10青春版',
+            num: 456478913,
+            weight: '0.55kg',
+            address: '中国大陆'
+        }
+        console.log(goods);
+        // 修改对象属性
+        goods.name = '小米10Plus'
+        // 增加对象属性
+        goods.color = 'pink'
+
+        document.write(`${goods.name}<br>`)
+        document.write(goods.num)
+        document.write(goods.weight)
+        document.write(goods.address)
+        //访问对象属性，如果没有这个属性，拿到的就是undefined
+        document.write(goods.color)
+    </script>
+</body>
+
+</html>

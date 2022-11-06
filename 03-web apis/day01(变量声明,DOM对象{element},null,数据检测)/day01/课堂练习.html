@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            background-image: url(./images/desktop_1.jpg);
+            background-repeat: no-repeat;
+        } */
+        .bd{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="box">123</div>
+    <div class="box">abc</div>
+    <p id="nav">导航栏</p>
+    <ul class="nav">
+      <li>测试1</li>
+      <li>测试2</li>
+      <li>测试3</li>
+      
+    </ul> -->
+    <script>
+        function randomnum(start=0,end=10)
+        {
+            if(end==start)
+            {
+                return end
+            }
+            else{
+            return Math.floor(Math.random()*(end-start+1)+start)
+            }
+        }
+        // let ele=document.querySelector('ul li')
+        // console.log(Object.prototype.toString.call(Object))
+        
+        // for(let i=0;i<ele.length;i++)
+        // {
+        //     console.log(ele[i])
+        // }
+        // document.body.style.webkitTransitionDuration
+        // document.body.style.backgroundImage= `url(./images/desktop_${randomnum(1,10)}.jpg)`
+        
+        // const box=document.querySelector('.nav')
+        // box.classList.add('bd')
+                
+    </script>
+</body>
+</html>

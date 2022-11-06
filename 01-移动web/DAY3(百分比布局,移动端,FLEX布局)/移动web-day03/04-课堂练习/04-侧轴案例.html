@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 3px solid #000;
+            margin: 100px auto;
+            border-radius: 10px;
+
+            display: flex;
+
+            /* 一点: */
+            /* justify-content: center; */
+            /* align-items: center; */
+
+            /* 二点 */
+
+            /* 先思考主轴 再思考侧轴 */
+            justify-content: space-between;
+        }
+
+        .box>div {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #000;
+        }
+
+        /* align-self:控制单个弹性盒子,在侧轴的对齐方式(参数和align-items一致 (起点 居中 终点)) */
+        
+        .son2 {
+            align-self: center;
+        }
+
+        .son3 {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 骰子:一点 -->
+    <div class="box">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="son3"></div>
+    </div>
+
+</body>
+
+</html>

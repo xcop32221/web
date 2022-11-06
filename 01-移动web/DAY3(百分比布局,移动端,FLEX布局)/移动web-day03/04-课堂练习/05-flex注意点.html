@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父容器添加flex后 */
+        .box {
+            display: flex;
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        .div {
+            /* 块级元素变成弹性盒子后: */
+            /* 宽度变成由自身内容撑开 */
+            /* 自身没有高度时,铺满父容器的高度 */
+            background-color: pink;
+        }
+
+        .span {
+            /* 行内元素变成弹性盒子后: */
+            /* 自身没有高度时,铺满父容器的高度 */
+            /* 可以直接设置大小 */
+            width: 80px;
+            height: 80px;
+            background-color: red;
+        }
+
+        a {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            display: flex;
+            /* 把行内元素变成弹性容器时,可以直接设置大小 */
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <!-- 块级 -->
+        <div class="div">块级</div>
+        <!-- 行内 -->
+        <span class="span">行内</span>
+    </div>
+
+    <!--   把行内元素变成弹性容器时  -->
+    <a href="#">我是a标签</a>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const arr = [{
+      name: '张三',
+      salary: 10000
+    }, {
+      name: '李四',
+      salary: 10000
+    }, {
+      name: '王五',
+      salary: 20000
+    },
+    ]
+    const res = arr.reduce((pre, cur) => pre + cur.salary * 0.3, 0)
+    console.log(res)
+
+    const res2=arr.find(el =>el.salary>10000)
+    console.log(res2)
+     
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 600px;
+            height: 60px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            
+        }
+        td,th{
+            border: 1px solid #000;
+            text-align: center;
+            border-right: none;
+        }
+        caption{
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+    </style>
+</head>
+<body>
+   
+       
+    <script>
+        let expend={tolAccount:'',electricty:'',water:'',web:'',remAccount:''}
+        expend.tolAccount=prompt('请输入银行卡余额')
+        expend.electricty=prompt('请输入电费')
+        expend.water=prompt('请输入水费')
+        expend.web=prompt('请输入网费')
+        expend.remAccount=expend.tolAccount-expend.electricty-expend.water-expend.web
+        document.write(`
+        <table>
+        <caption>2022年9月支出</caption>
+        <tr>
+        <th>银行卡总额</th>
+        <th>电费</th>
+        <th>水费</th>
+        <th>网费</th>
+        <th>银行卡余额</th>
+        </tr>
+        <tr>
+            <td>${expend.tolAccount}</td>
+            <td>${expend.electricty}</td>
+            <td>${expend.water}</td>
+            <td>${expend.web}</td>
+            <td>${expend.remAccount}</td>
+        </tr>
+    </table>`)
+    </script>
+</body>
+</html>

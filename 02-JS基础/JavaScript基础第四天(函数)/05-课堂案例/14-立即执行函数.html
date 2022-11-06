@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 立即执行函数防止变量冲突
+        // 立即执行函数,多个立即执行函数之间，必须要有分号分割否则就报错
+        // 1.两个小括号，第一个小括号里面放匿名表达式，然后第二个小括号调用
+        (function () {
+            console.log('匿名函数1被执行了')
+        })();
+        // 2.外面一个小括号包裹起来，里面的匿名函数直接使用里层的小括号调用
+        (function () {
+            console.log('匿名函数2被执行了')
+        }())
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outbox{
+            position: relative;
+            background-color: #fff;
+            width: 1200px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .oral{
+            margin-top: 50px;
+            width: 200px;
+            height: 200px;
+            animation: move1 3s linear infinite;
+        }
+        .ora2{
+            position: absolute;
+            left: 0;
+            top: 50px;
+            width: 200px;
+            rotate: 180deg;
+            height: 200px;
+            animation: move2 3s linear infinite ;
+        }
+        .semioral1,.semioral2{
+            background-color: #ec7f31;
+            width: 200px;
+            height: 100px;
+        }
+        .semioral1{
+            border-radius: 100px 100px 0 0 ;
+            animation: rotate1 1s infinite linear;
+        }
+        .semioral2{
+            border-radius: 0 0 100px 100px  ;
+            animation: rotate2 1s infinite linear ;
+        }
+        @keyframes rotate1{
+            0%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: -20deg;
+            }
+        }
+        @keyframes rotate2{
+            0%{
+                rotate: 0deg;
+            }
+            100%{
+                rotate: 20deg;
+            }
+        }
+        @keyframes move1{
+            0%{
+                transform: translateX(0px);
+            }
+            50%{
+                transform: translateX(1200px);
+            }
+            100%{
+                transform: translateX(1800px);
+            }
+        }
+        @keyframes move2{
+            0%{
+                transform: translateX(-1800px);
+            }
+            50%{
+                transform: translateX(-1400px);
+            }
+            100%{
+                transform: translateX(0px);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="outbox">
+        <div class="oral">
+            <div class="semioral1"></div>
+            <div class="semioral2"></div>
+        </div>
+        <div class="ora2">
+            <div class="semioral1"></div>
+            <div class="semioral2"></div>
+        </div>
+    </div>
+</body>
+</html>

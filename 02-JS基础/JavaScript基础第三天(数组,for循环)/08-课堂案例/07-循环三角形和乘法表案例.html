@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 120px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // <!-- 打印三角形案例 -->
+        // for (let i = 1; i <= 5; i++) {
+        //     // 里层循环打印的星星个数对应的是外层循环的行数，所以j <= i
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write('⭐')
+        //     }
+        //     document.write('<br>')
+        // }
+
+        // 九九乘法表
+        for (let i = 1; i <= 9; i++) {
+            for (let j = 1; j <= i; j++) {
+                // 变化的是列数，不变的是行数
+                document.write(`<div>${j} × ${i} = ${j*i}</div>`)
+            }
+            document.write('<br>')
+        }
+    </script>
+</body>
+
+</html>

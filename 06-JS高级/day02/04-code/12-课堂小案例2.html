@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      background-color: yellow;
+      width: 400px;
+      height: 400px;
+    }
+
+    .exampleText {
+      position: relative;
+      writing-mode: vertical-rl;
+      /* margin-block: 20px 40px; */
+      background-color: #c8c800;
+      inset: 100px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div>
+    <p class="exampleText">Example text</p>
+    <p class="ex">22222</p>
+  </div>
+
+  <script>
+    const gift = '50g茶叶,清洗球'
+    const div = document.querySelector('div')
+      // div.innerHTML=gift.split(',').map(el=>`<div style='background-color:orange'>${el}</div>`).join('')
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            width: 700px;
+            height: 300px;
+            border-left: 1px solid pink;
+            border-bottom: 1px solid pink;
+            margin: 50px auto;
+            justify-content: space-around;
+            align-items: flex-end;
+            text-align: center;
+        }
+
+        .box>div {
+            display: flex;
+            width: 50px;
+            background-color: pink;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box div span {
+
+            margin-top: -20px;
+        }
+
+        .box div h4 {
+            margin-bottom: -35px;
+            width: 70px;
+            margin-left: -10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+        // 1.循环生成四个弹窗，来接收用户输入的四个季度的数据，并且将四个季度的数据放到一个数组里面去
+        let dataArr = []
+        for (let i = 1; i <= 4; i++) {
+            let data = +prompt(`请输入第${i}季度的数据`)
+            dataArr.push(data)
+        }
+        // 3.将父标签的首标签给放到循环前面生成
+        document.write('<div class="box">')
+        // // 2.循环遍历数组，将数组里面的数据渲染成页面上需要的数据
+        for (let j = 0; j < dataArr.length; j++) {
+            document.write(`<div style="height: ${dataArr[j ]}px;">
+                <span>${dataArr[j ]}</span>
+                <h4>第${j + 1}季度</h4>
+            </div>`)
+        }
+        // // 3.将父标签的尾标签给放到循环后面生成
+        document.write('</div>')
+    </script>
+</body>
+
+</html>

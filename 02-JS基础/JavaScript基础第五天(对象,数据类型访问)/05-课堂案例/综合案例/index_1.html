@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .bigbox{
+            width: 1400px;
+            height: 800px;
+            margin: 100px auto;
+        }
+        .title{
+            display: flex;
+            justify-content:space-between;
+            align-items:center;
+            padding-right: 40px;
+            height: 40px;
+        }
+        .title span{
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+        }
+        .title em{
+            font-size: 12px;
+            color: #ccc;
+            font-style: normal;
+        }
+        ul{
+            display: flex;
+            justify-content:space-between;
+            align-items:flex-start;
+            flex-wrap: wrap;
+            height: 740px;
+            list-style: none;
+        }
+        li{
+            position: relative;
+            top: 0;
+            transition: all .3s;
+            width: 19%;
+            height: 340px;
+            background-color: white;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+            
+        }
+        li:hover{
+            top: -10px;
+            box-shadow: 0px 10px 20px #ccc;
+        }
+        ul li:last-child{
+            position: relative;
+            right: 61%;
+        }
+        ul li img{
+            width: 100%;
+        }
+        ul li div{
+            padding: 0px 22px;
+        }
+        .description{
+            height: 20px;
+        }
+        .detail{
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+        
+    <script>
+        let data = [{
+                src: 'images/course01.png',
+                title: 'Think PHP 5.0 博客系统实战项目演练',
+                num: 1125
+            },
+            {
+                src: 'images/course02.png',
+                title: 'Android 网络动态图片加载实战',
+                num: 357
+            },
+            {
+                src: 'images/course03.png',
+                title: 'Angular2 大前端商城实战项目演练',
+                num: 22250
+            },
+            {
+                src: 'images/course04.png',
+                title: 'Android APP 实战项目演练',
+                num: 389
+            },
+            {
+                src: 'images/course05.png',
+                title: 'UGUI 源码深度分析案例',
+                num: 124
+            },
+            {
+                src: 'images/course06.png',
+                title: 'Kami2首页界面切换效果实战演练',
+                num: 432
+            },
+            {
+                src: 'images/course07.png',
+                title: 'UNITY 从入门到精通实战案例',
+                num: 888
+            },
+            {
+                src: 'images/course08.png',
+                title: 'Cocos 深度学习你不会错过的实战',
+                num: 590
+            },
+        ]
+        let str1=`<div class="bigbox">
+        <div class="title">
+            <span>精品推荐</span>
+            <em>查看全部</em>
+        </div>
+        <ul>`
+        let str2=``
+        for(let i=0;i<data.length;i++)
+        {
+            str1+=`<li>
+                <img src="${data[i].src}" alt="">
+                <div class="description">${data[i].title}</div>
+                <div class="detail">
+                    <span style="color: orange;">高级</span>
+                    <em>·</em>
+                    <span style="color: orange;">${data[i].num}</span>
+                    <em style="font-style: normal;">正在学习</em>
+                </div>
+            </li>`
+        }
+        let str3=`</ul>
+        </div>`
+        document.write(str1+str2+str3)
+    </script>
+</body>
+</html>

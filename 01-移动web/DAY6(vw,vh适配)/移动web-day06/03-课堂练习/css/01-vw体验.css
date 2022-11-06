@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box1 {
+  width: 50vw;
+  height: 800px;
+  background-color: pink;
+}
+.box2 {
+  width: 50%;
+  height: 800px;
+  background-color: skyblue;
+}

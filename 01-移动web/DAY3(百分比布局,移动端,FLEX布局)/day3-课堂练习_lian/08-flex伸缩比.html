@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         
+         .box {
+            width: 800px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+         }
+         /* 序号 */
+         .son1 {
+            width: 80px;
+            height: 60px;
+            color: #fff;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+         }
+         /* 热度 */
+         .son3 {
+            width: 200px;
+            height: 60px;
+            background-color: skyblue;
+         }
+
+         /* 内容 */
+         .son2 {
+            /* 把父元素的剩余空间,分成了1份,son2占了1份 */
+            flex: 1;
+            /* 简单理解的具体用法: 就是直接得到父级的剩余空间,不需要去单独计算 */
+            /* 复杂一点的用法: 和其他子元素,按比例去划分父级剩余空间 (不太推荐) */
+            background-color: #f70;
+            height: 60px;
+
+         }
+
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="son1">序号</div>
+        <!-- 标题内容 -->
+        <div class="son2">2</div>
+        <div class="son3">热度</div>
+    </div>
+</body>
+</html>

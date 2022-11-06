@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox{
+            position: relative;
+            margin: 0 auto;
+            width: 600px;
+            height: 600px;
+            /* background-color: #000; */
+        }
+        .one,.two{
+            position: absolute;
+            top: 100px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: all .5s;
+            
+        }
+        .one{
+            left: 120px;
+            /* transform: translateX(-100%);
+             */
+        }
+        .two{
+            left: 280px;
+            /* transform: translateX(-30%); */
+        }
+        .three{
+            position: absolute;
+            top: 175px;
+            left: 200px;
+             width: 198px;
+            height: 198px;
+            border-radius: 10px 20px 0 30px;
+            background-color: red;
+            transform: rotate(45deg);
+            transition: all .5s;
+            
+        }
+        .bigbox:hover div{
+            transform: scale(1.5) rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+    </div>
+</body>
+</html>

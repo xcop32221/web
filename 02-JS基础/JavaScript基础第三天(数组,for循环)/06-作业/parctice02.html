@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function find10(arr) {
+            let arr10 = []
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] == 10) {
+                    arr10.push(i)
+                }
+            }
+            return arr10
+        }
+
+        let arr = find10([0,5,11,12])
+        if (arr.length===0) {
+            console.log(-1)
+            }
+        else {
+            for (let i = 0; i < arr.length; i++) {
+                console.log(`第${arr[i]}个下标为10`)
+
+            }
+        }
+       
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        width: 800px;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        line-height: 35px;
+    }
+
+    table {
+        margin: 20px auto;
+    }
+
+    th {
+        background: #999;
+    }
+
+    tr {
+        background: #f1f1f1;
+        text-align: center;
+    }
+</style>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>分数</th>
+                <th>移动</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button>上移</button><button>下移</button></td>
+                <td><button>删除</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var data = [
+                {
+                    "id": "001",
+                    "name": "大花",
+                    "age": "18",
+                    "score": "88"
+                },
+                {
+                    "id": "002",
+                    "name": "老铁",
+                    "age": "22",
+                    "score": "59"
+                },
+                {
+                    "id": "003",
+                    "name": "李狗蛋",
+                    "age": "16",
+                    "score": "55"
+                },
+                {
+                    "id": "004",
+                    "name": "小学霸",
+                    "age": "30",
+                    "score": "99"
+                },
+                {
+                    "id": "005",
+                    "name": "王铁柱",
+                    "age": "32",
+                    "score": "68"
+                },
+                {
+                    "id": "006",
+                    "name": "二丫",
+                    "age": "22",
+                    "score": "88"
+                },
+            ]
+    
+    //获取元素
+    const table=document.querySelector('tbody')
+    
+    //动态创建表格
+    let trs=data.map((el,i)=>{
+    return `
+            <tr>
+                <td>${el.id}</td>
+                <td>${el.name}</td>
+                <td>${el.age}</td>
+                <td>${el.score}</td>
+                <td><button>上移</button><button>下移</button></td>
+                <td><button>删除</button></td>
+            </tr>`
+        })
+    table.innerHTML=trs.join('')
+    //按钮功能实现
+    //事件监听/事件委托
+    table.addEventListener('click',function(e){
+        if (e.target.tagName==='BUTTON') {
+            //上移功能
+            if(e.target.innerText==='上移'){
+                if(e.target.parentNode.parentNode.previousElementSibling==null){
+                    alert('已经到顶了')
+                }
+                else{
+                table.insertBefore(e.target.parentNode.parentNode,e.target.parentNode.parentNode.previousElementSibling)
+            }}
+            //下移功能
+            if(e.target.innerText==='下移'){
+                try {
+                    table.insertBefore(e.target.parentNode.parentNode,e.target.parentNode.parentNode.nextElementSibling.nextElementSibling)
+                } catch (TypeError) {
+                    alert('已经到底了')
+                }
+            }
+            //删除功能
+            if(e.target.innerText==='删除'){
+                table.removeChild(e.target.parentNode.parentNode)
+            }
+        }
+      })
+    </script>
+</html>

@@ -1,0 +1,9 @@
+diff a/day03/04-code/07-原型链.html b/day03/04-code/07-原型链.html	(rejected hunks)
+@@ -26,6 +26,7 @@
+     // console.log(ldh instanceof Array)
+     // console.log([1, 2, 3] instanceof Array)
+     // console.log(Array instanceof Object)
++    
+   //   function deepClone(obj) {
+   //   //如果不是对象，直接返回该值
+   //   if (typeof obj != 'object') return {...obj};

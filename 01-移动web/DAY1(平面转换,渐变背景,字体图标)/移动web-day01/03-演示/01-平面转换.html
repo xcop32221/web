@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平面转换</title>
+    <style>
+        .box1 {
+            margin-top: 50px;
+            height: 150px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .box2 {
+            margin-top: 50px;
+            height: 150px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            padding-left: 70px;
+        }
+
+        .box3 {
+            margin-top: 50px;
+            height: 300px;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            overflow: hidden;
+        }
+
+        .box1 img {
+            width: 200px;
+            transition: all 4s;
+        }
+
+        .box2 img {
+            width: 90px;
+            transition: all 4s;
+        }
+
+
+        .box3 img {
+            width: 300px;
+            transition: all 3s;
+        }
+
+        .box1:hover img {
+            transform: translateX(1000px);
+        }
+
+        .box2:hover img {
+            transform: rotate(720deg)
+        }
+
+        .box3:hover img {
+            transform: scale(2.5)
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 位移 -->
+    <div class="box1">
+        <img src="./images/跑步.webp" alt="">
+    </div>
+    <!-- 旋转 -->
+    <div class="box2">
+        <img src="./images/旋转.png" alt="">
+    </div>
+    <!-- 缩放 -->
+    <div class="box3">
+        <img src="./images/缩放.webp" alt="">
+    </div>
+
+</body>
+
+</html>

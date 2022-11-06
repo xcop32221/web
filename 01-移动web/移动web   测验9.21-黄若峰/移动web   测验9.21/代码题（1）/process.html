@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes vary{
+            0%{
+                transform: translate(0,0) rotate(45deg);;
+            }
+            100%{
+                transform: translate(480px,0) rotate(45deg);
+            }
+        }
+        body{
+            background-color: #ccc;
+        }
+        .outbox{
+            position: relative;
+            background-color: white;
+            width: 800px;
+            height: 300px;
+            margin: 200px auto;
+            overflow: hidden;
+        }
+        .ovalbox{
+            width: 400px;
+            height: 100px;
+            border: 2px solid #000;
+            border-radius: 50px;
+            margin: 100px auto;
+            overflow: hidden;
+            box-sizing: border-box;
+            background-color: pink;
+            
+            
+        }
+        .masbox{
+            width: 1000px;
+            height: 400px;
+            position: relative;
+            left: -110px;
+            background-color: #fff;
+            animation: vary 3s linear alternate infinite;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div class="outbox">
+        <div class="ovalbox">
+            <div class="masbox"></div>
+        </div>
+        
+    </div>
+</body>
+</html>

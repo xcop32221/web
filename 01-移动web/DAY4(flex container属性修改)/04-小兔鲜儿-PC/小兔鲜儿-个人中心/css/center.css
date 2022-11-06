@@ -1,0 +1,269 @@
+.midcontent{
+    margin: 0px auto;
+    width: 1240px;
+    height: 1348px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* 左边部分 */
+.conLeft{
+    width: 227px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+}
+
+.conLeft ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    width: 227px;
+}
+.conLeft ul li:nth-of-type(1){
+    padding: 30px 0px;
+    height: 231px;
+    font-size: 17px;
+}
+.conLeft ul li:nth-of-type(4){
+    border: none;
+}
+.idImg{
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+.idImg img{
+    width: 85px;
+    height: 85px;
+}
+.convip{
+    width: 93px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #e76e51;
+    color: white;
+    font-size: 14px;
+}
+.convip img{
+    width: 15px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.conLeft dl{
+    align-self: flex-start;
+    margin-left: 52px;
+}
+.conLeft dl dt{
+    font-size: 18px;
+    margin: 32px 0;
+    color: black;
+}
+.conLeft dl dd{
+    font-size: 14px;
+    margin: 20px 0;
+}
+.conLeft dl dd::before{
+    content: '';
+    display: inline-block;
+    background-color: #5eb69c;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: -12px;
+    visibility: hidden;
+}
+.conLeft dl dd:hover::before{
+    visibility: visible;
+}
+.conLeft dl dd:hover a{
+    color: #5eb69c;
+}
+
+
+/* 右边开始 */
+.conRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 999px;
+    height: 1348px;
+}
+/* 右边内容头部 */
+.Righthd{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 999px;
+    height: 132px;
+    background-color: #fff;
+}
+.Righthd ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    font-size: 16px;
+}
+.Righthd li,.Righthd a{
+    width: 64px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Righthd li img{
+    width: 28px;
+    height: 28px;
+}
+.Righthd ul:nth-of-type(2) span{
+    color: #e76e51;
+    font-size: 20px;
+    font-weight: 700;
+}
+/* 我的订单 */
+.order{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 999px;
+    height: 392px;
+    background-color: #fff;
+}
+.orderhd{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 964px;
+}
+.orderhd span{
+    font-size: 21px;
+    font-weight: 700;
+}
+.orderhd i{
+    font-size: 16px;
+    color: #ccc;
+}
+.ordermid{
+    height: 137px;
+    width: 964px;
+}
+.ordermid ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ordermid ul li:nth-child(n+2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 20%;
+    border: 1px solid #ccc;
+    border-left: none;
+    height: 137px;
+    font-size: 14px;
+}
+.ordermid ul li:first-child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    border: 1px solid #ccc;
+    height: 137px;
+    font-size: 16px;
+}
+.ordermid ul li:first-child>span{
+    font-size: 14px;
+    color: #e76e51;
+    width: 40%;
+    text-align: center;
+}
+.goodsdetail i{
+    font-size: 14px;
+    color: gray;
+}
+.ordermid img{
+    width: 107px;
+    height: 107px;
+}
+.ordermidText{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 42px;
+}
+.ordermid ul li:nth-child(2) span{
+    color: red;
+}
+.ordermid ul li:nth-child(3) button{
+    width: 100px;
+    height: 30px;
+    background-color: #5ebc9c;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* 收藏商品 */
+
+.collection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 999px;
+    height: 383px;
+    background-color: #fff;
+}
+.collection .orderhd{
+    border-bottom: 1px solid #ccc;
+}
+
+.colGoods{
+    width: 925px;
+    height: 260px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.colGoods li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 20%;
+    font-size: 17px;
+}
+.colGoods li img{
+    width: 160px;
+    height: 160px;
+}
+.colGoods li i{
+    font-size: 19px;
+    color: red;
+}
+
+
+/* 我的足迹部分采用收藏样式 */
+.history{
+    width: 999px;
+    height: 383px;
+    background-color: #fff;
+}
+
+
+

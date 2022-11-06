@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: #ccc;
+      color: #fff;
+      text-align: center;
+      font-size: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+    const move=function(){
+      box.innerHTML=i++
+    }
+    //时间版本
+    const throttle1=function(fn,ms){
+        let start=0
+        return function(...args){
+          let now=+new Date()
+          if (now-start>ms) {
+            fn.call(this,...args)
+            start=+new Date()
+          }
+        }
+    }
+    //定时器版本
+    const throttle2=function(){
+      let timerId
+      return function(){
+        if (!timerId) {
+          timerId=setTimeout(()=>{
+            fn.call(this,...args)
+            timerId=null
+          },ms)
+        }
+      }
+    }
+    let i=0
+    const box=document.querySelector('.box')
+    //回调函数加(),表示同步执行
+    box.addEventListener('mousemove',throttle1(move,500).bind(this,0))
+
+    //lodash实现
+    //节流：._throttle(fn,awit)
+    //防抖：._debounce(fn,awit)
+  </script>
+</body>
+
+</html>

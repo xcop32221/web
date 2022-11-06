@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(num);
+        fn()
+        // 函数被声明了过后,那么这个函数就会被提升到当前作用域的最上面
+        function fn() {
+            console.log('我被调用了');
+        }
+        // var变量也会存在一个变量提升,声明变量后,会将这个声明的变量(没有赋值)提升到当前作用域的最上面
+
+        //  遵循先声明,后使用
+        var num = 10
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/orders.css">
+ 
+</head>
+    
+<body>
+    <!-- 项目规范: -->
+    
+    <!-- 1. 使用flex完成布局结构 -->
+    <!-- 2. 严格注意类名规范和代码结构 -->
+    <!-- 3. 开始之前，先熟悉提供的base.css和项目素材(字体图标,图片) -->
+    <!-- 4. 尽量书写代码注释 -->
+    <!-- 5. 使用到图片,请使用多倍图技术 -->
+    <!-- 6. 注意底部模块,不能遮挡主体内容展示 -->
+    <!-- 7. 尽量复用公共样式代码 -->
+
+
+    <!-- 主体盒子 -->
+    <div class="main">
+        <!-- 头部 -->
+        <div class="top">
+            <img src="./images/top.png" alt="">
+            <div class="title">
+                <!-- <i class="iconfont icon-more"></i> -->
+                填写订单
+            </div>
+        </div>
+
+        <!-- 用户信息栏 -->
+        <div class="userInfo">
+            <i class="iconfont icon-location"></i>
+            <div class="text">
+                <p class="texttop">
+                <span class="id">林丽</span>
+                <span class="phone">13086638026</span>
+                </p>
+                <p class="textdown">
+                    北京市&nbsp; 海定区&nbsp; 中关村软件园&nbsp; 信息科技大厦1号楼410#
+                </p>
+            </div>
+            <i class="iconfont icon-more"></i>
+        </div>
+
+        <!-- 商品信息栏 -->
+        <div class="goodsInfo">
+            <div class="goodImg"></div>
+            <div class="goodtext">
+                <ul>
+                    <li>康尔贝 非接触式红外体温仪<br>
+                        领券立减30元 婴儿级材质 测温的装置</li>
+                    <li>
+                        <span>粉色</span>
+                        <span>红外体温计</span>
+                    </li>
+                    <li>
+                        <span>&dollar;266</span>
+                        <del>&dollar;299</del>
+                    </li>
+                </ul>
+            </div>
+            <i class="quatity">
+                &times;&nbsp;1
+            </i>
+        </div>
+        
+        <!-- 用户方式栏 -->
+        <div class="mode">
+            <ul>
+                <li>
+                    <em>配送方式</em>
+                    <em>顺丰快递</em>
+                </li>
+                <li>
+                    <em>买家备注</em>
+                    <input class='detail'type="text" placeholder="希望可以尽快发货">
+                </li>
+                <li>
+                    <em>支付方式</em>
+                    <i class="pay">支付宝</i>
+                </li>
+            </ul>
+        </div>
+
+
+        <!-- 价格栏 -->
+        <div class="mode">
+            <ul>
+                <li>
+                    <em>商品总价</em>
+                    <em>&dollar;299</em>
+                </li>
+                <li>
+                    <em>运费</em>
+                    <em>&dollar;0.00</em>
+                </li>
+                <li>
+                    <em>折扣</em>
+                    <em class="red">-&dollar;30.00</em>
+                </li>
+            </ul>
+        </div>
+        <!-- 价格栏2-->
+        <div class="mode">
+            <ul>
+                <li>
+                    <em>商品总价</em>
+                    <em>&dollar;299</em>
+                </li>
+                <li>
+                    <em>运费</em>
+                    <em>&dollar;0.00</em>
+                </li>
+                <li>
+                    <em>折扣</em>
+                    <em class="red">-&dollar;30.00</em>
+                </li>
+            </ul>
+        </div>
+        <!-- 价格栏3 -->
+        <div class="mode">
+            <ul>
+                <li>
+                    <em>商品总价</em>
+                    <em>&dollar;299</em>
+                </li>
+                <li>
+                    <em>运费</em>
+                    <em>&dollar;0.00</em>
+                </li>
+                <li>
+                    <em>折扣</em>
+                    <em class="red">-&dollar;30.00</em>
+                </li>
+            </ul>
+        </div>
+        <!-- 底部固定栏 -->
+        <div class="bottom">
+            <div class="bottomLeft">
+                <i class="red">&dollar;266.00</i>
+            </div>
+            <button class="bottomRight">去支付</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

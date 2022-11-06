@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            width: 250px;
+            float: left;
+            margin: 0 30px;
+
+        }
+
+        li {
+            width: 200px;
+            height: 26px;
+            margin: 20px 0;
+            line-height: 26px;
+            background-color: #ccc;
+            overflow: hidden;
+           
+        }
+
+        li span {
+            float: left;
+        }
+
+        em {
+            float: right;
+            font-style: normal;
+        }
+
+        /* ::after 在XXXX之后*/
+        /* ::before 在XXXX之前 */
+        .box2 li::after {
+            float: right;
+            /* 必要属性1 */
+            content: '\e601';
+            /* 如果此时不知道如何做,就是看看,正常的字体图标怎么解析的 */
+            /* 把Unicode里的&#xe601; => \e601 */
+            /* 在Unicode教程页面内可以复制过来 */
+            /* 必要属性2 */
+            font-family: "iconfont" !important;
+            /* 让伪元素与iconfont(样式表)进行关联 */
+        }
+
+        /* .box2 li::after {
+            content: '\e601';
+            font-family: "iconfont" !important;
+        } */
+        
+    </style>
+</head>
+
+<body>
+    <ul class="box1">
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+        <li>
+            <span>内容</span>
+            <em class="iconfont icon-gouwuche"></em>
+        </li>
+    </ul>
+
+
+
+    <!-- 使用伪元素搭配字体图标 -->
+    <ul class="box2">
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+        <li>内容</li>
+    </ul>
+</body>
+
+</html>

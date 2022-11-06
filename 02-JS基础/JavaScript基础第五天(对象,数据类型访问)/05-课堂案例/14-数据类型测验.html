@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 基本数据类型，存放数据放在栈里面
+        let num1 = 10
+        // 基本数据类型赋值过后,会在栈里面重新开辟一片空间来存放数据
+        let num2 = num1
+        num1 = 20
+        console.log(num2); //10
+
+
+        // 复杂数据类型,把数据放在堆里面,然后在栈里面存放的数据的引用地址
+        let obj1 = {
+            age: 18
+        }
+        // 在栈里面新开辟一片空间,复制的是复杂数据类型的引用地址
+        let obj2 = obj1
+        // obj1.age的重新赋值操作,会将堆里面存放的数据改变
+        obj1.age = 20
+        // 因为obj1,和obj2存放的都是同一个堆数据里面的地址,所以obj2的数据也会随之改变
+        console.log(obj2.age); //20
+    </script>
+</body>
+
+</html>

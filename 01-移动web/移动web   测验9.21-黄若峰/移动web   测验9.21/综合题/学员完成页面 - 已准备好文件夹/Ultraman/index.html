@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1 minimum-scale=1 maximum-scale=1 user-scalable=no" />
+    <title>豆瓣</title>
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 
+    要求:
+    （1）自行选择rem或者vw移动适配方案；
+    （2）设计稿定稿为375px;
+    （3）技术选型为(rem或者vw) + flex + less + 浮动 + 定位 + 2D等；
+    （4）部分数值允许微调（不在取值浪费过多时间），尽量还原细节即可；
+    （5）实现随着屏幕尺寸改变，页面内容也随之改变，达到正常预览的适配效果；
+    （6）素材已提供，利用准备好的素材，尽量还原页面效果, 务必先检查提供的素材； 
+    -->
+    <!-- 大盒子包裹 -->
+    <div class="main">
+        <!-- 头部电影信息 -->
+        <div class="movie">
+            <div class="movieleft">
+                <img src="./images/atm.webp" alt="">
+            </div>
+            <div class="movieright">
+                <span>奥特曼</span>
+                <i>ウルトラマン（1966）</i>
+                <em>日本 / 剧情 / 动作 / 科幻 / 1966-07-17上映 / 片长25分钟</em>
+                <ul class="function">
+                    <li>
+                        <img src="./images/icon1.png" alt="">
+                        想看
+                    </li>
+                    <li>
+                        <img src="./images/icon2.png" alt="">
+                        在看
+                    </li>
+                    <li>
+                        <img src="./images/icon3.png" alt="">
+                        看过
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 得分信息 -->
+        <div class="score">
+            <div class="scorehd">
+                <span>豆瓣评分</span>
+                <button>打开App评分</button>
+            </div>
+            <div class="scorebody">
+                <span>8.8</span>
+                <div class="stars">
+                    <i class="iconfont icon-icon-"></i>
+                    <i class="iconfont icon-icon-"></i>
+                    <i class="iconfont icon-icon-"></i>
+                    <i class="iconfont icon-icon-"></i>
+                    <i class="iconfont icon-pingfenti"></i><br>
+                    14941人评分
+                </div>
+                <div class="starsdegree">
+                    <div class="stars_num">
+                        <div class="stars_num_left">
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                        </div>
+                        <div class="stars_num_right">
+                            <div class="score5_bar"></div>
+                        </div>
+                    </div>
+                    <div class="stars_num">
+                        <div class="stars_num_left">
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                           
+                        </div>
+                        <div class="stars_num_right">
+                            <div class="score4_bar"></div>
+                        </div>
+                    </div>
+                    <div class="stars_num">
+                        <div class="stars_num_left">
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                           
+                        </div>
+                        <div class="stars_num_right">
+                            <div class="score3_bar"></div>
+                        </div>
+                    </div>
+                    <div class="stars_num">
+                        <div class="stars_num_left">
+                            <i class="iconfont icon-icon-"></i>
+                            <i class="iconfont icon-icon-"></i>
+                
+                        </div>
+                        <div class="stars_num_right">
+                            <div class="score2_bar"></div>
+                            
+                        </div>
+                    </div>
+                    <div class="stars_num">
+                        <div class="stars_num_left">
+                            <i class="iconfont icon-icon-"></i>
+                           
+                        </div>
+                        <div class="stars_num_right">
+                            <div class="score1_bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部信息 -->
+        <div class="bottom">
+            <div class="imgbox">
+            <img src="./images/播放.png" alt="">
+            <span>可在线观看</span>
+            </div>
+            <span>打开豆瓣APP查看播放源</span>
+        </div>
+    </div>
+    <script src="./JS/flexible.js"></script>
+</body>
+
+</html>

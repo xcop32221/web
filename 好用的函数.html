@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //获得随机数组
+        function randomarr(arrnum = 1, start = 0, end = 10) {
+            let arr = []
+            if (end == start) {
+                return end
+            }
+            for (let i = 0; i < arrnum; i++) {
+                arr.push(Math.floor(Math.random() * (end - start + 1) + start))
+            }
+            return arr
+        }
+        //获得随机颜色
+        function randomnum(start = 0, end = 10) {
+            if (end == start) {
+                return end
+            }
+            else {
+                return Math.floor(Math.random() * (end - start + 1) + start)
+            }
+        }
+        function getRandomrgb(flag = 'hex') {
+            if (flag == 'rgb') {
+                let randomColorArr = randomarr(3, 0, 255)
+                let randomColor = 'rgb'
+                for (let i = 0; i < randomColorArr.length; i++) {
+                    if (i == 0) {
+                        randomColor += `(${randomColorArr[i]},`
+                    }
+                    else if (i == 2) {
+                        randomColor += `${randomColorArr[i]})`
+                    }
+                    else {
+                        randomColor += `${randomColorArr[i]},`
+                    }
+                }
+                return randomColor
+            }
+            else if (flag == 'hex') {
+                let color = '#'
+                let hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f']
+                for (let i = 0; i < 6; i++) {
+                    let index = randomnum(0, 16)
+                    color += hex[index]
+                }
+                return color
+            }
+        }
+        //得到当前时间的模板字符串
+        function gettime() {
+            //实例化日期对象
+            const date = new Date()
+
+            //获取年月日
+            const year = date.getFullYear()
+            let month = date.getMonth() + 1
+            let day = date.getDate()
+
+            //获取时分秒
+            let h = date.getHours()
+            let m = date.getMinutes()
+            let s = date.getSeconds()
+
+            //补零
+            month = month < 10 ? '0' + month : month
+            day = day < 10 ? '0' + day : day
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+
+            //返回模板字符串
+            return `${year}-${month}-${day} ${h}:${m}:${s}`
+        }
+        const getCounttime = function (string = '2022-10-13 00:00:00') {
+            //获取间隔时间戳
+            let now = +new Date()
+            let time = +new Date(`${string}`)
+            let gap = (time - now) / 1000
+
+            //时间戳转换为天，时，分，秒
+            let d = parseInt(gap / 60 / 60 / 24)
+            let h = parseInt(gap / 60 / 60 % 24)
+            let m = parseInt(gap / 60 % 60)
+            let s = parseInt(gap % 60)
+
+            // 5. 补0
+            d = d < 10 ? '0' + d : d
+            h = h < 10 ? '0' + h : h
+            m = m < 10 ? '0' + m : m
+            s = s < 10 ? '0' + s : s
+
+            // 6. 将天时分秒分别放到span标签中
+            document.querySelector('#day').innerHTML = d
+            document.querySelector('#hour').innerHTML = h
+            document.querySelector('#minutes').innerHTML = m
+            document.querySelector('#second').innerHTML = s
+        }
+
+
+        //生成器控制次数
+        function* nTimes(n) {
+            while (n--) {
+                yield;
+            }
+        }
+        //生成数值递增的数组
+        function* range(start, end) {
+            while (end > start) {
+                yield start++;
+            }
+        }
+        let arr1 = Array.from(range(1, 10))
+
+        //数组填充
+        function* zeroes(n) {
+            while (n--) {
+                yield 0;
+            }
+        }
+        let arr2=Array.from(zeroes(10))
+        
+        //实例化增加全局代理
+        const userList = [];
+        class User {
+            constructor(name) {
+                this.name_ = name;
+            }
+        }
+        const proxy = new Proxy(User, {
+            construct() {
+                const newUser = Reflect.construct(...arguments);
+                userList.push(newUser);
+                console.log(Reflect)
+                return newUser;
+            }
+        });
+    </script>
+</body>
+
+</html>

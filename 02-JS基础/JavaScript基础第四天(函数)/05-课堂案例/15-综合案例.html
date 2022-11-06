@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.声明一个转换时间的函数
+        // 对形参设置一个默认值
+        function date(time = 0) {
+            // 2.对传入进来的参数做转换
+            let h = parseInt(time / 60 / 60 % 24)
+            let m = parseInt(time / 60 % 60)
+            let s = parseInt(time % 60)
+            // 3.将拼接好的字符串进行一个返回
+            let str = `${time}转换后为${h}小时${m}分${s}秒`
+            return str
+        }
+        let userTime = +prompt('请输入你要转换的秒数')
+        // 4. 调用函数拿到返回值,赋值给新变量
+        let dateStr = date(userTime)
+        // 5.打印新变量
+        document.write(dateStr)
+    </script>
+</body>
+
+</html>

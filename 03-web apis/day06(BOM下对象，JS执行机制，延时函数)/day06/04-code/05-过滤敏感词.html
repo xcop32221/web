@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <textarea name="" id="" cols="30" rows="10"></textarea>
+  <button>发布</button>
+  <div></div>
+  <script>
+    const text=document.querySelector('textarea')
+    const btn=document.querySelector('button')
+    const div=document.querySelector('div')
+    btn.addEventListener('click',function(){
+       const reg=/[激基级即寄级]情/ig
+       if (reg.test(text.value)) {
+        div.innerHTML=text.value.replace(reg,'**')
+        text.value=''
+       }
+       else{
+        div.innerHTML=text.value
+       } 
+      })
+  </script>
+</body>
+
+</html>

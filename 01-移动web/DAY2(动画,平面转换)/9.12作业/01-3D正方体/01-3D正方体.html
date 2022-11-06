@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 1000px;
+            background-color: #000;
+            /* user-select: none; */
+        }
+
+        .box {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 4s;
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            animation: xuanzhuan 3s linear infinite;
+        }
+
+        /* .box:hover {
+            transform: rotate3d(1, 1, 0, 150deg);
+        } */
+
+        .box div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 300px;
+            font-size: 65px;
+            font-weight: 700;
+            color: #000;
+            opacity: 0.7;
+            
+        }
+
+        @keyframes xuanzhuan {
+            0% {
+                transform: rotate3D(1, 1, 0, 0);
+
+            }
+
+            100% {
+                transform: rotate3D(1, 1, 0, 360deg);
+
+            }
+        }
+
+
+        .box div:nth-child(1) {
+            background-color: pink;
+            transform: translateZ(150px);
+        }
+
+        .box div:nth-child(2) {
+            transform: translateZ(-150px);
+            background-color: rgb(178, 94, 199);
+        }
+
+        .box div:nth-child(3) {
+            transform: rotateX(90deg) translateZ(150px);
+            background-color: rgb(89, 207, 42);
+        }
+
+        .box div:nth-child(4) {
+            transform: rotateX(90deg) translateZ(-150px);
+            background-color: rgb(20, 240, 192);
+        }
+
+        .box div:nth-child(5) {
+            transform: rotateY(90deg) translateZ(-150px);
+            background-color: rgb(211, 114, 69);
+        }
+
+        .box div:nth-child(6) {
+            transform: rotateY(90deg) translateZ(150px);
+            background-color: rgb(235, 181, 4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>

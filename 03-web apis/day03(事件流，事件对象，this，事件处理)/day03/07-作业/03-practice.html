@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 80px;
+        }
+
+        input[type=text] {
+            width: 50px;
+            height: 44px;
+            outline: none;
+            border: 1px solid #ccc;
+            text-align: center;
+            border-right: 0;
+        }
+
+        input[type=button] {
+            height: 24px;
+            width: 22px;
+            cursor: pointer;
+        }
+
+        input {
+            float: left;
+            border: 1px solid #ccc;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="total">
+        <input type="button" value="+" id="add">
+        <input type="button" value="-" id="reduce" disabled>
+        <script>
+            //获取元素
+            const ipt1 = document.querySelector('[type="text"]')
+            const btn1 = document.querySelector('[value="+"]')
+            const btn2 = document.querySelector('[value="-"]')
+            
+            //事件监听：input输入，必须输入数字量
+            ipt1.addEventListener('input', function (e) {
+                
+                if (!(+(ipt1.value))) {
+                    alert('请输入数字量')
+                    ipt1.value = ''
+                }
+                
+                //存在数值，启用减法键
+                if ((+ipt1.value) > 0) {
+                    btn2.disabled = false
+                }
+                
+            })
+            //事件监听:加，减做对应的运算写入数量
+            btn1.addEventListener('click', function () {
+                ipt1.value = +ipt1.value + 1
+            })
+            btn2.addEventListener('click', function () {
+                //减到数值为0时，静止做减法
+                if ((+ipt1.value) > 0) {
+                    btn2.disabled = false
+                    ipt1.value = +ipt1.value - 1
+                }
+                else {
+                    btn2.disabled = true
+                    alert('数量已经为0了')
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

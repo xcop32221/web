@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //随机函数(num)
+        function randomnum(start=0,end=10)
+        {
+            if(end==start)
+            {
+                return end
+            }
+            else{
+            return Math.floor(Math.random()*(end-start+1)+start)
+            }
+        }
+        //main
+        
+        let guessNum=randomnum(0,10)
+        while(1)
+        {
+            num=+prompt('请猜0-10以内的数字')
+            if (num==guessNum)
+            {
+                alert('恭喜你猜对了')
+                break    
+            }
+            else if(num>guessNum)
+            {
+                alert(`猜大了`)
+                continue
+            }
+            else if(num<guessNum)
+            {
+                alert(`猜小了`)
+                continue
+            }
+        }
+    </script>
+</body>
+</html>

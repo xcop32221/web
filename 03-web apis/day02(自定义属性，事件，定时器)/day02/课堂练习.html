@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 600px;
+            height: 400px;
+            background-color: #000;
+            margin: 200px auto;
+        }
+        .div1{
+            width: 600px;
+            height: 400px;
+            background-color: orange;
+            margin: 200px auto;
+            transform: rotate(45deg);
+            transition: all .3s;
+        }
+        .div2{
+            width: 600px;
+            height: 400px;
+            background-color: skyblue;
+            margin: 200px auto;
+            transform: rotate(-45deg);
+            transition: all .3s;
+        }
+    </style>
+</head>
+<body>
+    <div data-id="7"></div>
+    <input type="text">
+</body>
+<script>
+    //随机函数(arr)
+    // function randomarr(arrnum=1,start=0,end=10)
+    //     {
+    //         let arr=[]
+    //         if(end==start)
+    //         {
+    //             return end
+    //         }
+    //         for(let i=0;i<arrnum;i++)
+    //         {
+    //             arr.push(Math.floor(Math.random()*(end-start+1)+start))
+    //         }
+    //         return arr
+    //     }
+    // function randomnum(start=0,end=10)
+    //     {
+    //         if(end==start)
+    //         {
+    //             return end
+    //         }
+    //         else{
+    //         return Math.floor(Math.random()*(end-start+1)+start)
+    //         }
+    //     }
+    // function getRandomrgb(flag='hex')
+    //     {
+    //         if (flag=='rgb') 
+    //         {
+    //             let randomColorArr=randomarr(3,0,255)
+    //             let randomColor='rgb'
+    //             for(let i=0;i<randomColorArr.length;i++)
+    //             {
+    //                 if(i==0)
+    //                 {
+    //                     randomColor+=`(${randomColorArr[i]},`
+    //                 }
+    //                 else if(i==2)
+    //                 {
+    //                     randomColor+=`${randomColorArr[i]})`
+    //                 }
+    //                 else{
+    //                 randomColor+=`${randomColorArr[i]},`
+    //                 }
+    //             }
+    //             return randomColor
+    //         }
+    //         else if(flag=='hex')
+    //         {
+    //             let color='#'
+    //             let hex=[0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f']
+    //             for(let i=0;i<6;i++)
+    //             {
+    //                 let index=randomnum(0,16)
+    //                 color+=hex[index]    
+    //             }
+    //             return color
+    //         }
+    //     }
+    // const box=document.querySelector('div')
+    // function colorSet()
+    // {
+    //     rgb=getRandomrgb('rgb')
+    //     box.style.backgroundColor=rgb
+    // }
+    // let timer1=setInterval(colorSet,1000)
+    // if (parseInt(box.style.backgroundColor)>5) {
+    //     clearInterval(timer1)
+    // }
+    
+    
+    // const box=document.querySelector('div')
+    const ipt=document.querySelector('input')
+    // box.addEventListener('mouseenter',function(){
+    //     box.className='div1'
+    // })
+    // box.addEventListener('mouseleave',function(){
+    //     box.className='div2'
+    // })
+    // input.addEventListener('focus',function(){
+    //     box.className='div1'})
+    // input.addEventListener('blur',function(){
+    // box.className='div2'})
+
+    // ipt.addEventListener('keydown',function(){
+    //     console.log(ipt.value)
+    // })
+    ipt.addEventListener('input',function(){
+        console.log(ipt.value)
+        if(ipt.value.length>3)
+        {
+            alert('1')
+        }
+    })
+    
+</script>
+</html>

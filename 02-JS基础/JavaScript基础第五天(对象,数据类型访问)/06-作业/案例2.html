@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //随机函数(num)
+        function randomnum(start=0,end=10)
+        {
+            if(end==start)
+            {
+                return end
+            }
+            else{
+            return Math.floor(Math.random()*(end-start+1)+start)
+            }
+        }
+        
+        let arr=['赵云','黄忠','关羽','张飞','马超','刘备','曹操']
+        for(let i=0;i<7;i++)
+        {
+        let index=randomnum(start=0,end=arr.length-1)
+        let name=arr[index]
+        arr.splice(index,1)
+        document.write(name+`<br>`)
+        
+        }
+        
+    </script>
+</body>
+</html>

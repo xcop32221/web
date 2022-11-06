@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <script>
+    const arr1 = [1, 2, 3]
+    // 展开运算符 可以展开数组
+    // console.log(...arr)
+
+    // console.log(Math.max(1, 2, 3))
+    // ...arr1  === 1,2,3
+    // 1 求数组最大值
+    console.log(Math.max(...arr1)) // 3
+    console.log(Math.min(...arr1)) // 1
+    // 2. 合并数组
+    const arr2 = [3, 4, 5]
+    const arr = [...arr1, ...arr2]
+    console.log(arr)
+    //3.浅复制数组
+    const arr3=[...arr2]    
+    //4.将字符串转为数组
+    const arr4=[...'hhhhh']
+    //5.将伪数组转换为真数组
+    const lis=document.querySelectorAll('li')
+    console.log([...lis])
+
+    const lis1=Array.from(lis)
+    console.log(lis1)
+
+    lis.indexof=function(){Array.indexof.call(this)}
+    console.log(lis)
+
+    
+  </script>
+</body>
+
+</html>

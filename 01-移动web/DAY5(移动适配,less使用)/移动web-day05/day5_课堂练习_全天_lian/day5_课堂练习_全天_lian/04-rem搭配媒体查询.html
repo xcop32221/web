@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* html里的fz到底写多少合适?  */
+        /* 方案: 把页面等分为十份, html里的fz,设置为当前视口宽度的十分之一  */
+
+        /* @media (width:375px) {
+            html {
+                font-size: 37.5px;
+            }
+        }
+
+        @media (width:414px) {
+            html {
+                font-size: 41.4px;
+            }
+        } */
+
+        /* 基准值已经设置完毕 */
+        /* 需求: 写一个350px宽,390px高的粉色盒子 */
+
+        div {
+            width: 9.33rem;
+            height: 10.4rem;
+            font-size: 20px;
+            background-color: pink;
+
+            /* 1. 书写时,一个一个的修改 */
+            /* 2. 全局书写完毕后,一次性修改 */
+            /* alt + Z */
+        }
+
+        /* Ui设计稿是375px */
+        /* 前端开发只需要根据375px去书写页面效果,单位使用rem */
+        /* 确保375px下,效果能够完整展示,准确的 */
+        /* 那么其他尺寸, 随之等比例的变化即可 */
+
+
+
+        /* 待解决的问题: */
+        /* 尺寸计算过于麻烦(其他的解决方案) */
+
+        /* 交给插件去计算 */
+        /* 1. 插件名称: px to rem */
+        /* 2. 修改插件的配置: 修改设计稿的尺寸(基准值) */
+        /*    -设置  搜索 cssrem  修改Root Font Size 基准值为37.5  */
+        /*    -启动rem悬停 */
+
+        /* 其他屏幕的html的fz还未单独定义 ，无数次屏幕尺寸如果都去定义，效率太低（其他解决方案） */
+        
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

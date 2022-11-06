@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text">
+    <script>
+
+        // 想要的效果？
+        // 1. 抬起一个键，不会立马发送请求，我们可以给一个延迟等待的时间 200ms
+        // 2. 如果在200ms内，我按下后抬起了一个键，又重新按一个键，重新计时
+        // 3. 只有当最后一次按下键抬起，超过了200ms后，才会执行发送请求的代码
+        
+        //1.主线程执行到事件绑定代码时，此时回调函数是同步，直接在调用栈中执行，将函数返回到事件绑定中
+        //2.事件触发时，通过回调在消息队列中添加宏任务，放入消息队列中，主线程把该任务放到JS线程执行
+        //3.执行时，这个任务会在延时队列中添加一个setTimeout宏任务
+        //4.这个延时队列中的任务对应的是我们实际想去执行的操作: 根据作用域链去访问变量，执行操作
+        //5.下次事件触发时，同样执行1，2步，主线程中处理是：把延时队列中上次添加的任务清除掉，重新添加setTimeout延时任务
+        //如何清除延时队列中的任务：
+        //正常情况下来说，第二步中进行处理通过作用域链是访问不到上个计时器的ID
+        //我们想把这个ID留下来，给其他执行上下文访问，即下次向消息队列中添加时候清除
+        //解决方案：1.放入闭包中  2.放在全局作用域上（但是同一个页面只能有一个）
+         
+        function sendmsg(x,y,z,d) {
+            console.log(x+y+z+d)
+        }
+        const input = document.querySelector('input')
+        const debounce = (fn, ms = 0) => {
+            let timerid
+            return function(...args){
+                clearTimeout(timerid)
+                //延时器中回调函数为this
+                //要是想改变this指向绑定到DOM上，需要使用箭头函数
+                timerid=setTimeout(()=>{
+                fn.call(this,...args)
+            },ms)
+            } 
+        }
+        
+        input.addEventListener('keyup', debounce(sendmsg, 200).bind(input,1,2,3))
+        
+        
+        
+       
+    
+    </script>
+</body>
+
+</html>

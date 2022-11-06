@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test{
+            position: absolute;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+            background: orange;
+            margin: 100px 200px;
+        }
+        @keyframes rotate {
+            0%{
+                transform: translate(0,0) rotate(0deg);
+                background-color: skyblue;
+                
+            }
+            
+            100%{
+                transform: translate(1200px,1000px) rotate(180deg);
+                background-color: red;
+                
+            }
+        }
+        .rotate{
+            transition: all .1s;
+            animation: rotate 1s linear alternate infinite;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="test"></div>
+    <script>
+        // 点击这个div, 让他旋转180度, 持续时间0.3s 
+        const box=document.querySelector('div')
+        // 再点一次, 恢复初始状态 ... transform
+        box.addEventListener('click',function(){
+            this.classList.toggle('rotate')
+          })
+        
+
+    </script>
+</body>
+</html>
