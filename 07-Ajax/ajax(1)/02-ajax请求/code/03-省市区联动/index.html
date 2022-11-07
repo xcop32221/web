@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .form-select {
+        width: 103px;
+        display: inline-block;
+      }
+      .col-form-label {
+        text-align: right;
+      }
+      .figure-img {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+      #upload {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-9" style="margin: 100px auto">
+        <select class="form-select col-4" name="province">
+          <option value="">--省--</option>
+        </select>
+        <select class="form-select col-4" name="city">
+          <option value="">--市--</option>
+        </select>
+        <select class="form-select col-4" name="area">
+          <option value="">--区--</option>
+        </select>
+      </div>
+    </div>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/index.js"></script>
+  </body>
+</html>

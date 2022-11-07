@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      action="https://fanyi.baidu.com/#en/zh/multiple"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+      target="_self"
+    >
+      <input type="text" name="username" id="username" />
+      <input type="password" name="password" id="password" />
+      <button>button 提交</button>
+      <!-- input框必须有type="submit" 才能触发form标签的submit事件 -->
+      <input type="submit" />
+    </form>
+
+    <!-- 在form标签外的button按钮不能触发form标签的submit事件 -->
+    <button>提交</button>
+  </body>
+</html>

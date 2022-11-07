@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../../lib/axios.min.js"></script>
+    <script>
+      // 1. new FormData()  FormData构造函数不是axios插件提供的
+      let fd = new FormData()
+
+      // 2. fd.append('属性名', '属性值')  给fd添加键值对
+      fd.append('aaa', '111')
+      fd.append('bbb', '222')
+
+      axios({
+        method: 'POST',
+        url: 'http://ajax-base-api-t.itheima.net/api/addbook',
+        // 3. 把fd实例对象赋值给data属性
+        data: fd
+      })
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        alert('出了一点小差错*……*')
+      })
+    </script>
+  </body>
+</html>

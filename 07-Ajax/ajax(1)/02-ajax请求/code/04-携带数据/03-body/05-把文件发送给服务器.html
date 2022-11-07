@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .progress {
+        margin: 30px 0;
+        width: 400px;
+        height: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      i {
+        display: block;
+        background-color: #ce5;
+        height: 100%;
+        width: 0%;
+        transition: width 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="file" accept="image/png, image/jpeg" id="file" />
+      <!-- <input type="file" accept="image/*" /> -->
+      <button>上传图片</button>
+
+      <!-- 进度条 -->
+      <div class="progress">
+        <i></i>
+      </div>
+
+    </form>
+    <img src="" id ="uploadImg">
+
+    <script src="../../lib/axios.min.js"></script>
+
+    <script>
+      const button = document.querySelector('button')
+      const input = document.querySelector('#file')
+      button.addEventListener('click', function (e) {
+        e.preventDefault()
+        
+        // 当用户点击button按钮时，拿到用户选中的图片
+        // input.files 是伪数组
+        // input.files[0] 这是用户选择的那张图片
+        console.log(input.files[0])
+
+        // 1. new FormData()
+        let fd = new FormData()
+
+        // 2. 往new出来的实现对象身上添加键值对
+        fd.append('avatar', input.files[0])
+        
+        // 3. 通过axios插件发送ajax请求
+        axios({
+          // GET 请求不支持请求体，所以不能是get
+          method: 'POST',
+          url: 'http://ajax-base-api-t.itheima.net/api/upload/avatar',
+          // 直接把fd实例对象赋值给data属性即可
+          data: fd,
+
+          // axios给我们提供了一个onUploadProgress方法
+          onUploadProgress: function(e){
+            // e.loaded 是已上传图片的大小
+            // e.total 是图片总共的大小
+            console.log(e);
+            let perent = (e.loaded / e.total) * 100 + '%'
+            document.querySelector('i').style.width = perent
+          }
+        })
+          .then((res) => {
+            // 我们刚上传到服务器的图片的完整url
+            console.log(res.data);
+            console.log('http://ajax-base-api-t.itheima.net' + res.data.url)
+            const img_url = 'http://ajax-base-api-t.itheima.net' + res.data.url
+            document.querySelector('#uploadImg').src = img_url
+          })
+          .catch((err) => {
+            alert('网络异常，请稍后再试')
+          })
+      })
+    </script>
+  </body>
+</html>

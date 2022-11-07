@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .form-select {
+        width: 103px;
+        display: inline-block;
+      }
+      .col-form-label {
+        text-align: right;
+      }
+      .figure-img {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+      #upload {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-9" style="margin: 100px auto">
+        <select class="form-select col-4" name="province">
+          <option value="">--省--</option>
+        </select>
+        <select class="form-select col-4" name="city">
+          <option value="">--市--</option>
+        </select>
+        <select class="form-select col-4" name="area">
+          <option value="">--区--</option>
+        </select>
+      </div>
+    </div>
+
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/form-serialize.js"></script>
+    <script>
+      axios.defaults.baseURL = 'http://ajax-api.itheima.net/api'
+
+      // 上传头像
+      const upload = document.querySelector('#upload')
+      const avatar = document.querySelector('.figure img')
+      avatar.addEventListener('click', () => {
+        upload.click()
+      })
+      upload.addEventListener('change', async () => {
+        const file = upload.files[0]
+        const fd = new FormData()
+        fd.append('avatar', file)
+        const { data: res } = await axios.post('/file', fd)
+        avatar.src = res.data.url
+        document.querySelector('[name=avatar]').value = res.data.url
+      })
+
+      // 页面初始化
+      const ps = document.querySelector('[name=province]')
+      const cs = document.querySelector('[name=city]')
+      const as = document.querySelector('[name=area]')
+      const initData = async () => {
+        const { data: res } = await axios.get('/settings')
+        // 显示图片
+        avatar.src = res.data.avatar
+        // 显示省市区
+        const {
+          data: { data: province },
+        } = await axios.get('/province')
+        const phtml = province
+          .map(item => `<option value="${item}">${item}</option>`)
+          .join('')
+        ps.innerHTML = `${phtml}`
+
+        const {
+          data: { data: city },
+        } = await axios.get('/city', { params: { pname: res.data.province } })
+        const chtml = city
+          .map(item => `<option value="${item}">${item}</option>`)
+          .join('')
+        cs.innerHTML = `${chtml}`
+
+        const {
+          data: { data: area },
+        } = await axios.get('/area', {
+          params: { pname: res.data.province, cname: res.data.city },
+        })
+        const ahtml = area
+          .map(item => `<option value="${item}">${item}</option>`)
+          .join('')
+        as.innerHTML = `${ahtml}`
+
+        // 填充表单
+        Object.keys(res.data).forEach(key => {
+          document.querySelector(`[name=${key}]`).value = res.data[key]
+        })
+      }
+      initData()
+
+      // 省市区联动
+      ps.addEventListener('change', async () => {
+        cs.value = ''
+        as.value = ''
+        const {
+          data: { data: city },
+        } = await axios.get('/city', { params: { pname: ps.value } })
+        const chtml = city
+          .map(item => `<option value="${item}">${item}</option>`)
+          .join('')
+        cs.innerHTML = `${chtml}`
+        const {
+          data: { data: area },
+        } = await axios.get('/area', {
+          params: { pname: ps.value, cname: cs.value },
+        })
+        const ahtml = area
+          .map(item => `<option value="${item}">${item}</option>`)
+          .join('')
+        as.innerHTML = `${ahtml}`
+      })
+      cs.addEventListener('change', async () => {
+        as.value = ''
+        const {
+          data: { data: area },
+        } = await axios.get('/area', {
+          params: { pname: ps.value, cname: cs.value },
+        })
+        const ahtml = area
+          .map(item => `<option value="${item}">${item}</option>`)
+          .join('')
+        as.innerHTML = `${ahtml}`
+      })
+
+      // 保存信息
+      document.querySelector('form').addEventListener('submit', async e => {
+        e.preventDefault()
+        const data = serialize(e.target, { hash: true })
+        await axios.put('/settings', data)
+        alert('保存成功')
+      })
+    </script>
+  </body>
+</html>

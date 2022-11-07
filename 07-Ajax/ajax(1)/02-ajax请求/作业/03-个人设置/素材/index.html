@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <style>
+      .form-select {
+        width: 103px;
+        display: inline-block;
+      }
+      .col-form-label {
+        text-align: right;
+      }
+      .figure-img {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+      #upload {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="p-5">个人设置</h1>
+      <form class="col-4">
+        <div class="row mb-3">
+          <label class="col-form-label col-3">昵称：</label>
+          <div class="col-9">
+            <input class="form-control col-9" type="text" name="nickname" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-form-label col-3">籍贯：</label>
+          <div class="col-9">
+            <select class="form-select col-4" name="province"></select>
+            <select class="form-select col-4" name="city"></select>
+            <select class="form-select col-4" name="area"></select>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-form-label col-3">头像：</label>
+          <div class="col-9">
+            <input class="form-control col-9" type="hidden" name="avatar" />
+            <figure class="figure">
+              <input type="file" id="upload" />
+              <img
+                src="https://yanxuan-item.nosdn.127.net/12a882699bd531a1bd428bffe1989525.jpg"
+                class="figure-img img-fluid rounded"
+                alt="..."
+              />
+              <figcaption class="figure-caption">修改头像</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-3"></label>
+          <div class="col-9">
+            <button class="btn btn-primary">保存</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="./lib/axios.js"></script>
+    <script src="./lib/map.js"></script>
+    <script src="./lib/index.js"></script>
+  </body>
+</html>

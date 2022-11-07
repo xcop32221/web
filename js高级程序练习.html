@@ -588,14 +588,27 @@
         //     console.log(val)
         // }
         // console.log(0 && 1)
-        const getList = ([x, ...y]) => [x, y]
-        const getUser = user => ({ name: user.name, age: user.age })
+        // const getList = ([x, ...y]) => [x, y]
+        // const getUser = user => ({ name: user.name, age: user.age })
 
-        const list = [1, 2, 3, 4]
-        const user = { name: "Lydia", age: 21 }
+        // const list = [1, 2, 3, 4]
+        // const user = { name: "Lydia", age: 21 }
 
-        console.log(getList(list))
-        console.log(getUser(user))
+        // console.log(getList(list))
+        // console.log(getUser(user))
+        try{
+            console.log(1)
+            a=a
+            console.log(3)
+        }
+        catch{
+            throw Error('出错了')
+            console.log(2)
+        }
+        finally{
+            console.log(3)
+        }
+        console.log(3)
     </script>
 </body>
 

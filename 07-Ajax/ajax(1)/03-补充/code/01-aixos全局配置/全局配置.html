@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <script src="../../lib/axios.min.js"></script>
+    <script>
+        // 统一设置一些参数
+        axios.defaults.baseURL = 'http://ajax-base-api-t.itheima.net'
+        // 设置公共的请求头
+        axios.defaults.headers.common['Authorization'] = '1111'
+
+        // 设置某些请求的请求头
+        axios.defaults.headers.post['aaa'] = '2222'
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.css" />
+    <style>
+      ul li span:first-child{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body style="padding: 15px">
+    <!-- 评论面板 -->
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">发表评论</h3>
+      </div>
+      <form class="panel-body" id="formAddCmt">
+        <div>评论人：</div>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          name="username"
+          autocomplete="off"
+        />
+        <div>评论内容：</div>
+        <textarea id="content" class="form-control" name="content"></textarea>
+
+        <button type="submit" class="btn btn-primary">发表评论</button>
+      </form>
+    </div>
+
+    <!-- 评论列表 -->
+    <ul class="list-group" id="cmt-list"></ul>
+
+    <script src="./lib/axios.min.js"></script>
+    <script>
+      const username = document.querySelector('#username')
+      const content = document.querySelector('#content')
+      const btn = document.querySelector('.btn')
+      const list = document.querySelector('#cmt-list')
+
+      // 获取评论列表
+      function getcomment(){
+        axios({
+          method: 'GET',
+          url: 'http://ajax-base-api-t.itheima.net/api/cmtlist'
+        })
+        .then(res => {
+          console.log(res.data.data)
+          let arr_get = res.data.data.map(item => {
+            const {id, username, content, time} = item
+            return `
+              <li class="list-group-item">
+                <span class="badge" style="background-color: #f0ad4e" data-id='${id}'>删除</span>
+                <span class="badge" style="background-color: #f0ad4e">评论时间：${time}</span>
+                <span class="badge" style="background-color: #5bc0de">评论人：${username}</span>
+                ${content}
+              </li>
+            `
+          })
+          list.innerHTML = arr_get.join('')
+        })
+        .catch(err => {
+          alert('出了一点小差错*……*')
+        })
+      }
+      getcomment()
+
+      // 发表评论
+      btn.addEventListener('click', function(e){
+        e.preventDefault()
+        axios({
+          method: 'POST',
+          url: 'http://ajax-base-api-t.itheima.net/api/addcmt',
+          data: {
+            username: username.value,
+            content: content.value
+          }
+        })
+        .then(res => {
+          if (res.data.status === 201) {
+            console.log('评论发表成功！')
+            getcomment()
+          } else {
+            console.log('评论发表失败！')
+          }
+        })
+        .catch(err => {
+          alert('出了一点小差错*……*')
+        })
+      })
+
+      // 删除评论
+      list.addEventListener('click', function(e){
+        if (e.target.innerHTML !== '删除') {
+          return
+        }
+
+        axios({
+          method: 'GET',
+          url: 'http://ajax-base-api-t.itheima.net/api/delcmt',
+          params: {
+            id: e.target.dataset.id
+          }
+        })
+        .then(res => {
+          if (res.data.status === 200) {
+            console.log('删除评论成功！')
+            getcomment()
+          } else {
+            console.log('删除评论失败！')
+          }
+        })
+        .catch(err => {
+          alert('出了一点小差错*…*')
+        })
+      })
+      
+    </script>
+  </body>
+</html>

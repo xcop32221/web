@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../../lib/axios.min.js"></script>
+    <script>
+      // axios.defaults.baseURL = 'http://ajax-base-api-t.itheima.net'
+
+      // 添加请求拦截器
+      axios.interceptors.request.use(
+        // 第一个函数什么时候执行？  答：当每一个通过axios发送的ajax请求前执行
+        function (config) {
+          // 在发送请求之前做些什么
+          // console.log(1111)
+
+          if (config.url === '/api/getbooks') {
+            // 改变config里的配置
+            config.method = 'get'
+            config.url = '/api/cmtlist'
+          }
+
+          // 对url进行改变，并把新的url地址重新赋值给config
+          config.url = 'http://ajax-base-api-t.itheima.net' + config.url
+
+          // return config是把config的配置return到axios内部
+          return config
+        },
+        // 第二个函数什么时候执行？  答： 当请求发送前出错时会自动执行
+        function (error) {
+          // 对请求错误做些什么
+          console.log(2222)
+
+          return Promise.reject(error)
+        },
+      )
+
+      // 添加响应拦截器
+      axios.interceptors.response.use(
+        function(response){
+          // 对响应数据做什么
+          response.aaa = 111
+
+          // 与then()里的console.log(res)一模一样
+          // console.log(response)
+
+          return response
+        },
+        function(error){
+          // 把catch里的代码统一拿到这里来执行
+          alert('网络异常')
+
+          // 对响应错误做什么
+          return Promise.reject(error)
+        }
+      )
+
+      // 一个请求
+      axios({
+        method: 'get',
+        url: '/api/getbooks',
+      })
+        .then(res => {
+          console.log(res)
+          console.log(res.data)
+        })
+        // .catch(err => {
+        //   console.log(err)
+        //   alert('网络异常')
+        // })
+
+      // 一个请求
+      axios({
+        method: 'get',
+        url: '/api/cmtlist',
+      })
+        .then(res => {
+          console.log(res.data)
+        })
+        // .catch(err => {
+        //   console.log(err)
+        //   alert('网络异常')
+        // })
+    </script>
+  </body>
+</html>

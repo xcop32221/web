@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+    />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body></body>
+  <script>
+    // 1.new XMLHttpRequest()构造函数  得到一个实例对象
+    let xhr = new XMLHttpRequest()
+
+    // 2.启动一个http请求 注意:这时候并没有发送真正的请求,这里只是准备好等待发送
+    xhr.open('get', 'http://ajax-base-api-t.itheima.net/api/getbooks')
+
+    // 3.添加监听响应事件
+    // 当浏览器拿到响应数据后会自动触发load绑定事件
+    xhr.addEventListener('load', function(){
+      console.log(this.status)
+      console.log(this.response)
+      // 服务器给客户端的是json字符串,我们需要把它转换成js对象或数组
+      let res = JSON.parse(this.response)
+      console.log(res)
+    })
+
+    xhr.addEventListener('error', function(){
+      alert('网络异常，请稍后再试')
+    })
+
+    // 4.发送请求
+    xhr.send()
+  </script>
+</html>

@@ -24,15 +24,43 @@
     <div id="test"></div>
    <script type="text/babel">
         const data=['Angular','React','Vue']
+        
         const vdom=(
             <div>
                 <h1>前端框架</h1>
                 <ul>
-                    {data}
+                    {
+                        data.map((el,i)=>{
+                            //每个元素都得有唯一的key，用于diffing算法
+                            return <li key={i}>{el}</li>
+                        })
+                    }
                 </ul>
             </div>
         )
+        
         ReactDOM.render(vdom,document.getElementById('test'))
+        
+        /*
+        
+        JS表达式{}中能写入什么
+        表达式和语句不是一个概念：
+        表达式：产生一个值，可以放在任何一个需要值的地方
+        例如：定义一个变量在左边接，有值就是表达式
+        1.a  变量名
+        2.a+b
+        3.demo(1) 函数调用表达式
+        4.arr.map()
+        5.function test(){}
+
+        语句(代码):
+        1.if(){}
+        2.for(){}
+        3.switch(){case:xxxx}
+            
+        diffing算法就靠每个标签(虚拟dom)的key去区分
+        
+        */
 
    </script>
 </body>

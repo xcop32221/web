@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>使用POST发送请求</h2>
+        <div>请求数据: <span id="requestData"></span></div>
+        <input id="nameInput" />
+        <button id="post">post请求</button>
+    </div>
+    <script>
+        const requestData = document.querySelector('#requestData')
+        const nameInput = document.querySelector('#nameInput')
+        const postbtn = document.querySelector('#post')
+        function request(method, url, data, cb, errCb) {
+        // 1 new
+        const xhr = new XMLHttpRequest();
+        // 2 open
+        xhr.open(method, url);
+        // xhr.open("POST", "http://192.168.22.24:4000/test_json");
+        // 3 设置请求头
+        // 把 js 对象，转换成 网络可以传输的 json 格式的 字符串
+        xhr.setRequestHeader("content-type", "application/json");
+        // 4 发送请求
+        xhr.send(JSON.stringify(data));
+        requestData.innerHTML = "请求中...";
+        // 5 监听
+        xhr.responseType = "json";
+        xhr.addEventListener("readystatechange", () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              cb(xhr.response);
+            } else {
+              errCb(xhr.status);
+            }
+          }
+        });
+      }
+        //点击事件内发送请求事件
+        postbtn.onclick = () => {
+            const nameinput = nameInput.value
+            nameInput.value = null
+            requestData.innerHTML = '请求加载中'
+            request(
+                method='POST',
+                url ="http://192.168.22.24:4000/test_json",
+                data = {name:nameinput},
+                cb=(res)=>{
+                    requestData.innerHTML=res
+                },
+                errCb=(res)=>{
+                    requestData.innerHTML=res
+                }
+                
+            )
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

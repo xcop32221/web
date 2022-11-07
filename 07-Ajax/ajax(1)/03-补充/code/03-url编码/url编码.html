@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一种编码----------------------------------encodeURI
+        // 对任一个字符串进行编码
+        let str = encodeURI('字符串编码')
+        console.log(str)
+
+        // 解码
+        let new_str = decodeURI(str)
+        console.log(new_str)
+
+        // 第二种编码----------------------------------encodeURIComponent
+        let str1 = encodeURI('ab/cd?ef=12')  // 只会对非ASCII码进行编码
+        console.log(str1)
+
+        let str2 = encodeURIComponent('ab/cd?ef=12')
+        console.log(str2)
+
+        // 工作使用场景
+        // https://baidu.com?wd=js中&符号的作用&q=xxx
+        let url = 'https://baidu.com?wd=' + 
+        encodeURIComponent('js中&符号的作用') +
+        '&q=xxx'
+
+        console.log(url)
+    </script>
+</body>
+</html>

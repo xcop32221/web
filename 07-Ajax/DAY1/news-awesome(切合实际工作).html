@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.2/css/bootstrap.css"
+      rel="stylesheet"
+      /> -->
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.0/css/all.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.2/js/bootstrap.js"></script> -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+  </head>
+  <style>
+    body {
+      /* 色度值的颜色表示 hsla */
+      background-color: hsla(223, 100%, 65%, 0.941);
+    }
+    .view-container {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 1em;
+      background-color: white;
+    }
+    .view-container > .result {
+      width: 400px;
+      height: 600px;
+      overflow: auto;
+      position: relative;
+      transition: all 0.4s;
+    }
+    .view-container > .refresh-button {
+      position: absolute;
+      right: 40px;
+      bottom: 40px;
+    }
+  </style>
+  <body>
+    <div class="view-container">
+      <div class="result" id="result">
+        <div style="padding: 1em">
+          <div class="alert alert-primary">请点击悬浮按钮查询新闻列表</div>
+        </div>
+      </div>
+      <button
+        class="refresh-button btn btn-lg btn-primary btn-floating"
+        id="refresh"
+      >
+        <i class="fas fa-refresh"></i>
+      </button>
+    </div>
+
+    <div id="liveToast" style="position: fixed; right: 10px; top: 10px">
+      <div class="toast-body">
+        <span id="toast-content" style="color: white"></span>
+      </div>
+    </div>
+    <script>
+      window.onload = () => {
+        const result = document.querySelector("#result");
+        const refresh = document.querySelector("#refresh");
+        const toast = document.querySelector("#liveToast");
+        let isLoading = false;
+        const loading = () => {
+          result.style.opacity = 0;
+          setTimeout(() => {
+            result.innerHTML = `
+              <div style="width:100%;height:100%;display:flex;flex-flow:row nowrap;justify-content:center;align-items:center;">
+                <div class="spinner-border">
+                    <span class="visually-hidden">请求中...</span>
+                    </div>
+                    </div>
+                    `;
+            result.style.opacity = 1;
+          }, 400);
+        };
+        // 处理请求结果，readyState 4 且 status 200
+        const handleResult = (res) => {
+          result.style.opacity = 0;
+          setTimeout(() => {
+            result.style.opacity = 1;
+            result.innerHTML =
+              '<ul class="list-group">' +
+              res.data
+                .map(
+                  (el) => `
+                    <li class="list-group-item" style="padding:1em">
+                        <img src="${el.img}" style="width: 100%; margin-bottom: 1em"/>
+                        <h4 style="margin: 0 0 1em 0">${el.title}</h4>
+                        <p style="margin:0 0 1em 0; opacity: .6">${el.source}</p>
+                        <div style="display:flex;flex-flow:row nowrap;justify-content:space-between">
+                            <span style="font-size: 12px; opacity:.6"><i class="fas fa-calendar" style="margin-right:1em"></i>${el.time}</span>
+                            <span style="font-size: 12px; opacity:.6"><i class="fas fa-message" style="margin-right:1em"></i>${el.cmtcount}</span>
+                            </div>
+                            </li>
+                            `
+                )
+                .join("") +
+              "</ul>";
+            toast.setAttribute("class", "toast bg-success");
+            toast.querySelector("#toast-content").textContent = "请求成功";
+            setTimeout(() => {
+              new bootstrap.Toast(toast).show();
+            }, 0);
+          }, 400);
+        };
+        const handleError = (status) => {
+          toast.setAttribute("class", "toast bg-danger");
+          toast.querySelector("#toast-content").textContent =
+            "请求失败：" + status;
+          setTimeout(() => {
+            new bootstrap.Toast(toast).show();
+          }, 0);
+        };
+        refresh.addEventListener("click", () => {
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "http://ajax-api.itheima.net/api/news");
+          xhr.send();
+          xhr.responseType = "json";
+          loading();
+          xhr.onreadystatechange = (e) => {
+            // 在请求事件监听函数中，做 xhr 的解构赋值
+            const { readyState, status, response } = e.target;
+            if (readyState === 4) {
+              if (status === 200) {
+                handleResult(response);
+              } else {
+                handleError(status);
+              }
+            }
+          };
+        });
+      };
+    </script>
+  </body>
+</html>

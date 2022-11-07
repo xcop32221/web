@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../../lib/axios.min.js"></script>
+    <script>
+      axios({
+        method: 'POST',
+        url: 'http://ajax-base-api-t.itheima.net/api/addbook',
+        // 查询字符串格式
+        data: 'bookname=aaa&author=bbb'
+      })
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        alert('出了一点小差错*……*')
+      })
+    </script>
+  </body>
+</html>
