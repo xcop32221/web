@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 'http://ajax-api.itheima.net/api/news' -->
+    <button id="refresh">点击刷新新闻</button>
+    <div id="newsList"></div>
+    <!-- 'http://ajax-api.itheima.net/api/login' -->
+    <form id="loginForm">
+        <div>
+            <!-- 绑定 label 的 for 到 input 的 id -->
+            <!-- 在点击 label 的时候，聚焦 focus 到 input -->
+            <label for="username">用户名</label>
+            <!-- 要想让 formdata 拿到数据，必须给 input 加上 name 属性 -->
+            <input name="username" placeholder="请输入用户名" id="username" />
+        </div>
+        <div>
+            <label for="password">密码</label>
+            <input name="password" placeholder="请输入密码" id="password" />
+        </div>
+        <button type="submit">登录</button>
+    </form>
+    <!-- "http://ajax-api.itheima.net/api/robot?spoken=" -->
+    <input id="talk" placeholder="请输入内容与机器人聊天，回车提交" />
+    <div id="result"></div>
+    <script>
+        const refresh=document.querySelector('#refresh')
+        const newslist=document.querySelector('#newsList')
+        refresh.onclick=()=>{
+            fetch(
+                'http://ajax-api.itheima.net/api/news',
+                {
+                    method:'GET'
+                }
+            ).then((res)=>res.json()).then((res)=>{
+                console.log(res)
+                newslist.innerHTML=res.data.map((el)=>{
+                   return `
+                            <div>
+                                <img src="${el.img}" alt="">
+                                <h4>${el.title}</h4>
+                                <p>发布时间${el.id} 评论数${el.cmtcount} 来源：${el.source} </p>
+                            </div>
+                            `
+                }).join('')
+            })
+        }
+
+        const form=document.querySelector('#loginForm')
+        const formdata=new FormData(form)
+        form.onsubmit=(e)=>{
+            e.preventDefault();
+            const xhr=new XMLHttpRequest()
+            xhr.onreadystatechange=()=>{
+                if (xhr.readyState===4) {
+                    if (xhr.status===200) {
+                        alert('登录成功')
+                    }
+                    else{
+                        alert('登录失败')
+                    }
+                }
+            }
+            xhr.open('POST','http://ajax-api.itheima.net/api/login')
+            xhr.setRequestHeader('content-type','application/json')
+            xhr.send(JSON.stringify({
+              username:formdata.get('username') ,
+              password:formdata.get('password') 
+            }))
+        }
+
+        const talk=document.querySelector('#talk')
+        const res=document.querySelector('#result')
+        talk.onkeyup=(e)=>{
+            if (e.key==='Enter') {
+                const xhr=new XMLHttpRequest()
+                xhr.responseType='json'
+                xhr.onreadystatechange=()=>{
+                    if (xhr.readyState===4) {
+                        if (xhr.status===200) {
+                            console.log(xhr.response)
+                            res.innerHTML=xhr.response.data.info.text
+                        }
+                    }
+                }
+                xhr.open('GET','http:ajax-api.itheima.net/api/robot?spoken='+talk.value)
+                xhr.send()
+            }
+        }
+    </script>
+</body>
+</html>
