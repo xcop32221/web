@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="result">请上传头像</div>
+    <input
+      type="file"
+      id="fileInput"
+      placeholder="上传头像"
+      accept="image/*"
+      style="display: none"
+    />
+    <button id="upload">上传文件</button>
+    <script>
+      const fileInput = document.querySelector("#fileInput");
+      const upload = document.querySelector("#upload");
+      const result = document.querySelector("#result");
+      upload.onclick = () => {
+        fileInput.click();
+      };
+      fileInput.onchange = (e) => {
+        console.log(e.target.files);
+        const file = e.target.files[0];
+        const formData = new FormData();
+        formData.append("avatar", file);
+        e.target.value = null;
+        fetch("https://autumnfish.cn/api/form/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            result.innerHTML = `<img src="${res.data}"/>`;
+          });
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="loginForm">
+        <div>
+          <!-- 绑定 label 的 for 到 input 的 id -->
+          <!-- 在点击 label 的时候，聚焦 focus 到 input -->
+          <label for="username">用户名</label>
+          <!-- 要想让 formdata 拿到数据，必须给 input 加上 name 属性 -->
+          <input name="username" placeholder="请输入用户名" id="username" />
+        </div>
+        <div>
+          <label for="password">密码</label>
+          <input name="password" placeholder="请输入密码" id="password" />
+        </div>
+        <button type="submit">登录</button>
+      </form>
+      <script>
+        const loginForm = document.querySelector("#loginForm");
+      loginForm.onsubmit = (e) => {
+        console.log("submit");
+        e.preventDefault();
+        const formData = new FormData(loginForm);
+        fetch(
+          "http://ajax-api.itheima.net/api/login",
+           {
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify({
+                username:formData.get('username'),
+                password:formData.get('password')
+            })
+           }
+        )
+          .then((result) => {
+            return result.json();
+          })
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((err)=>{
+            console.log(err)
+          })
+       
+      };
+      </script>
+</body>
+</html>

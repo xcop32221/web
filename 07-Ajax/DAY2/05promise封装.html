@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //封装timeout
+        function timeout(ms) {
+            const timeOut = new Promise((res, rej) => {
+                setTimeout(() => {
+                    res('hello')
+                }, ms)
+            })
+            return timeOut
+        }
+        // timeout(2000).then((res)=>{
+        //     res+='world'
+        //     console.log(res)
+        //     return timeout(3000)
+        // })
+        // .then((res)=>{
+        //     console.log(res)
+        // })
+        // const str='adv'
+
+        //封装xhr
+        function myfetch(method, url, contentType = 'text/plain', body = null) {
+            const xhr = new XMLHttpRequest()
+            xhr.open(method.toUpperCase(), url)
+            xhr.setRequestHeader('contentType', contentType)
+            xhr.send(body)
+            const myFetchPromise = new Promise((res, rej) => {
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status === 200) {
+                            res(xhr.response)
+                        }
+                        else {
+                            rej(xhr.status)
+                        }
+                    }
+                }
+
+            })
+            return myFetchPromise
+        }
+        myfetch('GET', 'http://ajax-api.itheima.net/api/news').then((res) => {
+            console.log(res)
+        })
+
+
+        //封装获取file
+        function upload(file, dataform, key) {
+            const uploadPromise = new Promise((resolve, reject) => {
+                file.onchange = (e) => {
+                    const data = e.target.files[0]
+                    dataform.append(key, data)
+                    e.target.value = null
+                    fetch("https://autumnfish.cn/api/form/upload", {
+                        method: 'POST',
+                        body: dataform
+                    }).then((res) => {
+                        resolve(res.json())
+                    }).catch((err)=>{
+                        reject(err)
+                    })
+                }
+            })
+            return uploadPromise
+        }
+
+    </script>
+</body>
+
+</html>

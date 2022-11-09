@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="testFetch">测试 fetch</button>
+    <script>
+      const testFetch = document.querySelector("#testFetch");
+      testFetch.onclick = () => {
+        // url, 请求配置
+        fetch("http://ajax-api.itheima.net/api/login", {
+          // 请求方法
+          method: "POST",
+          // 请求数据
+          body: JSON.stringify({ username: "admin", password: "123456" }),
+        })
+          .then(() => {
+            alert("登录成功");
+          })
+          .catch(() => {
+            alert("登录失败");
+          });
+
+        // 默认为 GET 请求
+        fetch("http://ajax-api.itheima.net/api/news")
+          // 返回为 json
+          .then((res) => res.json())
+          .then((res) => {
+            // 请求成功
+            console.log(res);
+          })
+          .catch((err) => {
+            // 请求失败
+            console.err(err);
+          });
+      };
+    </script>
+  </body>
+</html>
