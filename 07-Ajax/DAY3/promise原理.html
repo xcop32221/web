@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let a=1
+        // function wait(cb){
+        //     setTimeout(()=>{
+        //         cb()
+        //     },1000)
+        // }
+        // function callback(){
+        //     console.log(a)
+        // }
+        // wait(callback)
+        // a=2
+        const a = { val: 1 }
+        const b = a.val
+        function fn() {
+            a.val = 2
+            console.log(b)
+        }
+        fn()//1
+    </script>
+</body>
+
+</html>

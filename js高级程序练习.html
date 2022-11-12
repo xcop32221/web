@@ -596,19 +596,33 @@
 
         // console.log(getList(list))
         // console.log(getUser(user))
-        try{
-            console.log(1)
-            a=a
-            console.log(3)
+        // try{
+        //     console.log(1)
+        //     a=a
+        //     console.log(3)
+        // }
+        // catch{
+        //     throw Error('出错了')
+        //     console.log(2)
+        // }
+        // finally{
+        //     console.log(3)
+        // }
+        // console.log(3)
+        async function baz() {
+            const a=await new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    res('可以执行了')
+                },2000)    
+            }).then((res)=>{
+                console.log(res)
+            })
         }
-        catch{
-            throw Error('出错了')
-            console.log(2)
-        }
-        finally{
-            console.log(3)
-        }
-        console.log(3)
+        console.log('现在开始')
+        baz()
+        setTimeout(()=>{
+            console.log('1')
+        },1000)
     </script>
 </body>
 

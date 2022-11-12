@@ -27,17 +27,17 @@
         //then方法调用了resolve把resolve的参数传给then方法里的cb
         //再调用就把上一个cb的返回值传给本次cb的参数
         //把明明放在settimeout里的回调放在外面去调用
-
+        
 
         //等待一段时间返回一个promise
-        function await(timeout){
-            //返回如果是个promise
-            return new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                resolve('hello')
-            },timeout)
-        })
-        }
+        // function await(timeout){
+        //     //返回如果是个promise
+        //     return new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve('hello')
+        //     },timeout)
+        // })
+        // }
 
     </script>
 </body>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        while(true){
+        ;(async function(){
+            const res=await fetch('http://192.168.22.24:4000/wanglei?杜老师好帅=😅')
+            console.log(res.json())
+            const res2=await fetch('http://192.168.22.24:4000/wanglei?杜老师好帅=😅')
+            console.log(res2.json())
+            const res3=await fetch('http://192.168.22.24:4000/wanglei?杜老师好帅=😅')
+            console.log(res3.json())
+        })()}
+    </script>
+</body>
+</html>

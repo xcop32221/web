@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="race">
+    <script>
+        const race=document.querySelector('.race')
+        const Promise1=new Promise((res,rej)=>{
+            race.onkeyup=(e)=>{
+                if(e.key==='A')
+                {res('A')}
+            }
+        })
+        const Promise2=new Promise((res,rej)=>{
+            race.onchang=(e)=>{
+                res('B')
+            }
+        })
+        Promise.race([Promise1,Promise2]).then((res)=>{
+            console.log(res)
+            return Promise.race([Promise1,Promise2])
+        })
+        
+    </script>
+</body>
+</html>

@@ -12,14 +12,25 @@
     <script>
 
         //封装timeout
-        function timeout(ms) {
-            const timeOut = new Promise((res, rej) => {
-                setTimeout(() => {
-                    res('hello')
-                }, ms)
-            })
-            return timeOut
-        }
+        // function timeout(ms) {
+        //     const timeOut = new Promise((res, rej) => {
+        //         setTimeout(() => {
+        //             res('hello')
+        //         }, ms)
+        //     })
+        //     return timeOut
+        // }
+        // const timeOut = new Promise((res, rej) => {
+        //         setTimeout(() => {
+        //             res('hello')
+        //         }, 1000)
+        //     })
+        // timeOut.then().then((res)=>{
+        //     console.log(res)
+        // })
+        // console.log(Promise.resolve(4))
+        
+        
         // timeout(2000).then((res)=>{
         //     res+='world'
         //     console.log(res)
@@ -31,51 +42,80 @@
         // const str='adv'
 
         //封装xhr
-        function myfetch(method, url, contentType = 'text/plain', body = null) {
-            const xhr = new XMLHttpRequest()
-            xhr.open(method.toUpperCase(), url)
-            xhr.setRequestHeader('contentType', contentType)
-            xhr.send(body)
-            const myFetchPromise = new Promise((res, rej) => {
-                xhr.onreadystatechange = () => {
-                    if (xhr.readyState === 4) {
-                        if (xhr.status === 200) {
-                            res(xhr.response)
-                        }
-                        else {
-                            rej(xhr.status)
-                        }
-                    }
-                }
+        // function myfetch(method, url, contentType = 'text/plain', body = null) {
+        //     const xhr = new XMLHttpRequest()
+        //     xhr.open(method.toUpperCase(), url)
+        //     xhr.setRequestHeader('contentType', contentType)
+        //     xhr.send(body)
+        //     const myFetchPromise = new Promise((res, rej) => {
+        //         xhr.onreadystatechange = () => {
+        //             if (xhr.readyState === 4) {
+        //                 if (xhr.status === 200) {
+        //                     res(xhr.response)
+        //                 }
+        //                 else {
+        //                     rej(xhr.status)
+        //                 }
+        //             }
+        //         }
 
-            })
-            return myFetchPromise
-        }
-        myfetch('GET', 'http://ajax-api.itheima.net/api/news').then((res) => {
-            console.log(res)
+        //     })
+        //     return myFetchPromise
+        // }
+        // myfetch('GET', 'http://ajax-api.itheima.net/api/news').then((res) => {
+        //     console.log(res)
+        // })
+
+
+        // //封装获取file
+        // function upload(file, dataform, key) {
+        //     const uploadPromise = new Promise((resolve, reject) => {
+        //         file.onchange = (e) => {
+        //             const data = e.target.files[0]
+        //             dataform.append(key, data)
+        //             e.target.value = null
+        //             fetch("https://autumnfish.cn/api/form/upload", {
+        //                 method: 'POST',
+        //                 body: dataform
+        //             }).then((res) => {
+        //                 resolve(res.json())
+        //             }).catch((err)=>{
+        //                 reject(err)
+        //             })
+        //         }
+        //     })
+        //     return uploadPromise
+        // }
+
+        // function myPromise(domElement,clickFn,mouseMoveFn,mouseenterFn){
+        //     let flag
+        //     const clickEvent=new Promise((res,rej)=>{
+        //         domElement.onclick=()=>{
+        //             flag+=1
+        //             res()
+        //         }
+        //     })
+
+        // }
+        // console.log(JSON)
+        // ;(async function(){
+        //     const a=await new Promise((res,rej)=>{
+        //         res([1,2,3])
+        //     }).then((res)=>{
+        //         let res1=res.map((el)=>{
+        //             return el+1
+        //         })
+        //         return res1
+        //     })
+        //     console.log(a)
+        // })()
+        
+        const a=new Promise((res,rej)=>{
+            setInterval(()=>{
+                res(1)
+            },2000)
         })
-
-
-        //封装获取file
-        function upload(file, dataform, key) {
-            const uploadPromise = new Promise((resolve, reject) => {
-                file.onchange = (e) => {
-                    const data = e.target.files[0]
-                    dataform.append(key, data)
-                    e.target.value = null
-                    fetch("https://autumnfish.cn/api/form/upload", {
-                        method: 'POST',
-                        body: dataform
-                    }).then((res) => {
-                        resolve(res.json())
-                    }).catch((err)=>{
-                        reject(err)
-                    })
-                }
-            })
-            return uploadPromise
-        }
-
+        console.log(a)
     </script>
 </body>
 
