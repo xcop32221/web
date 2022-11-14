@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>渲染列表</title>
+    <script src="script/react.development.js"></script>
+    <script src="script/react-dom.development.js"></script>
+    <!-- 引入babel -->
+    <script src="script/babel.min.js"></script>
+</head>
+
+<body>
+    <button>点击</button>
+    <hr>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const name = '孙悟空'
+        const lang = 'en'
+        let div;
+        //语句中可以去操作JSX
+        if (lang === 'en') {
+            div = <div>{name}</div>
+        }
+        else if (lang === 'zn') {
+            div = <div>{name}</div>
+        }
+        function MyComponent() {
+            const newArr = arr.map((el) => {
+                return '我是' + el
+            })
+            return <ul>{newArr.map((el) => {
+                return <li>{el}</li>
+            })}</ul>
+        }
+        const arr = ['孙悟空', '猪八戒', '沙和尚']
+
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+
+        const arrbox =
+            <div>
+                <ul>{arr.map((el,i) => {
+                    return <li key={i}>{el}</li>
+                })}</ul>
+            </div>
+        root.render(arrbox)
+
+        document.querySelector('button').onclick = () => {
+            const data = ['wayyt', '孙悟空','猪八戒', '沙和尚']
+            const newarrbox = <div>
+                <ul>{data.map((el,i) => {
+                    return <li key={i}>{el}</li>
+                })}</ul>
+            </div>
+            root.render(newarrbox)
+        }
+
+    </script>
+</body>
+
+</html>

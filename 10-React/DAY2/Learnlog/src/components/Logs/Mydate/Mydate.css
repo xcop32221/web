@@ -1,0 +1,33 @@
+/* 设置日期样式 */
+.date{
+    width: 90px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+.month{
+    height:30px;
+    background-color: #D62828;
+    line-height: 30px;
+    color: #fff;
+}
+.day{
+    height: 60px;
+    line-height: 60px;
+    font-size: 50px;
+}
+/* 设置内容样式 */
+.content{
+    flex: auto;
+    text-align: center;
+    font-weight: bold;
+}
+.desc{
+    font-size: 16px;
+    color: #194b49;
+}
+.time{
+    color: #D62828;
+}

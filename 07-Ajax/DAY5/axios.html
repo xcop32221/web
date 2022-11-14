@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        axios(
+            {
+                url:'http://ajax-api.itheima.net/api/category/top'
+                
+            }
+        ).then((res)=>{
+            const {data:list}=res.data
+            console.log(list)
+            Promise.all(
+                list.map((el)=>{
+                    return axios(
+                        {
+                            url:'http://ajax-api.itheima.net/api/category/sub?id='+el.id,
+                        
+                        }
+                    )
+                })
+            )
+            .then((res1)=>{
+                console.log(res1)
+            })
+        })
+        
+       
+    </script>
+</body>
+</html>

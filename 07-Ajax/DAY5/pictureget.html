@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="images">
+
+    </ul>
+    <script>
+        const images = document.querySelector('#images')
+        axios({
+            method: 'get',
+            url: "http://122.9.139.38:4000/images"
+        }).then((res) => {
+            console.log(res)
+            const data = res.data
+            console.log(data)
+            const list = data.map((el) => {
+                return `<div class='all'><img src="${el}" alt=""><button class='btn' data-src='${el}'>删除</button></div>`
+            }).join('')
+            images.innerHTML = list
+            const btns = document.querySelectorAll('.btn')
+            images.addEventListener('click', (e) => {
+                if (e.target.className == 'btn') {
+                    const filename = e.target.dataset.src.split('4000/')[1]
+                    console.log(filename)
+                    axios({
+                        method: 'delete',
+                        url: "http://122.9.139.38:4000/images?name=" + `${escape(filename)}`,
+                    
+                    }).then((res) => {
+                        console.log(res)
+                        const all = document.querySelector('.all')
+                        const delImg = document.querySelector(`[src="${e.target.dataset.src}"]`)
+                        all.style.display = 'none'
+                    })
+
+                }
+            })
+        })
+        
+
+    </script>
+
+</body>
+
+</html>

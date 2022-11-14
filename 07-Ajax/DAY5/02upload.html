@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="img" style="width: 200px; height: 200px;">
+    </div>
+    <input type="file" accept="image/*" id='avatar' style="display: none;">
+    <button id="upload">上传头像</button>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        // 添加请求拦截器
+        axios.interceptors.request.use(
+            function (config) {
+                // 在发送请求之前做些什么
+                console.log(2222)
+                return config;
+            },
+            function (error) {
+                // 对请求错误做些什么
+                return Promise.reject(error);
+            }
+        );
+
+        // 添加响应拦截器
+        axios.interceptors.response.use(
+            function (response) {
+                // 2xx 范围内的状态码都会触发该函数。
+                // 对响应数据做点什么
+                return response;
+            },
+            function (error) {
+                // 超出 2xx 范围的状态码都会触发该函数。
+                // 对响应错误做点什么
+                return Promise.reject(error);
+            }
+        );
+        ; (async function click() {
+            const file = document.querySelector('#avatar')
+            const upload = document.querySelector('#upload')
+            const img = document.querySelector('#img')
+            const dataform = new FormData()
+            await new Promise((res, rej) => {
+                upload.onclick = (() => {
+                    res('1')
+                })
+            })
+            file.click()
+            await new Promise((res, rej) => {
+                file.onchange = ((e) => {
+                    const data = e.target.files[0]
+                    dataform.append('avatar', data)
+                    e.target.value = null
+                    res('1')
+                })
+            })
+
+            
+            await axios({
+                method: 'post',
+                url: "http://122.9.139.38:4000/file",
+                data: dataform
+            }).then((res) => {
+                console.log(res)
+            })
+
+
+        })()
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
